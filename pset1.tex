@@ -1,0 +1,108 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb, amsthm, color}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption}
+\usetikzlibrary{arrows}
+
+\noprintanswers
+\newtheorem{definition}{Definition}
+
+
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 1: \textsection 1.1-1.4}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+
+\begin{questions}
+
+\question For each of the following sets, (i) write the set in set builder notation, i.e. $\left\{x : p(x) \right\}$. Then (ii) write the set as a list of its elements, if possible:
+	\begin{parts}
+		\part The set of natural numbers whose square is less than 25
+		\part $(-1,8]$
+		\part The set of rational numbers less than 4
+	\end{parts}
+ 
+\begin{solution}
+Enter your solution here.
+\end{solution} 
+
+\question Determine whether each of the following is true or false. Explain your reasoning for each answer:
+	\begin{parts}
+		\part The empty set is a proper subset of every set.
+		\part The empty set is an element of every set.
+		
+	%\end{parts}
+	
+%\question Determine whether each of the following is true or false. Explain your reasoning for each answer:
+%	\begin{parts}
+		\part	$\{1\} \in \{1,2,3,\{4\}\}$
+		\part $\{1\} \subseteq \{1,2,3,\{4\}\}$
+		
+%	\end{parts}
+	
+%	\question Determine whether each of the following is true or false. Explain your reasoning for each answer:
+%	\begin{parts}
+		\part $\{4\} \subseteq \{1,2,3,\{4\}\}$
+		\part $\{3\} \subset \mathcal{P}(\mathbb{Q})$
+		\part $\{\{\emptyset\}\} \subseteq \mathcal{P}(\{\emptyset, \{\emptyset\}\})$
+		
+	\end{parts}
+	
+\question Give an example, if possible, of sets $A,B,$ and $C$ satisfying the following. If it is not possible, explain why not.
+	\begin{parts}
+		\part $A\subseteq B$, $B \subseteq C$, and $C \subseteq A$
+		\part $A\subset B$, $B \subset C$, and $C \subset A$
+		\part $A \subseteq B$, $B \nsubseteq C$, and $C \nsubseteq A$
+	\end{parts}
+
+\question Write the power set of each of the following sets.
+	\begin{parts}
+		\part $\{\emptyset, \triangle, \square\}$
+		\part $\{a, \{b,\{c\} \} \}$
+	\end{parts}
+	
+
+\question For $A=\{ 1, 2\}$, determine $A \times \mathcal{P}(A)$.
+
+\question Assume $A$ and $B$ are sets with $|A|=4$ and $|B|=3.$ Determine $|A \times B|$. Explain your reasoning. 
+
+\question Let $$A=\{x | x^2-3x+4=0\} \qquad B=\{x \in\mathbb{Z} | x \textrm{ is divisible by 4} \} \qquad C=\{x \in \mathbb{Z} | x \textrm{ is even}\}.$$  Write out the roster notation of each set, using $\dots$ as needed. Which sets are subsets of each other? 
+
+\question Let $A=\{1\}, B=\{\{1\},1\}$ and $C=1.$  Using $A$, $B$ and $C$ and the symbols $\subset, \subseteq$ and $\in,$ write as many true statements as possible.  
+
+\question We will see the following two definitions later in the course, but you are probably already familiar with them.
+\begin{definition} An integer $n$ is \emph{even} if $n=2a$ for some integer $a \in \mathbb{Z}$. \end{definition}
+\begin{definition} An integer $n$ is \emph{odd} if $n=2a+1$ for some integer $a \in \mathbb{Z}$. \end{definition}
+Read the proofs below. What is being proven? Are there any gaps or holes in the logic?  The first one is well-written while the second is not. What are some things that stand out as bad in the second proof?
+
+\begin{proof} Suppose the integer $x$ is odd. Then $x = 2a+1$ for some $a \in \mathbb{Z}$, by definition
+of an odd number. Thus $x^2 = (2a+1)^2 = 4a^2+4a+1 = 2(2a^2+2a)+1$, so
+$x^2 = 2b +1$ where $b = 2a^2 +2a \in  \mathbb{Z}$. Therefore $x^2$ is odd, by definition
+of an odd number. \end{proof}
+
+\begin{proof} $x = 2k + 1.$
+Square it so
+\[
+x^2 = (2k+1)^2 = 4k^2 + 4k + 1.
+\]
+That's even, plus one. That's odd. {So it works.}
+\end{proof}
+
+\question Adapt the good proof above (in problem 9) to prove a complimentary statement about even numbers.
+
+\end{questions}
+
+\end{document}
