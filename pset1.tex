@@ -6,7 +6,7 @@
 \usepackage{pgf,tikz, subcaption}
 \usetikzlibrary{arrows}
 
-\noprintanswers
+\printanswers
 \newtheorem{definition}{Definition}
 
 
@@ -32,48 +32,72 @@
 	\begin{parts}
 		\part The set of natural numbers whose square is less than 25
 
-		(i) $\{n : n^2 < 25, n \in \mathbb{N}\}$
+        \begin{solution} \\
+        (i) $\{n : n^2 < 25, n \in \mathbb{N}\}$
 
-		(ii) $\{1, 2, 3, 4\}$
+        (ii) $\{1, 2, 3, 4\}$
+        \end{solution}
 
 		\part $(-1,8]$
 
+        \begin{solution} \\
 		(i) $\{x : -1 < x \le 8, x \in \mathbb{R}\}$
+
+        (ii) Infinite set, cannot be written as a list of elements.
+        \end{solution}
 
 		\part The set of rational numbers less than 4
 
+        \begin{solution} \\
 		(i) $\{r : r < 4, r \in \mathbb{Q}\}$
+
+        (ii) Infinite set, cannot be written as a list of elements.
+        \end{solution}
 	\end{parts}
  
 \question Determine whether each of the following is true or false. Explain your reasoning for each answer:
 	\begin{parts}
 		\part The empty set is a proper subset of every set.
 
+        \begin{solution} \\
 		False, $\emptyset$ is not a proper subset of $\emptyset$ because $\emptyset = \emptyset$.
+        \end{solution}
 
 		\part The empty set is an element of every set.
 
+        \begin{solution} \\
 		False, $\emptyset$ is not an element of the set $\{1, 2, 3\}$.
+        \end{solution}
 
 		\part	$\{1\} \in \{1,2,3,\{4\}\}$
 
+        \begin{solution} \\
 		False, the set $\{1\}$ is not an element of $\{1,2,3,\{4\}\}$.
+        \end{solution}
 
 		\part $\{1\} \subseteq \{1,2,3,\{4\}\}$
 
+        \begin{solution} \\
 		True, $\{1\}$ is a subset of $\{1,2,3,\{4\}\}$ because every element of $\{1\}$, i.e. 1, is in $\{1,2,3,\{4\}\}$.
+        \end{solution}
 
 		\part $\{4\} \subseteq \{1,2,3,\{4\}\}$
 
+        \begin{solution} \\
 		False, the set $\{4\}$ is not a subset of $\{1,2,3,\{4\}\}$ because 4 is not in $\{1,2,3,\{4\}\}$.
+        \end{solution}
 
 		\part $\{3\} \subset \mathcal{P}(\mathbb{Q})$
 
+        \begin{solution} \\
 		False, $\{3\}$ is not a proper subset of $\mathcal{P}(\mathbb{Q})$ because 3 is not a subset of $\mathbb{Q}$.
+        \end{solution}
 
 		\part $\{\{\emptyset\}\} \subseteq \mathcal{P}(\{\emptyset, \{\emptyset\}\})$
 
-		True, $\{\{\emptyset\}\}$ is a subset of $\mathcal{P}(\{\emptyset, \{\emptyset\}\}) = \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}, \{\{\emptyset\}\}\}$
+        \begin{solution} \\
+            True, $\{\{\emptyset\}\}$ is a subset of $\mathcal{P}(\{\emptyset, \{\emptyset\}\})$ because every element of $\{\{\emptyset\}\}$, i.e. $\{\emptyset\}$, is a subset of $\{\emptyset, \{\emptyset\}\}$.
+        \end{solution}
 		
 	\end{parts}
 	
@@ -81,41 +105,58 @@
 	\begin{parts}
 		\part $A\subseteq B$, $B \subseteq C$, and $C \subseteq A$
 
+        \begin{solution} \\
 		$A = B = C = \{1\}$
+        \end{solution}
 
 		\part $A\subset B$, $B \subset C$, and $C \subset A$
 
-		Impossible because $A\subset B$, $B \subset C$ implies that $|A| < |B| < |C|$, and $C \subset A$ implies $|C| < |A|$. So we have $|A| < |C|$ and $|C| < |A|$, a contradiction.
+        \begin{solution} \\
+            Impossible. By the definition of a proper subset, we have $A \subseteq B, \ A \neq B, \ B \subseteq C, \ B \neq C, \ C \subseteq A, \ C \neq A$. Since $A \subseteq B, \ B \subseteq C$, we have $A \subseteq C$. Then we have $A \subseteq C, \ C \subseteq A$, so $A = C$, but we also have $A \neq C$, so we have a contradiction. Therefore, $A\subset B$, $B \subset C$, and $C \subset A$ is impossible.
+        \end{solution}
 
 		\part $A \subseteq B$, $B \nsubseteq C$, and $C \nsubseteq A$
 
+        \begin{solution} \\
 		$A = \{1\}, B = \{1, 2\}, C = \{3\}$
+        \end{solution}
 
 	\end{parts}
 
 \question Write the power set of each of the following sets.
 	\begin{parts}
 		\part $\{\emptyset, \triangle, \square\}$
-		
+	
+        \begin{solution} \\
 		$\{\emptyset, \{\emptyset\}, \{\triangle\}, \{\square\}, \{\emptyset, \triangle\}, \{\emptyset, \square\}, \{\triangle, \square\}, \{\emptyset, \triangle, \square\}\}$
+        \end{solution}
 
 		\part $\{a, \{b,\{c\} \} \}$
 
+        \begin{solution} \\
 		$\{\emptyset, \{a\}, \{\{b, \{c\}\}\}, \{a, \{b, \{c\}\}\}\}$
+        \end{solution}
 	\end{parts}
 	
 
 \question For $A=\{ 1, 2\}$, determine $A \times \mathcal{P}(A)$.
 
+\begin{solution} \\
 $\mathcal{P}(A) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}$
 
 $A \times \mathcal{P}(A) = \{(1, \emptyset), (1, \{1\}), (1, \{2\}), (1, \{1, 2\}), (2, \emptyset), (2, \{1\}), (2, \{2\}), (2, \{1, 2\})\}$
+\end{solution}
 
 \question Assume $A$ and $B$ are sets with $|A|=4$ and $|B|=3.$ Determine $|A \times B|$. Explain your reasoning. 
 
-$|A \times B| = |A| \times |B| = 12$.
+\begin{solution} \\
+$|A \times B| = |A| \times |B| = 12$. $|A \times B| = |A| \times |B|$ because there are $|A|$ choices for the first element of the tuples in $A \times B$, $|B|$ choices for the second element of the tuples in $A \times B$, and the first and second elements are chosen independently so there are $|A| \times |B|$ choices in total.
+\end{solution}
 
 \question Let $$A=\{x | x^2-3x+4=0\} \qquad B=\{x \in\mathbb{Z} | x \textrm{ is divisible by 4} \} \qquad C=\{x \in \mathbb{Z} | x \textrm{ is even}\}.$$  Write out the roster notation of each set, using $\dots$ as needed. Which sets are subsets of each other? 
+
+\begin{solution} \\
+TODO: check that x are ints.
 
 $A = \emptyset$
 
@@ -124,10 +165,12 @@ $B = \{0, \pm 4, \pm 8, \pm 12, \dots\}$
 $C = \{0, \pm 2, \pm 4, \pm 6, \dots\}$
 
 $A \subseteq B, A \subseteq C, B \subseteq C$
+\end{solution}
 
 
 \question Let $A=\{1\}, B=\{\{1\},1\}$ and $C=1.$  Using $A$, $B$ and $C$ and the symbols $\subset, \subseteq$ and $\in,$ write as many true statements as possible.
 
+\begin{solution} \\
 $A \in B$
 
 $A \subset B$
@@ -137,6 +180,7 @@ $A \subseteq B$
 $C \in A$
 
 $C \in B$
+    \end{solution}
 
 \question We will see the following two definitions later in the course, but you are probably already familiar with them.
 \begin{definition} An integer $n$ is \emph{even} if $n=2a$ for some integer $a \in \mathbb{Z}$. \end{definition}
@@ -156,17 +200,21 @@ x^2 = (2k+1)^2 = 4k^2 + 4k + 1.
 That's even, plus one. That's odd. {So it works.}
 \end{proof}
 
+\begin{solution} \\
 The following is being proven: If $x$ is odd, then $x^2$ is odd.
 
 The first proof does not have holes in the logic. The second proof does: the proof does not explicitly say $k \in \mathbb{Z}$ or put $4k^2 + 4k + 1$ into the form $2b + 1$.
 
 The sentences in the second proof are incomplete, it's unclear what "that" refers to, and the proof does not show that $4k^2 + 4k + 1$ can be put into the form $2b + 1, b \in \mathbb{Z}$.
+\end{solution}
 
 \question Adapt the good proof above (in problem 9) to prove a complimentary statement about even numbers.
 
 Show that if $x$ is even, then $x^2$ is even.
 
+\begin{solution} \\
 \begin{proof} Suppose the integer $x$ is even. Then $x = 2a$ for some $a \in \mathbb{Z}$, by definition of an even number. Thus $x^2 = (2a)^2 = 4a^2$, so $x^2 = 2b$ where $b = 2a^2 \in \mathbb{Z}$. Therefore $x^2$ is even, by definition of an even number. \end{proof}
+\end{solution}
 
 \end{questions}
 
