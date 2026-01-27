@@ -1,0 +1,76 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption}
+\usetikzlibrary{arrows}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+\printanswers
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 2: \textsection 1.5-1.10}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+\begin{questions}
+
+\question Let $\{a,b,c,d,e,f\}$ be the universal set, and let $R=\{a,b,c,d,f \}$, $S=\{b,c, f\}$, and $T=\{ d,e,f \}$.
+	\begin{parts}
+		\part $R \cap T$
+		\part $R \cap (S\cup T)$
+		\part $(R - S) - T$
+		\part $R - (S - T)$
+		\part $\mathcal{P}(\overline{R})$
+	\end{parts}
+%\begin{solution}
+%Enter solution here
+%\end{solution}
+\question Give an example of a universal set $U$, three sets $A$, $B$ and $C$, and accompanying Venn diagram such that $|A\cup(B\cap C)|=4$ and $|(A\cup B) \cap C|=2$. What is $| A - B|$? $| B - A |$?
+
+\question Assume $A \subseteq B$ is it true that $$(A \times B) \cap (B \times A)=A \times A?$$ Why or why not?
+
+\question Assume $A \subseteq B$ is it true that $$(A \times B) \cup (B \times A)=B \times B?$$ Why or why not?
+	
+\question For each natural number $n$, let $A_n=\mathbb{N} - \{ 1,2,3, \ldots, n\}$. Determine $\bigcup_{n\in\mathbb{N} }A_n$ and $\bigcap_{n\in\mathbb{N}} A_n$.
+
+\question For each $r>0$, let $B_r=\left\{(x,y) \in \mathbb{R}^2 : x^2+y^2 \leq r^2 \right\}$. Determine $\bigcup_{n\in\mathbb{N} }B_n$, $\bigcap_{n\in\mathbb{N}} B_n$, and $\bigcap_{n\in\mathbb{N}} \overline{B_n}$.
+
+\question Respond to the following inquiry from Alex, Age 10. 
+
+Dear Math 2710 student, 
+
+Today in math class, my teacher told me about the Barber's paradox. I don't get it.  Why didn't the barber shave himself?  Was the barber a woman?  Did they live in another town? Do they just not like shaving? And what does this have to do with math?
+
+Sincerely, \\
+Alex, Age 10
+
+
+
+\question  A set of  is called an inductive set if (1) the number 1 is in the set and (2) for any number in the set (call it $n$), the number $n+1$ is in the set. Let $\mathbb{N}$ be the universal set. What are the possible complements of inductive sets?  (Hint: the complements are also subsets of $\mathbb{N}$, so what does the well-ordering principle tell us about them?)
+
+\question Read the proof below.  Then comment on it. (How does it work? What definitions are we using and how? Are there parts that are unclear? How would you make them more clear?)
+
+To prove that $$(A \cap B)^C = (A^C \cup B^C),$$ we can show that $(A \cap B)^C \subseteq (A^C \cup B^C)$ and $(A^C \cup B^C) \subseteq (A \cap B)^C$. 
+
+First, we will show $(A \cap B)^C \subseteq (A^C \cup B^C).$ We need to show that every element in $(A \cap B)^C$ is also in $(A^C \cup B^C)$. Let $x \in (A \cap B)^C$. Then that means that $x  \notin (A \cap B)$.  That means that $x$ is not in both $A$ and $B$.  So $x  \notin A$ or $x \notin B$ (or both). If $x  \notin A$ then $x \in A^C$. If $x  \notin B$, $x \in B^C$. Either way, $x \in A^C \cup B^C$ since the union contains all elements in one of the other (or both).  Thus, we showed if $x \in (A \cap B)^C$, then $x \in (A^C \cup B^C)$, so we can conclude $(A \cap B)^C \subseteq (A^C \cup B^C).$
+
+Now, we will show $(A^C \cup B^C) \subseteq (A \cap B)^C$. Let $x \in (A^C \cup B^C)$, then either $x \in A^C$ or $x \in B^C$.  If $x \in A^C$ then $x  \notin A$, thus $x  \notin A \cap B$. If $x \in B^C$ then $x  \notin B$, so $x  \notin A \cap B$.  In either case, $x  \notin A \cap B$, so $x \in (A \cap B)^C.$ Thus we can conclude, if $x \in (A^C \cup B^C)$ then $(A \cap B)^C$, so  $(A^C \cup B^C) \subseteq (A \cap B)^C$.
+
+Finally since $(A \cap B)^C \subseteq (A^C \cup B^C)$ and $(A^C \cup B^C) \subseteq (A \cap B)^C$, we can conclude $(A \cap B)^C = (A^C \cup B^C)$.
+
+
+
+
+\question Use the technique in 9 to show that $$A \cup (A \cap B) = A.$$
+
+\end{questions}
+
+\end{document}
