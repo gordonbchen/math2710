@@ -1,10 +1,12 @@
 \documentclass[12 pt]{exam}
 \usepackage[margin=0.75in]{geometry}
-\usepackage{amsmath,amssymb,color}
+\usepackage{amsmath,amssymb, amsthm, color}
 \usepackage{enumerate,graphicx,multicol}
 \usepackage{wrapfig}
 \usepackage{pgf,tikz, subcaption}
 \usetikzlibrary{arrows}
+
+\newtheorem{lemma}{Lemma}
 
 \pagestyle{head}                       % This causes the exam to only have headers, no footers.
 %\runningheadrule                     % This causes the headings to have an underline.
@@ -25,23 +27,119 @@
 \question Let $\{a,b,c,d,e,f\}$ be the universal set, and let $R=\{a,b,c,d,f \}$, $S=\{b,c, f\}$, and $T=\{ d,e,f \}$.
 	\begin{parts}
 		\part $R \cap T$
+        \begin{solution} \\
+        $R \cap T = \{d, f\}$
+        \end{solution}
+
 		\part $R \cap (S\cup T)$
+        \begin{solution} \\
+        $R \cap (S \cup T) = R \cap \{b, c, d, e, f\} = \{b, c, d, f\}$
+        \end{solution}
+
 		\part $(R - S) - T$
+        \begin{solution} \\
+        $(R-S) - T = \{a, d\} - \{d, e, f\} = \{a\}$
+        \end{solution}
+
 		\part $R - (S - T)$
+        \begin{solution} \\
+        $R - (S - T) = R - \{b, c\} = \{a, d, f\}$
+        \end{solution}
+
 		\part $\mathcal{P}(\overline{R})$
+        \begin{solution} \\
+        $\mathcal{P}(\overline{R}) = \mathcal{P}(\{e\}) = \{\emptyset, \{e\}\}$
+        \end{solution}
 	\end{parts}
-%\begin{solution}
-%Enter solution here
-%\end{solution}
+
 \question Give an example of a universal set $U$, three sets $A$, $B$ and $C$, and accompanying Venn diagram such that $|A\cup(B\cap C)|=4$ and $|(A\cup B) \cap C|=2$. What is $| A - B|$? $| B - A |$?
+\begin{solution} \\
+$U = \mathbb{N}$
+
+$A = \{1, 2\}, \ B = \{3, 4\} = C$
+
+$|A \cup (B \cap C)| = |\{1, 2\} \cup \{3, 4\}| = |\{1, 2, 3, 4\}| = 4$
+
+$|(A \cup B) \cap C)| = |\{1, 2, 3, 4\} \cup \{3, 4\}| = |\{ 3, 4\}| = 2$
+
+$\colorbox{red}{TODO: Does following have to be true? Fix Venn diagram.}$
+
+$|A - B| = |\emptyset| = 0$
+
+$|B - A| = |\emptyset| = 0$
+
+\begin{tikzpicture}
+  \begin{scope} [fill opacity=0.3]
+    \fill[red]   ( 90:1.2) circle (2);
+    \fill[green] (210:1.2) circle (2);
+    \fill[blue]  (330:1.2) circle (2);
+  \end{scope}
+
+  \node at ( 90:2.5)  {$A$};
+  \node at (210:2.5)  {$B$};
+  \node at (330:2.5)  {$C$};
+\end{tikzpicture}
+
+\end{solution}
 
 \question Assume $A \subseteq B$ is it true that $$(A \times B) \cap (B \times A)=A \times A?$$ Why or why not?
+\begin{solution}\begin{proof}
+$\colorbox{red}{TODO: check proofs.}$
+
+First we show that $(A \times B) \cap (B \times A) \subseteq A \times A$. Let $(x, y) \in (A \times B) \cap (B \times A)$. Then $(x, y) \in A \times B$ and $(x, y) \in B \times A$, so $x \in A \cap B$ and $y \in B \cap A$. Since $A \subseteq B$, $A \cap B = A$, and $x \in A$ and $y \in A$. Since $x \in A$ and $y \in A$, $(x, y) \in A \times A$, and $(A \times B) \cap (B \times A) \subseteq A \times A$.
+
+Now we show that $A \times A \subseteq (A \times B) \cap (B \times A)$. Let $(x, y) \in A \times A$. Then $x \in A$ and $y \in A$. Since $A \subseteq B$, $y \in A$ implies $y \in B$, and $x \in A$ implies $x \in B$. Because $x \in A, y \in B$, we have that $(x, y) \in A \times B$. Because $x \in B, y \in A$, we have that $(x, y) \in B \times A$. Since $(x, y) \in A \times B$ and $(x, y) \in B \times A$, $(x, y) \in (A \times B) \cap (B \times A)$, and $A \times A \subseteq (A \times B) \cap (B \times A)$.
+
+Since $(A \times B) \cap (B \times A) \subseteq A \times A$ and $A \times A \subseteq (A \times B) \cap (B \times A)$, $(A \times B) \cap (B \times A) = A \times A$
+\end{proof}\end{solution}
 
 \question Assume $A \subseteq B$ is it true that $$(A \times B) \cup (B \times A)=B \times B?$$ Why or why not?
+\begin{solution}\begin{proof}
+First we show that $(A \times B) \cup(B \times A) \subseteq B \times B$. Let $(x, y) \in (A \times B) \cup (B \times A)$. Then $(x, y) \in A \times B$ or $(x, y) \in B \times A$. Then $x \in A \cup B$ and $y \in A \cup B$. Since $A \subseteq B$, $A \cup B = B$, so $x \in B$ and $y \in B$. Then $(x, y) \in B \times B$, and $(A \times B) \cup (B \times A) \subseteq B \times B$.
+
+Now we show that $B \times B \subseteq (A \times B) \cup(B \times A)$. Let $(x, y) \in B \times B$. Then $x \in B$ and $y \in B$, and $x \in A \cup B$ and $y \in B \cup A$. Then, $(x, y) \in (A \times B) \cup (B \times A)$, and we have that $B \times B \subseteq (A \times B) \cup (B \times A)$.
+
+Since $(A \times B) \cup (B \times A) \subseteq B \times B$ and $B \times B \subseteq (A \times B) \cup (B \times A)$, $(A \times B) \cup (B \times A) = B \times B$
+\end{proof}\end{solution}
 	
 \question For each natural number $n$, let $A_n=\mathbb{N} - \{ 1,2,3, \ldots, n\}$. Determine $\bigcup_{n\in\mathbb{N} }A_n$ and $\bigcap_{n\in\mathbb{N}} A_n$.
+\begin{solution}
+\begin{proof} $\bigcup_{n \in \mathbb{N}} A_n = A_1$
+\begin{lemma}
+$A_{n+1} \subseteq A_n$
+
+$A_{n+1} = \mathbb{N} - \{1, 2, 3, \ldots, n, n+1\} = A_n - \{n+1\}$
+
+$A_n$ has all elements inside $A_{n+1}$ and the element $n+1$, so $A_{n+1} \subseteq A_n$.
+\end{lemma}
+
+Since $A_{n+1} \subseteq A_n$, $A_n \subseteq A_1$ for $n > 1$, and $\bigcup_{n \in \mathbb{N}} A_n = A_1$.
+\end{proof}
+
+\begin{proof}
+$\bigcap_{n\in\mathbb{N}}A_n = \emptyset$
+
+For sake of contradiction, assume $n' \in \bigcap_{n\in\mathbb{N}}A_n$. Consider the set $A_{n'} = \mathbb{N} - \{1, 2, \dots, n'\}$. Then $n' \notin A_{n'}$, and because $n' \in \mathbb{N}$, $n' \notin \bigcap_{n\in\mathbb{N}}A_n$. We assumed $n' \in \bigcap_{n\in\mathbb{N}}A_n$, but found that $n' \notin \bigcap_{n\in\mathbb{N}}A_n$, so we have a contradiction. Therefore $\bigcap_{n\in\mathbb{N}}A_n = \emptyset$.
+\end{proof}
+
+\end{solution}
 
 \question For each $r>0$, let $B_r=\left\{(x,y) \in \mathbb{R}^2 : x^2+y^2 \leq r^2 \right\}$. Determine $\bigcup_{n\in\mathbb{N} }B_n$, $\bigcap_{n\in\mathbb{N}} B_n$, and $\bigcap_{n\in\mathbb{N}} \overline{B_n}$.
+\begin{solution}
+\begin{proof} $\bigcup_{n\in\mathbb{N}} B_n = \mathbb{R}^2$
+
+For the sake of contradiction, assume $(x, y) \notin \bigcup_{n\in\mathbb{N}} B_n$, $(x, y) \in \mathbb{R}^2$. Then there is no $r \in \mathbb{N}$ such that $(x, y) \in B_r$. Let $r = \left\lceil x^2 + y^2 \right\rceil$. Since $x^2 + y^2 \le r \le r^2$, then there does exist some $r$ such that $x^2 + y^2 \le r^2$, and $(x, y) \in B_r$. This is a contradiction. Therefore, $\bigcup_{n\in\mathbb{N}} B_n = \mathbb{R}^2$.
+\end{proof}
+
+\begin{proof} $\bigcap_{n\in\mathbb{N}}B_n = \{(x, y) \in \mathbb{R}^2, x^2 + y^2 \le 1\}$
+
+\colorbox{red}{TODO: do these need proofs?}
+\end{proof}
+
+
+\begin{proof} $\bigcap_{n\in\mathbb{N}}B_n = \emptyset$
+\end{proof}
+\end{solution}
 
 \question Respond to the following inquiry from Alex, Age 10. 
 
@@ -52,9 +150,13 @@ Today in math class, my teacher told me about the Barber's paradox. I don't get 
 Sincerely, \\
 Alex, Age 10
 
+\begin{solution} \\
+\end{solution}
 
 
 \question  A set of  is called an inductive set if (1) the number 1 is in the set and (2) for any number in the set (call it $n$), the number $n+1$ is in the set. Let $\mathbb{N}$ be the universal set. What are the possible complements of inductive sets?  (Hint: the complements are also subsets of $\mathbb{N}$, so what does the well-ordering principle tell us about them?)
+\begin{solution} \\
+\end{solution}
 
 \question Read the proof below.  Then comment on it. (How does it work? What definitions are we using and how? Are there parts that are unclear? How would you make them more clear?)
 
@@ -67,9 +169,14 @@ Now, we will show $(A^C \cup B^C) \subseteq (A \cap B)^C$. Let $x \in (A^C \cup 
 Finally since $(A \cap B)^C \subseteq (A^C \cup B^C)$ and $(A^C \cup B^C) \subseteq (A \cap B)^C$, we can conclude $(A \cap B)^C = (A^C \cup B^C)$.
 
 
+\begin{solution} \\
+\end{solution}
 
 
 \question Use the technique in 9 to show that $$A \cup (A \cap B) = A.$$
+
+\begin{solution} \\
+\end{solution}
 
 \end{questions}
 
