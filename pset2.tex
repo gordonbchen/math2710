@@ -62,22 +62,46 @@ $|A \cup (B \cap C)| = |\{1, 2\} \cup \{3, 4\}| = |\{1, 2, 3, 4\}| = 4$
 
 $|(A \cup B) \cap C)| = |\{1, 2, 3, 4\} \cup \{3, 4\}| = |\{ 3, 4\}| = 2$
 
-$\colorbox{red}{TODO: Does following have to be true? Fix Venn diagram.}$
+$|A - B| = |A| = 2$
 
-$|A - B| = |\emptyset| = 0$
+$|B - A| = |B| = 2$
 
-$|B - A| = |\emptyset| = 0$
+\begin{tikzpicture}[node distance=2cm, thick]
+  % Define colors for reuse
+  \colorlet{colorA}{red!30}
+  \colorlet{colorB}{green!30}
+  \colorlet{colorC}{blue!30}
 
-\begin{tikzpicture}
-  \begin{scope} [fill opacity=0.3]
-    \fill[red]   ( 90:1.2) circle (2);
-    \fill[green] (210:1.2) circle (2);
-    \fill[blue]  (330:1.2) circle (2);
+  % Scope for the filled circles with transparency
+  \begin{scope}[fill opacity=0.5]
+    \fill[colorA] (90:1.5) circle (2.5) node[above, opacity=1, yshift=2.2cm] {};
+    \fill[colorB] (210:1.5) circle (2.5) node[below left, opacity=1, xshift=-1.8cm, yshift=-1.2cm] {};
+    \fill[colorC] (330:1.5) circle (2.5) node[below right, opacity=1, xshift=1.8cm, yshift=-1.2cm] {};
   \end{scope}
 
-  \node at ( 90:2.5)  {$A$};
-  \node at (210:2.5)  {$B$};
-  \node at (330:2.5)  {$C$};
+  \node at (90:3.7) {\small A};
+  \node at (210:3.7) {\small B};
+  \node at (330:3.7) {\small C};
+
+  % Draw the outlines so the borders are crisp
+  \draw (90:1.5) circle (2.5);
+  \draw (210:1.5) circle (2.5);
+  \draw (330:1.5) circle (2.5);
+
+  % Optional: Labels for the intersections
+  % Middle (A \cap B \cap C)
+  \node at (0,0) {\small $\emptyset$};
+  
+  \node at (90:3) {\small $\{1, 2\}$};
+  
+  % Pairwise intersections
+  \node at (150:1.8) {\small $\emptyset$};
+  \node at (30:1.8)  {\small $\emptyset$};
+  \node at (270:1.8) {\small $\{3, 4\}$};
+
+  % Universal Set Box
+  \draw (-5,-4) rectangle (5,5);
+  \node at (4.5,4.5) {$U$};
 \end{tikzpicture}
 
 \end{solution}
@@ -95,6 +119,8 @@ Since $(A \times B) \cap (B \times A) \subseteq A \times A$ and $A \times A \sub
 
 \question Assume $A \subseteq B$ is it true that $$(A \times B) \cup (B \times A)=B \times B?$$ Why or why not?
 \begin{solution}\begin{proof}
+$\colorbox{red}{TODO: This is False (not necessarily true)}$
+
 First we show that $(A \times B) \cup(B \times A) \subseteq B \times B$. Let $(x, y) \in (A \times B) \cup (B \times A)$. Then $(x, y) \in A \times B$ or $(x, y) \in B \times A$. Then $x \in A \cup B$ and $y \in A \cup B$. Since $A \subseteq B$, $A \cup B = B$, so $x \in B$ and $y \in B$. Then $(x, y) \in B \times B$, and $(A \times B) \cup (B \times A) \subseteq B \times B$.
 
 Now we show that $B \times B \subseteq (A \times B) \cup(B \times A)$. Let $(x, y) \in B \times B$. Then $x \in B$ and $y \in B$, and $x \in A \cup B$ and $y \in B \cup A$. Then, $(x, y) \in (A \times B) \cup (B \times A)$, and we have that $B \times B \subseteq (A \times B) \cup (B \times A)$.
