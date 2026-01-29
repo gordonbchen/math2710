@@ -108,62 +108,52 @@ $|B - A| = |B| = 2$
 
 \question Assume $A \subseteq B$ is it true that $$(A \times B) \cap (B \times A)=A \times A?$$ Why or why not?
 \begin{solution}\begin{proof}
-$\colorbox{red}{TODO: check proofs.}$
 
-First we show that $(A \times B) \cap (B \times A) \subseteq A \times A$. Let $(x, y) \in (A \times B) \cap (B \times A)$. Then $(x, y) \in A \times B$ and $(x, y) \in B \times A$, so $x \in A \cap B$ and $y \in B \cap A$. Since $A \subseteq B$, $A \cap B = A$, and $x \in A$ and $y \in A$. Since $x \in A$ and $y \in A$, $(x, y) \in A \times A$, and $(A \times B) \cap (B \times A) \subseteq A \times A$.
+First we show that $(A \times B) \cap (B \times A) \subseteq A \times A$.
 
-Now we show that $A \times A \subseteq (A \times B) \cap (B \times A)$. Let $(x, y) \in A \times A$. Then $x \in A$ and $y \in A$. Since $A \subseteq B$, $y \in A$ implies $y \in B$, and $x \in A$ implies $x \in B$. Because $x \in A, y \in B$, we have that $(x, y) \in A \times B$. Because $x \in B, y \in A$, we have that $(x, y) \in B \times A$. Since $(x, y) \in A \times B$ and $(x, y) \in B \times A$, $(x, y) \in (A \times B) \cap (B \times A)$, and $A \times A \subseteq (A \times B) \cap (B \times A)$.
+Let $(x, y) \in (A \times B) \cap (B \times A)$. Then $(x, y) \in A \times B$ and $(x, y) \in B \times A$, so $x \in A \cap B$ and $y \in B \cap A$. Since $A \subseteq B$, $A \cap B = A$, and $x \in A$ and $y \in A$. Since $x \in A$ and $y \in A$, $(x, y) \in A \times A$, and $(A \times B) \cap (B \times A) \subseteq A \times A$.
 
-Since $(A \times B) \cap (B \times A) \subseteq A \times A$ and $A \times A \subseteq (A \times B) \cap (B \times A)$, $(A \times B) \cap (B \times A) = A \times A$
+Now we show that $A \times A \subseteq (A \times B) \cap (B \times A)$.
+
+Let $(a, a) \in A \times A$. Then we have that $a \in A$. $(a, a) \in A \times B$ because $a \in A$ and $a \in B$, because $A \subseteq B$. $(a, a) \in B \times A$ because $a \in B$ and $a \in A$. Then, $(a, a) \in A \times B$ and $(a, a) \in B \times A$, so $(a, a) \in (A \times B) \cap (B \times A)$, and we have shown that $A \times A \subseteq (A \times B) \cap (B \times A)$.
+
+Since $(A \times B) \cap (B \times A) \subseteq A \times A$ and $A \times A \subseteq (A \times B) \cap (B \times A)$, we get that $(A \times B) \cap (B \times A) = A \times A$.
 \end{proof}\end{solution}
 
 \question Assume $A \subseteq B$ is it true that $$(A \times B) \cup (B \times A)=B \times B?$$ Why or why not?
 \begin{solution}\begin{proof}
-$\colorbox{red}{TODO: This is False (not necessarily true)}$
+No, if $A \subseteq B$ is it not necessarily true that $(A \times B) \cup (B \times A) = B \times B$.
 
-First we show that $(A \times B) \cup(B \times A) \subseteq B \times B$. Let $(x, y) \in (A \times B) \cup (B \times A)$. Then $(x, y) \in A \times B$ or $(x, y) \in B \times A$. Then $x \in A \cup B$ and $y \in A \cup B$. Since $A \subseteq B$, $A \cup B = B$, so $x \in B$ and $y \in B$. Then $(x, y) \in B \times B$, and $(A \times B) \cup (B \times A) \subseteq B \times B$.
+Let $b \in B$, and $b \notin A$. $(b, b) \in B \times B$ because $b \in B$. However, $(b, b) \notin (A \times B) \cup (B \times A)$ because $(b, b) \notin A \times B$, since $b \notin A$, and $(b, b) \notin B \times A$, since $b \notin A$.
 
-Now we show that $B \times B \subseteq (A \times B) \cup(B \times A)$. Let $(x, y) \in B \times B$. Then $x \in B$ and $y \in B$, and $x \in A \cup B$ and $y \in B \cup A$. Then, $(x, y) \in (A \times B) \cup (B \times A)$, and we have that $B \times B \subseteq (A \times B) \cup (B \times A)$.
-
-Since $(A \times B) \cup (B \times A) \subseteq B \times B$ and $B \times B \subseteq (A \times B) \cup (B \times A)$, $(A \times B) \cup (B \times A) = B \times B$
+Because $(b, b) \in B \times B$ and $(b, b) \notin (A \times B) \cup (B \times A)$, $(A \times B) \cup (B \times A) \neq B \times B$.
 \end{proof}\end{solution}
 	
 \question For each natural number $n$, let $A_n=\mathbb{N} - \{ 1,2,3, \ldots, n\}$. Determine $\bigcup_{n\in\mathbb{N} }A_n$ and $\bigcap_{n\in\mathbb{N}} A_n$.
-\begin{solution}
-\begin{proof} $\bigcup_{n \in \mathbb{N}} A_n = A_1$
-\begin{lemma}
-$A_{n+1} \subseteq A_n$
+\begin{solution} \\
+$A_{n+1} = \mathbb{N} - \{1, 2, 3, \ldots, n, n+1\} = A_n - \{n+1\}$, so $A_n$ has all elements inside $A_{n+1}$ and the element $n+1$, so $A_{n+1} \subseteq A_n$. By induction, then $A_n \subseteq A_1$ for $n \in \mathbb{N}$; clearly $A_1 \subseteq A_1$ and we have shown that $A_{n+1} \subseteq A_n$. Then \fbox{$\bigcup_{n \in \mathbb{N}} A_n = A_1$} since the union of a set and all of its subsets is just the set itself. \\
 
-$A_{n+1} = \mathbb{N} - \{1, 2, 3, \ldots, n, n+1\} = A_n - \{n+1\}$
+\fbox{$\bigcap_{n\in\mathbb{N}}A_n = \emptyset$}
 
-$A_n$ has all elements inside $A_{n+1}$ and the element $n+1$, so $A_{n+1} \subseteq A_n$.
-\end{lemma}
-
-Since $A_{n+1} \subseteq A_n$, $A_n \subseteq A_1$ for $n > 1$, and $\bigcup_{n \in \mathbb{N}} A_n = A_1$.
-\end{proof}
-
-\begin{proof}
-$\bigcap_{n\in\mathbb{N}}A_n = \emptyset$
-
-For sake of contradiction, assume $n' \in \bigcap_{n\in\mathbb{N}}A_n$. Consider the set $A_{n'} = \mathbb{N} - \{1, 2, \dots, n'\}$. Then $n' \notin A_{n'}$, and because $n' \in \mathbb{N}$, $n' \notin \bigcap_{n\in\mathbb{N}}A_n$. We assumed $n' \in \bigcap_{n\in\mathbb{N}}A_n$, but found that $n' \notin \bigcap_{n\in\mathbb{N}}A_n$, so we have a contradiction. Therefore $\bigcap_{n\in\mathbb{N}}A_n = \emptyset$.
-\end{proof}
-
+For sake of contradiction, assume $n' \in \bigcap_{n\in\mathbb{N}}A_n$. Consider the set $A_{n'} = \mathbb{N} - \{1, 2, \dots, n'\}$. Then $n' \notin A_{n'}$, and because $n' \in \mathbb{N}$, we have that $n' \notin \bigcap_{n\in\mathbb{N}}A_n$. We assumed $n' \in \bigcap_{n\in\mathbb{N}}A_n$, but found that $n' \notin \bigcap_{n\in\mathbb{N}}A_n$, so we have a contradiction. Therefore $\bigcap_{n\in\mathbb{N}}A_n = \emptyset$.
 \end{solution}
 
 \question For each $r>0$, let $B_r=\left\{(x,y) \in \mathbb{R}^2 : x^2+y^2 \leq r^2 \right\}$. Determine $\bigcup_{n\in\mathbb{N} }B_n$, $\bigcap_{n\in\mathbb{N}} B_n$, and $\bigcap_{n\in\mathbb{N}} \overline{B_n}$.
 \begin{solution}
 \begin{proof} $\bigcup_{n\in\mathbb{N}} B_n = \mathbb{R}^2$
 
-For the sake of contradiction, assume $(x, y) \notin \bigcup_{n\in\mathbb{N}} B_n$, $(x, y) \in \mathbb{R}^2$. Then there is no $r \in \mathbb{N}$ such that $(x, y) \in B_r$. Let $r = \left\lceil x^2 + y^2 \right\rceil$. Since $x^2 + y^2 \le r \le r^2$, then there does exist some $r$ such that $x^2 + y^2 \le r^2$, and $(x, y) \in B_r$. This is a contradiction. Therefore, $\bigcup_{n\in\mathbb{N}} B_n = \mathbb{R}^2$.
+For the sake of contradiction, assume $(x, y) \notin \bigcup_{n\in\mathbb{N}} B_n$, where $(x, y) \in \mathbb{R}^2$. Then there is no $r \in \mathbb{N}$ such that $(x, y) \in B_r$, otherwise $\bigcup_{n\in\mathbb{N}} B_n$ would contain $(x, y)$. Let $r = \left\lceil x^2 + y^2 \right\rceil$. Since $x^2 + y^2 \le r \le r^2$, then there does exist some $r \in \mathbb{N}$ such that $x^2 + y^2 \le r^2$, and $(x, y) \in B_r$. This is a contradiction because we assumed that $(x, y) \notin \bigcup_{n\in\mathbb{N}}B_n$, but we found a $B_r, r\in \mathbb{N}$ that contains $(x, y)$, so $\bigcup_{n\in\mathbb{N}} B_n$ must contain $(x, y)$. Therefore, $\bigcup_{n\in\mathbb{N}} B_n = \mathbb{R}^2$.
 \end{proof}
 
-\begin{proof} $\bigcap_{n\in\mathbb{N}}B_n = \{(x, y) \in \mathbb{R}^2, x^2 + y^2 \le 1\}$
+\begin{proof} $\bigcap_{n\in\mathbb{N}}B_n = B_1$
 
-\colorbox{red}{TODO: do these need proofs?}
+$B_n$ contains all points enclosed by a circle of radius $n$ centered around the origin. $\{B_1, B_2, B_3, \dots\}$ is then a set of sets containing all points in concentric circles of increasing radius, where $B_1$ is the set containing the points of the smallest circle. Any point not in $B_1$ will not be in $\bigcap_{n\in\mathbb{N}}B_n$, because it is not in $B_1$. Every point inside $B_1$ will be in $\bigcap_{n\in\mathbb{N}}B_n$ because since each $B_n, n > 1$, surrounds $B_1$, $B_1$ is a subset of each $B_n$. Since the only points inside $B_1$ are in $\bigcap_{n\in\mathbb{N}}B_n$, then $\bigcap_{n\in\mathbb{N}}B_n = B_1$.
 \end{proof}
 
 
-\begin{proof} $\bigcap_{n\in\mathbb{N}}B_n = \emptyset$
+\begin{proof} $\bigcap_{n\in\mathbb{N}}\overline{B_n} = \emptyset$
+
+For the sake of contradiction, assume $(x, y) \in \bigcap_{n\in\mathbb{N}}\overline{B_n}$. Then there is no $r \in \mathbb{N}$ for which $(x, y) \in B_r$, otherwise $(x, y) \notin \overline{B_r}$ and $(x, y) \notin \bigcap_{n\in\mathbb{N}}\overline{B_n}$. Let $r = \left \lceil x^2 + y^2 \right\rceil$. Since $x^2 + y^2 \le r \le r^2$, then there exists an $r \in \mathbb{N}$ such that $(x, y) \in B_r$. Contradiction, we found an $r \in \mathbb{N}$ such that $(x, y) \in B_r$, but if $(x, y) \in B_r$, then $(x, y) \notin \overline{B_r}$ and $(x,y) \notin \bigcap_{n\in\mathbb{N}}\overline{B_n}$. So it must be true that $\bigcap_{n\in\mathbb{N}}\overline{B_n} = \emptyset$.
 \end{proof}
 \end{solution}
 
@@ -177,11 +167,19 @@ Sincerely, \\
 Alex, Age 10
 
 \begin{solution} \\
+Imagine a town in which a barber can only shave people that do not shave themselves. Does that barber shave himself? If he does, then the barber is a person that shaves himself, so he cannot shave himself. If he does not shave himself, then he is a person that does not shave himself, so he must shave himself. This is a paradox because the barber cannot shave himself and cannot not shave himself.
+
+Now imagine the set of all sets that do not contain itself. Does that set contain itself? If the set contained itself, then it is a set that contains itself, so it should not contain itself. If the set does not contain itself, then it should include itself. This is a paradox similar to the barber paradox because there is no resolution to this problem.
+
+$\colorbox{red}{TODO: what does this have to do with math?}$
 \end{solution}
 
 
 \question  A set of  is called an inductive set if (1) the number 1 is in the set and (2) for any number in the set (call it $n$), the number $n+1$ is in the set. Let $\mathbb{N}$ be the universal set. What are the possible complements of inductive sets?  (Hint: the complements are also subsets of $\mathbb{N}$, so what does the well-ordering principle tell us about them?)
 \begin{solution} \\
+Either complements of inductive sets is $\emptyset$ or they are non-empty.
+
+If they are non-empty, then the well-ordering principle tells us that every non-empty subset of $\mathbb{N}$ has a smallest element, so the complement of the inductive set must have a smallest element, call it $n$. $n \neq 1$ because 1 is in the inductive set by definition of an inductive set. Since $n > 1$ and $n \in \mathbb{N}$, then $n-1 \in \mathbb{N}$, and $n-1$ is not in the complement of the inductive set becuase $n-1 < n$ and $n$ was the smallest element. Then $n-1$ must be in the inductive set, but then $n-1 + 1 = n$ must be in the inductive set. But now we have a contradiction, we assumed that $n$ was the smallest element in the complement of the inductive set (not in the inductive set), but found that $n$ has to be in the inductive set. So then the complements of inductive sets must be empty, ie the complements of inductive sets is $\emptyset$.
 \end{solution}
 
 \question Read the proof below.  Then comment on it. (How does it work? What definitions are we using and how? Are there parts that are unclear? How would you make them more clear?)
@@ -196,12 +194,22 @@ Finally since $(A \cap B)^C \subseteq (A^C \cup B^C)$ and $(A^C \cup B^C) \subse
 
 
 \begin{solution} \\
+The proof shows that $(A \cap B)^C = (A^C \cup B^C)$ by showing $(A \cap B)^C \subseteq (A^C \cup B^C)$ and $(A^C \cup B^C) \subseteq (A \cap B)^C$. It does this by showing for both subset statements that every element in the LHS must be in the RHS. We are using the definition of subset equality, ie that $A = B \iff A \subseteq B, \ B \subseteq A$. We are using the definition of subsets, showing that $A \subseteq B$ means that for every $a \in A$, we have that $a \in B$. We are also using definitions of union, intersection, and complement. There aren't really any parts that are unclear.
 \end{solution}
 
 
 \question Use the technique in 9 to show that $$A \cup (A \cap B) = A.$$
 
 \begin{solution} \\
+\begin{proof} $A \cup (A \cap B) = A$.
+We show $A \cup (A \cap B) = A$ by showing $A \cup (A \cap B) \subseteq A$ and $A \subseteq A \cup (A \cap B)$.
+
+First we show that $A \cup (A \cap B) \subseteq A$. Let $x \in A \cup (A \cap B)$. Then $x \in A$ or $x \in A \cap B$. If $x \in A \cap B$, then $x \in A$, so really in either case, $x \in A$. Since we showed that if $x \in A \cup (A \cap B)$ then $x \in A$, we can conclude that $A \cup (A \cap B) = A$.
+
+Now we show that $A \subseteq A \cup (A \cap B)$. Let $a \in A$. $a \in A \cup (A \cap B)$ because $a \in A$. We showed that if $a \in A$, then $a \in A \cup (A \cap B)$, so we can conclude that $A \subseteq A \cup (A \cap B)$.
+
+Since $A \cup (A \cap B) \subseteq A$ and $A \subseteq A \cup (A \cap B)$, we conclude that $A \cup (A \cap B) = A$.
+\end{proof}
 \end{solution}
 
 \end{questions}
