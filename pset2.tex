@@ -169,9 +169,9 @@ Alex, Age 10
 \begin{solution} \\
 Imagine a town in which a barber can only shave people that do not shave themselves. Does that barber shave himself? If he does, then the barber is a person that shaves himself, so he cannot shave himself. If he does not shave himself, then he is a person that does not shave himself, so he must shave himself. This is a paradox because the barber cannot shave himself and cannot not shave himself.
 
-Now imagine the set of all sets that do not contain itself. Does that set contain itself? If the set contained itself, then it is a set that contains itself, so it should not contain itself. If the set does not contain itself, then it should include itself. This is a paradox similar to the barber paradox because there is no resolution to this problem.
+Now imagine the set of all sets that do not contain itself. Does that set contain itself? If the set contained itself, then it is a set that contains itself, so it should not contain itself. If the set does not contain itself, then it should include itself. This paradox, Russell's Paradox, is similar to the barber paradox because just like how we ask if the the set of people the barber shaves contains himself, we ask if the set of all sets that do not contain iteself contains the set itself.
 
-$\colorbox{red}{TODO: what does this have to do with math?}$
+This relates to math because Russell's Paradox showed that the naive definition of a set, just a unordered collection of arbitrary objects, is not sufficient because it can produce contradictions like the set of all sets that do not contain itself. Russell's Paradox forced mathematicians to make restrictions on sets and what they can and cannot contain.
 \end{solution}
 
 
@@ -204,7 +204,7 @@ The proof shows that $(A \cap B)^C = (A^C \cup B^C)$ by showing $(A \cap B)^C \s
 \begin{proof} $A \cup (A \cap B) = A$.
 We show $A \cup (A \cap B) = A$ by showing $A \cup (A \cap B) \subseteq A$ and $A \subseteq A \cup (A \cap B)$.
 
-First we show that $A \cup (A \cap B) \subseteq A$. Let $x \in A \cup (A \cap B)$. Then $x \in A$ or $x \in A \cap B$. If $x \in A \cap B$, then $x \in A$, so really in either case, $x \in A$. Since we showed that if $x \in A \cup (A \cap B)$ then $x \in A$, we can conclude that $A \cup (A \cap B) = A$.
+First we show that $A \cup (A \cap B) \subseteq A$. Let $x \in A \cup (A \cap B)$. Then $x \in A$ or $x \in A \cap B$. If $x \in A \cap B$, then $x \in A$, so really in either case, $x \in A$. Since we showed that if $x \in A \cup (A \cap B)$ then $x \in A$, we can conclude that $A \cup (A \cap B) \subseteq A$.
 
 Now we show that $A \subseteq A \cup (A \cap B)$. Let $a \in A$. $a \in A \cup (A \cap B)$ because $a \in A$. We showed that if $a \in A$, then $a \in A \cup (A \cap B)$, so we can conclude that $A \subseteq A \cup (A \cap B)$.
 
