@@ -25,39 +25,114 @@
 \question Which of the following sentences are statements?  If they are determine, indicate the truth value. If they are not, explain why. 
 \begin{parts}
 \part The integer 423 is prime. 
+\begin{solution}\\
+Yes, this is a statement because the statement that 423 is prime is either true or false. The statement is false because 423 is divsible by 3, $423 / 3 = 141$.
+\end{solution}
+
 \part Take the derivative of $f(x)=x^2.$
+\begin{solution}\\
+No, this is not a statement because it is not either true or false. It is a demand.
+\end{solution}
+
 \part Is 7 a real number?
+\begin{solution}\\
+No, this is not a statement because it is not either true or false. It is a question.
+\end{solution}
+
 \part $5x+4$ is an odd integer.
+\begin{solution}\\
+No, this is a open sentence because its truth value depends on the value of $x$.
+\end{solution}
+
 \part For all integers $n$, $2n+1$ is an odd integer. 
+\begin{solution}\\
+Yes, this is a statement because it is either true or false. It is true by the definition of odd.
+\end{solution}
+
 \end{parts}
-%\begin{solution}Put your answer here. \end{solution}
+
+
 \question Let $$P(n): n \textrm{ and } n+2 \textrm{ are prime}$$ be an open sentence over the domain $\mathbb{N}$. Find 4 positive integers $n$ for which $P(n)$ is true and 4 for which it is false. Note: if $n \in \mathbb{N}$ such that $P(n)$ is true, then $n, n+2$ are called twin primes. It is conjectured (but not known) that there are infinitely many twin primes. 
+\begin{solution}\\
+$P(n)$ is true for $n \in \{3, 5, 11, 17\}$.
+
+$P(n)$ is false for $n \in \{2, 4, 6, 8\}$.
+\end{solution}
 
 
 \question State the negation of each of the following statements two ways each. The first can be ``direct'' but the second should be more natural. For example, for the negation of The integer $a$ is even. The ``direct'' way could be to say ``The integer $a$ is not even'' while the more natural way is to say ``The integer $a$ is odd.'' 
 \begin{parts}
 \part 157 is a prime number. 
+\begin{solution}\\
+157 is not a prime number.
+
+157 is a composite number.
+\end{solution}
+
 \part The real number $a$ is greater than 7. 
+\begin{solution}\\
+The real number $a$ is not greater than 7.
+
+The real number $a$ is less than or equal to 7.
+\end{solution}
+
 \part It will rain at least two days this week.
+\begin{solution}\\
+The number of days it will rain this week is not at least 2.
+
+The number of days it will rain this week is less than 2.
+\end{solution}
+
 \part No one is wearing shorts today.
+\begin{solution}\\
+It is not the case that no one is wearing shorts today.
+
+Someone is wearing shorts today.
+\end{solution}
+
 \part Exactly one of my two feet is cold.
+\begin{solution}\\
+It is not the case that exactly one of my two feet is cold.
+
+The number of my feet that are cold is not one.
+\end{solution}
+
 \end{parts}
 
 \question Consider the following statement: If I don't do my homework, then I won't do well on the exam. Explain four different possible outcomes (combinations of doing/not doing homework and doing/not doing well on the exam). For each outcome, is the above statement true or false. 
+\begin{solution}\\
+I don't do my homework and I don't do well on the exam. The above statement is true because just like the statement says, I didn't do my homework and didn't do well on the exam.
+
+I don't do my homework and I do well on the exam. The above statement is false because I didn't do my homework and did well on the exam, contradicting the statement that if I didn't do my homework I wouldn't do well on the exam.
+
+I do my homework and I don't do well on the exam. The above statement is true because it doesn't say what happens if I do my homework.
+
+I do my homework and I do well on the exam. The above statement is true because it doesn't say what happens if I do my homework.
+\end{solution}
+
 
 \question Four friends, Adam, Bonnie, Carl and Darla, are making evening plans. Someone suggests they go see a movie. Bonnie says she will go to the movie if Adam does. Carl says he will go if Bonnie does. Darla says she will go if Carl goes. What are the possible groupings of friends at the movie?
-
-
-
-
-
-
+\begin{solution}\\
+\{Adam, Bonnie, Carl, Darla\}, \{Bonnie, Carl, Darla\}, \{Carl, Darla\}, \{Darla\}
+\end{solution}
 
 \question For each of the following biconditional statements, determine whether the statement is true or false. Explain each answer.
 \begin{parts}
-	\part A number being even is necessary and sufficient for to be divisible by 4. 
+	\part A number being even is necessary and sufficient for it to be divisible by 4. 
+    \begin{solution}\\
+    False, a number being even is necessary for it to be divisible by 4, but it is not sufficient because there are even numbers not divisible by 4. For example, 2 is even, but it is not divisible by 4.
+    \end{solution}
+
 	\part A function is continuous if and only if it is differentiable.
+    \begin{solution}\\
+    False, a function can be continuous and not differentiable, e.g. $f(x) = |x|$ is continuous but not differentiable.
+    \end{solution}
+
 	\part The Statue of Liberty is in New York if and only if UConn's math majors are required to take Calculus.
+    \begin{solution}\\
+    True, the Statue of Liberty is in New York and UConn's math majors are required to take Calculus, so true iff true is true.
+    \end{solution}
+
 \end{parts}
 
 
@@ -65,24 +140,41 @@
 \question Fill out the truth table below. 
 
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
 $P $& $Q$ & $\sim P$ & $\sim Q$ & $P \wedge Q$ & $P \lor Q$ & $P \to Q$ & $P \vee (\sim Q)$ & $(\sim Q) \Rightarrow( \sim P)$ \\
 \hline
-&&&&&&&&\\
+T&T&F&F&T&T&T&T&T\\
 \hline
-&&&&&&&&\\
+T&F&F&T&F&T&F&T&F\\
 \hline
-&&&&&&&&\\
+F&T&T&F&F&T&T&F&T\\
 \hline
-&&&&&&&&\\
+F&F&T&T&F&F&T&T&T\\
 \hline
 \end{tabular}
 
 \question Given statements $P$, $Q$, and $R$, which of the following compound statements are tautologies? Which are contradictions? Explain each answer.
 \begin{parts}
 	\part $(P \wedge Q) \vee ((\sim P) \wedge (\sim Q))$
+    \begin{solution}\\
+    This is neither a tautology nor a contradiction. The statement is only true if P and Q are both true or both false.
+    \end{solution}
+
 	\part $\sim (P \wedge \sim P)$
+    \begin{solution}\\
+    This is a tautology because $P \wedge \sim P$ is always false, so $\sim (P \wedge \sim P)$ is always true.
+    \end{solution}
+
 	\part $\left[ P \Rightarrow (Q \wedge R) \right] \Rightarrow (P \Rightarrow Q )$
+    \begin{solution}\\
+    This is a tautology because if we already have that P implies Q and R ($P \Rightarrow (Q \wedge R)$), then we have P implies Q ($P \Rightarrow Q$).
+    \end{solution}
+
 	\part $((P \wedge Q) \vee (\sim P \wedge Q)) \wedge (P \wedge \sim Q)$
+    \begin{solution}\\
+    This is a contraction because for the statement to be true, we require that $P \wedge \sim Q$ is true, so $P$ must be true and $Q$ must be false. However, if $Q$ is false, then $(P \wedge Q) \vee (\sim P \wedge Q)$ is false because both statements inside the parentheses require that $Q$ is true. So then we have false and true which is false.
+    \end{solution}
+
 \end{parts}
 
 
@@ -90,14 +182,30 @@ $P $& $Q$ & $\sim P$ & $\sim Q$ & $P \wedge Q$ & $P \lor Q$ & $P \to Q$ & $P \ve
 \question Given propositional forms $P$, $Q$, and $R$, with $P$ equivalent to $Q$ and $Q$ equivalent to $R$, determine whether each of the following is true. Explain each answer.
 \begin{parts}
 	\part $P$ is equivalent to $R$.
+    \begin{solution}\\
+    True, if $P \equiv Q$ and $Q \equiv R$, then $P \equiv R$ because $P$ and $Q$ have the same truth tables, so if $Q$ and $R$ have the same truth tables, $P$ and $R$ have the same truth tables.
+    \end{solution}
+
 	\part $Q \vee R$ is equivalent to $P \wedge Q$.
+    \begin{solution}\\
+    True, if $P \equiv Q \equiv R$, then $Q \vee R = Q \vee Q = Q$ and $P \wedge Q = Q \wedge Q = Q$, so $Q \wedge R \equiv P \vee Q$.
+    \end{solution}
+
 	\part $\sim Q$ is equivalent to $\sim P$.
+    \begin{solution}\\
+    True, if $P \equiv Q$, then $\sim P \equiv \sim Q$ because all entries in the truth table are inverted on both sides of the equivalence.
+    \end{solution}
+
 \end{parts}
 
 
 
 \question Use the properties we saw in class to explain why the compound statements below are equivalent:
 $$P \Rightarrow (Q \vee R) \equiv (P \wedge (\sim Q)) \Rightarrow R$$
+\begin{solution}\\
+
+\end{solution}
+
 
 %\newpage
 
