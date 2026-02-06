@@ -205,9 +205,13 @@ $$P \Rightarrow (Q \vee R) \equiv (P \wedge (\sim Q)) \Rightarrow R$$
 \begin{solution}\\
 $P \Rightarrow (Q \vee R)$
 
-$\equiv (P \wedge (Q \vee R)) \vee (\sim P)$
+$\equiv (\sim P) \vee (Q \vee R) \qquad$ by definition of $\Rightarrow$.
 
-$\equiv (P \wedge Q) \vee (P \wedge R) \vee (\sim P)$
+$\equiv ((\sim P) \vee Q) \vee R \qquad$ by Associative Laws.
+
+$\equiv (\sim (P \wedge (\sim Q))) \vee R \qquad$  by DeMorgan's Law.
+
+$\equiv (P \wedge (\sim Q)) \Rightarrow R \qquad$ by definition of $\Rightarrow$.
 \end{solution}
 
 
