@@ -6,6 +6,7 @@
 \usepackage{pgf,tikz, subcaption}
 \usetikzlibrary{arrows}
 
+\printanswers
 \newtheorem{claim}{Claim}
 
 \pagestyle{head}                       % This causes the exam to only have headers, no footers.
@@ -27,16 +28,32 @@
 \question Determine which of the following are true, with $x$ and $y$ in the domain of all real numbers. Explain each answer.
 \begin{parts}
 	\part $\forall x, x+x \geq x$.
+    \begin{solution}\\
+    False. Let $x = -1$. $(-1) + (-1) = -2 < -1$.
+    \end{solution}
+
 	\part $\forall x, \exists y, x+y=0$.
+    \begin{solution}\\
+    True. Let $y = -x$. Then $x + y = x - x = 0$.
+    \end{solution}
 
 \end{parts}
+
 
 \question Determine which of the following are true, with $x$ and $y$ in the domain of all real numbers. Explain each answer.
 \begin{parts}
-
 	\part $\exists x, \forall y, x+y=0$.
+    \begin{solution}\\
+    False. Proof by Contradiction. Assume that $\exists x, \forall y, x+y=0$. Then choose a single $y$ for which $x + y = 0$. Then $x + (y + 1) = 1 \ne 0$. So $y+1$ is a counterexample.
+    \end{solution}
+
 	\part $\exists x, \forall y, \exists z, xy=yz$.
+    \begin{solution}\\
+    True. Let $x = z$. Then for all $y$, $xy = yz$.
+    \end{solution}
+
 \end{parts}
+
 
 \question Consider the two statements we discussed in class:
 
@@ -45,65 +62,165 @@
 ``Each state has been visited by at least one person."
 
 Write these statement in terms of quantifiers. Each statement should have both a $\forall$  and a $\exists$.
+\begin{solution}\\
+``At least one person in the room has visited all 50 states."
+
+$\exists \text{person} \in \text{room}, \forall \text{state} \in \text{US}, \text{person visited state}$ \\
+
+``Each state has been visited by at least one person."
+
+$\forall \text{state} \in \text{US}, \exists \text{person} \in \text{room}, \text{person visited state}$ \\
+
+\end{solution}
+
+
 \question Determine whether each of the following statements is true.  Note $|x|$ is defined to be $x$ if $x \geq 0$ and $-x$ if $x < 0$. Explain each answer.
 \begin{parts}
 	\part For all real numbers $x$, $|x|< 4$ if $x<4$.
+    \begin{solution}\\
+    False, let $x = -5$. $-5 < 4$, but $|-5| = 5 > 4$.
+    \end{solution}
+
 	\part For all real numbers $x$, $x^2<2$ is a necessary and sufficient condition for $|x|< 4$.
+    \begin{solution}\\
+    $x^2 < 2 \iff |x| < 4$
+
+    False, let $x = 3$. Then $|3| < 4$, but $3^2 = 9 > 2$.
+    \end{solution}
+
 \end{parts}
 
 \question Determine whether each of the following statements is true.  Note $|x|$ is defined to be $x$ if $x \geq 0$ and $-x$ if $x < 0$. Explain each answer.
 \begin{parts}
 	\part For all real numbers $x$, $|x|< 4$ if and only if $x < 4$ when $x \geq 0$, or $-x < 4$ when $x < 0$.
+    \begin{solution}\\
+    False. Let $x = -5$. This satisfies $x \ge 0 \Rightarrow x < 4$ because $x \ge 0$ is false. Since the left side of the iff is an or, the entire left side is true, which means that means that $|-5| < 4$. But $|-5| = 5 > 4$, so the statement must be false.
+    \end{solution}
+
 	\part For all real numbers $x$, $|x|<4$ if and only if $-4 < x < 4$.
+    \begin{solution}\\
+    True. $|x| = x$ if $x \ge 0$, so when $x \ge 0$, $|x| < 4$ means that $x < 4$. $|x| = -x$ if $x < 0$, so when $x < 0$, $|x| < 4$ means that $-x < 4$, ie that $x > -4$. Combining these cases, $|x| < 4$ requires that $-4 < x < 4$.
+    \end{solution}
+
 \end{parts}
+
 
 \question{Translate the following sentences into symbolic logic.}
 \begin{parts}
-\part If $x$ is a rational number and $x \neq 0$, then $\tan(x)$ is not a rational number. 
-\part Everything is funny as long as it is happening to somebody else. (Will Rogers).
+    \part If $x$ is a rational number and $x \neq 0$, then $\tan(x)$ is not a rational number. 
+    \begin{solution}\\
+    $(x \in \mathbb{Q}, x \ne 0) \Rightarrow (\tan(x) \notin \mathbb{Q})$
+    \end{solution}
+
+    \part Everything is funny as long as it is happening to somebody else. (Will Rogers).
+    \begin{solution}\\
+    $(\forall \text{things}, \text{happening to someone else} \Rightarrow \text{funny}$
+    \end{solution}
+
 \end{parts}
+
 
 \question Consider the quantified statement, ``Some people do not like animals.''
 \begin{parts}
 	\part Rewrite the statement symbolically using an existential quantifier followed by a universal quantifier. Use variables $x$ and $y$ in the domain $S=\{ \text{living things}\}$.
+    \begin{solution}\\
+    $\exists x \in \text{people}, \forall y \in \text{animals}, x \text{ does not like } y$
+    \end{solution}
+
 	\part Write the negation of the quantified statement you gave in (a).
+    \begin{solution}\\
+    $\forall x \in \text{people}, \exists y \in \text{animals}, x \text{ likes } y$
+    \end{solution}
+
 	\part Use properties of quantifiers and logical equivalence to rewrite the statement in (b) using a universal quantifier followed by an existential quantifier.
+    \begin{solution}\\
+    \colorbox{red}{TODO: is this the same as b?}
+    \end{solution}
+
 	\part Restate the symbolic negation of, ``Some people do not like animals'' from (c) in plain English. Explain to a non-mathematical audience why this says the ``opposite'' of, ``Some people do not like animals.''
+    \begin{solution}\\
+
+    \end{solution}
+
 \end{parts}
-
-
 
 
 \question Write the negation of each of the following statements.
 \begin{parts}
-\part Everyone likes snow.
-\part $ \forall x \in \mathbb{R}, x^2>0$
-\part For all $b \in \mathbb{Z}$, if $x>0$ then $bx>0$.
+    \part Everyone likes snow.
+    \begin{solution}\\
+    Someone does not like snow.
+    \end{solution}
+
+    \part $ \forall x \in \mathbb{R}, x^2>0$
+    \begin{solution}\\
+    $\exists x \in \mathbb{R}, x^2 \le 0$
+    \end{solution}
+
+    \part For all $b \in \mathbb{Z}$, if $x>0$ then $bx>0$.
+    \begin{solution}\\
+    There exists some $b \in \mathbb{Z}$, where if $x > 0$, then $bx \le 0$.
+    \end{solution}
+
 \end{parts}
+
 
 \question Write the negation of each of the following statements.
 \begin{parts}
-\part Somebody ate all the ice cream. 
-\part $ \exists \in \mathbb{R}, x^2+1=1$
-\part  If the determinant of a square matrix, then its columns are linearly dependent. 
+    \part Somebody ate all the ice cream. 
+    \begin{solution}\\
+    No one at all of the ice cream.
+    \end{solution}
+
+    \part $ \exists x \in \mathbb{R}, x^2+1=1$
+    \begin{solution}\\
+    $\forall x \in \mathbb{R}, x^2 + 1 \ne 1$
+    \end{solution}
+
+    \part  If the determinant of a square matrix exists, then its columns are linearly dependent. 
+    \begin{solution}\\
+    If the determinant of a square matrix exists, then its columns are linearly independent.
+    \end{solution}
+
 \end{parts}
+
 
 \question Recall to prove that $$S \subseteq T$$ we need to start with a fixed but arbitrary element in the first set and then explain how we know it is in the second.  Use that approach to prove the following statements. 
 \begin{parts}
-\part Given three sets $A$, $B$, and $C$, $A \subseteq B$ and $A \subseteq C$ if and only if $A \subseteq B \cap C$.
-\part Prove that for every set $A$ in a family $\mathcal{S}$ of sets, $\displaystyle{ A \subseteq \bigcup_{S \in \mathcal{S}}S}.$
+    \part Given three sets $A$, $B$, and $C$, $A \subseteq B$ and $A \subseteq C$ if and only if $A \subseteq B \cap C$.
+    \begin{solution}\\
+    First we show that $A \subseteq B, A \subseteq C \Rightarrow A \subseteq B \cap C$.
+
+    Let $a \in A$. Since $A \subseteq B$ and $A \subseteq C$, we have that $a \in B$ and $a \in C$. Then, $a \in B \cap C$. Since any arbitrary $a \in A$ satisfies $a \in B \cap C$, then $A \subseteq B \cap C$.
+
+    Next we show that $A \subseteq B \cap C \Rightarrow A \subseteq B, A \subseteq C$.
+
+    Let $a \in A$. Since $A \subseteq B \cap C$, then $a \in B \cap C$. Then $a \in B$ and $a \in C$, so $A \subseteq B$ and $A \subseteq C$.
+
+    Since we showed that $A \subseteq B, A \subseteq C \Rightarrow A \subseteq B \cap C$ and $A \subseteq B \cap C \Rightarrow A \subseteq B, A \subseteq C$, we can conclude that $A \subseteq B, A \subseteq C \iff A \subseteq B \cap C$.
+    \end{solution}
+
+    \part Prove that for every set $A$ in a family $\mathcal{S}$ of sets, $\displaystyle{ A \subseteq \bigcup_{S \in \mathcal{S}}S}.$
+    \begin{solution}\\
+
+    \end{solution}
+
 \end{parts}
 
 
 \question Find (look-up) the definition of the statement ``The sequence $a_n$ converges to $b$.''  Write it using quantifiers. Then write its negation. 
+\begin{solution}\\
+$a_n$ converges to $b$ if $\forall \epsilon > 0$, $\exists N \in \mathbb{N}$ such that if $n > N$, then $|a_n - b| < \epsilon$
+
+Negation: $\exists \epsilon > 0$, $\forall N \in \mathbb{N}$ if $n > N$, then $|a_n - b| \ge \epsilon$
+\end{solution}
+
 
 \question Find (look-up) the definition of the statement ``The sequence $a_n$ diverges.''  Write it using quantifiers. Then write its negation. 
-	
+\begin{solution}\\
 
-	
-
+\end{solution}
 
 
 \end{questions}
-
 \end{document}
