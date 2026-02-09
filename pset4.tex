@@ -1,0 +1,109 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color,amsthm}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption}
+\usetikzlibrary{arrows}
+
+\newtheorem{claim}{Claim}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 4: }    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+\begin{questions}
+
+\question Determine which of the following are true, with $x$ and $y$ in the domain of all real numbers. Explain each answer.
+\begin{parts}
+	\part $\forall x, x+x \geq x$.
+	\part $\forall x, \exists y, x+y=0$.
+
+\end{parts}
+
+\question Determine which of the following are true, with $x$ and $y$ in the domain of all real numbers. Explain each answer.
+\begin{parts}
+
+	\part $\exists x, \forall y, x+y=0$.
+	\part $\exists x, \forall y, \exists z, xy=yz$.
+\end{parts}
+
+\question Consider the two statements we discussed in class:
+
+``At least one person in the room has visited all 50 states."
+
+``Each state has been visited by at least one person."
+
+Write these statement in terms of quantifiers. Each statement should have both a $\forall$  and a $\exists$.
+\question Determine whether each of the following statements is true.  Note $|x|$ is defined to be $x$ if $x \geq 0$ and $-x$ if $x < 0$. Explain each answer.
+\begin{parts}
+	\part For all real numbers $x$, $|x|< 4$ if $x<4$.
+	\part For all real numbers $x$, $x^2<2$ is a necessary and sufficient condition for $|x|< 4$.
+\end{parts}
+
+\question Determine whether each of the following statements is true.  Note $|x|$ is defined to be $x$ if $x \geq 0$ and $-x$ if $x < 0$. Explain each answer.
+\begin{parts}
+	\part For all real numbers $x$, $|x|< 4$ if and only if $x < 4$ when $x \geq 0$, or $-x < 4$ when $x < 0$.
+	\part For all real numbers $x$, $|x|<4$ if and only if $-4 < x < 4$.
+\end{parts}
+
+\question{Translate the following sentences into symbolic logic.}
+\begin{parts}
+\part If $x$ is a rational number and $x \neq 0$, then $\tan(x)$ is not a rational number. 
+\part Everything is funny as long as it is happening to somebody else. (Will Rogers).
+\end{parts}
+
+\question Consider the quantified statement, ``Some people do not like animals.''
+\begin{parts}
+	\part Rewrite the statement symbolically using an existential quantifier followed by a universal quantifier. Use variables $x$ and $y$ in the domain $S=\{ \text{living things}\}$.
+	\part Write the negation of the quantified statement you gave in (a).
+	\part Use properties of quantifiers and logical equivalence to rewrite the statement in (b) using a universal quantifier followed by an existential quantifier.
+	\part Restate the symbolic negation of, ``Some people do not like animals'' from (c) in plain English. Explain to a non-mathematical audience why this says the ``opposite'' of, ``Some people do not like animals.''
+\end{parts}
+
+
+
+
+\question Write the negation of each of the following statements.
+\begin{parts}
+\part Everyone likes snow.
+\part $ \forall x \in \mathbb{R}, x^2>0$
+\part For all $b \in \mathbb{Z}$, if $x>0$ then $bx>0$.
+\end{parts}
+
+\question Write the negation of each of the following statements.
+\begin{parts}
+\part Somebody ate all the ice cream. 
+\part $ \exists \in \mathbb{R}, x^2+1=1$
+\part  If the determinant of a square matrix, then its columns are linearly dependent. 
+\end{parts}
+
+\question Recall to prove that $$S \subseteq T$$ we need to start with a fixed but arbitrary element in the first set and then explain how we know it is in the second.  Use that approach to prove the following statements. 
+\begin{parts}
+\part Given three sets $A$, $B$, and $C$, $A \subseteq B$ and $A \subseteq C$ if and only if $A \subseteq B \cap C$.
+\part Prove that for every set $A$ in a family $\mathcal{S}$ of sets, $\displaystyle{ A \subseteq \bigcup_{S \in \mathcal{S}}S}.$
+\end{parts}
+
+
+\question Find (look-up) the definition of the statement ``The sequence $a_n$ converges to $b$.''  Write it using quantifiers. Then write its negation. 
+
+\question Find (look-up) the definition of the statement ``The sequence $a_n$ diverges.''  Write it using quantifiers. Then write its negation. 
+	
+
+	
+
+
+
+\end{questions}
+
+\end{document}
