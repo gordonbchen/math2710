@@ -109,12 +109,12 @@ $\forall \text{state} \in \text{US}, \exists \text{person} \in \text{room}, \tex
 \begin{parts}
     \part If $x$ is a rational number and $x \neq 0$, then $\tan(x)$ is not a rational number. 
     \begin{solution}\\
-    $(x \in \mathbb{Q}, x \ne 0) \Rightarrow (\tan(x) \notin \mathbb{Q})$
+    $(x \in \mathbb{Q} \land x \ne 0) \Rightarrow (\tan(x) \notin \mathbb{Q})$
     \end{solution}
 
     \part Everything is funny as long as it is happening to somebody else. (Will Rogers).
     \begin{solution}\\
-    $(\forall \text{things}, \text{happening to someone else} \Rightarrow \text{funny}$
+        $\forall \text{thing} \in \text{things}, \text{thing happening to someone else} \Rightarrow \text{funny}$
     \end{solution}
 
 \end{parts}
@@ -134,12 +134,14 @@ $\forall \text{state} \in \text{US}, \exists \text{person} \in \text{room}, \tex
 
 	\part Use properties of quantifiers and logical equivalence to rewrite the statement in (b) using a universal quantifier followed by an existential quantifier.
     \begin{solution}\\
-    \colorbox{red}{TODO: is this the same as b?}
+    $\forall x \in \text{people}, \exists y \in \text{animals}, x \text{ likes } y$
     \end{solution}
 
 	\part Restate the symbolic negation of, ``Some people do not like animals'' from (c) in plain English. Explain to a non-mathematical audience why this says the ``opposite'' of, ``Some people do not like animals.''
     \begin{solution}\\
+    For every person, there is at least 1 animal that they like.
 
+    This is the opposite of ``some people do not like animals" because if it is not true that ``some people do not like animals", then for every person, there is at least 1 animal that they like, because they don't hate all animals, so they must like at least 1 animal.
     \end{solution}
 
 \end{parts}
