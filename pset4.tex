@@ -179,9 +179,9 @@ $\forall \text{state} \in \text{US}, \exists \text{person} \in \text{room}, \tex
     $\forall x \in \mathbb{R}, x^2 + 1 \ne 1$
     \end{solution}
 
-    \part  If the determinant of a square matrix exists, then its columns are linearly dependent. 
+    \part  If the determinant of a square matrix is non-zero, then its columns are linearly dependent. 
     \begin{solution}\\
-    If the determinant of a square matrix exists, then its columns are linearly independent.
+    If the determinant of a square matrix is non-zero, then its columns are linearly independent.
     \end{solution}
 
 \end{parts}
@@ -204,7 +204,7 @@ $\forall \text{state} \in \text{US}, \exists \text{person} \in \text{room}, \tex
 
     \part Prove that for every set $A$ in a family $\mathcal{S}$ of sets, $\displaystyle{ A \subseteq \bigcup_{S \in \mathcal{S}}S}.$
     \begin{solution}\\
-
+    Let $a \in A$. Then $a \in \bigcup_{S \in \mathcal{S}} S$ because $a \in A$ and $A \in \mathcal{S}$, so $a$ is in one of the sets being unioned, and must therefore be in the union. Since $a \in A$ implies $a \in \bigcup_{S \in \mathcal{S}}$, then we can conclude that $A \subseteq \bigcup_{S \in \mathcal{S}} S$.
     \end{solution}
 
 \end{parts}
@@ -212,15 +212,24 @@ $\forall \text{state} \in \text{US}, \exists \text{person} \in \text{room}, \tex
 
 \question Find (look-up) the definition of the statement ``The sequence $a_n$ converges to $b$.''  Write it using quantifiers. Then write its negation. 
 \begin{solution}\\
-$a_n$ converges to $b$ if $\forall \epsilon > 0$, $\exists N \in \mathbb{N}$ such that if $n > N$, then $|a_n - b| < \epsilon$
+$a_n$ converges to $b$ if $\exists b, \forall \epsilon > 0$, $\exists N \in \mathbb{N}$, $\forall n \in \mathbb{N}$, if $n > N$, then $|a_n - b| < \epsilon$
 
-Negation: $\exists \epsilon > 0$, $\forall N \in \mathbb{N}$ if $n > N$, then $|a_n - b| \ge \epsilon$
+Negation: $\forall b, \exists \epsilon > 0$, $\forall N \in \mathbb{N}$, $\exists n \in \mathbb{N}$, if $n > N$, then $|a_n - b| \ge \epsilon$
 \end{solution}
 
 
 \question Find (look-up) the definition of the statement ``The sequence $a_n$ diverges.''  Write it using quantifiers. Then write its negation. 
 \begin{solution}\\
+$a_n$ diverges if $\forall b$, $\exists \epsilon > 0$, $\forall N \in \mathbb{N}$, $\exists n \in \mathbb{N}$, such that if $n > N$, then $|a_n - b| \ge \epsilon$
 
+Negation: $\exists b, \forall \epsilon > 0$, $\exists N \in \mathbb{N}$, $\forall n \in \mathbb{N}$, if $n > N$, then $|a_n - b| < \epsilon$
+\end{solution}
+
+
+\newpage
+\question Challenge: What is $\forall \epsilon > 0, \exists \delta > 0, (|x-a| < \delta) \Rightarrow |f(x) - f(a)| < \epsilon$ the definition of?
+\begin{solution} \\
+This is the definition of $f(x)$ being continuous at $a$.
 \end{solution}
 
 
