@@ -71,11 +71,16 @@ In every case, $|ab| = |a||b|$. \qed
 
 
 \question State the result proven below, and determine the proof method used.
-	\begin{proof}
-		Suppose that $S \subseteq B$ for every $S$ in $\mathcal{S}$, and let $x \in \displaystyle{ \bigcap_{S \in \mathcal{S}}S}$. Then by definition of $\displaystyle{ \bigcap_{S \in \mathcal{S}}S}$, $x$ is an element of some set $T$ in $\mathcal{S}$.
-		
-		\hspace{.4in} Now, since $S \subseteq B$ for every $S$ in $\mathcal{S}$, it must be true that $T \subseteq B$, and therefore, $x$ is an element of $B$ by definition of $T \subseteq B$. Thus, every element of $\displaystyle{ \bigcap_{S \in \mathcal{S}}S}$ is also an element of $B$.
-	\end{proof}
+\begin{proof}
+Suppose that $S \subseteq B$ for every $S$ in $\mathcal{S}$, and let $x \in \displaystyle{ \bigcap_{S \in \mathcal{S}}S}$. Then by definition of $\displaystyle{ \bigcap_{S \in \mathcal{S}}S}$, $x$ is an element of some set $T$ in $\mathcal{S}$.
+
+\hspace{.4in} Now, since $S \subseteq B$ for every $S$ in $\mathcal{S}$, it must be true that $T \subseteq B$, and therefore, $x$ is an element of $B$ by definition of $T \subseteq B$. Thus, every element of $\displaystyle{ \bigcap_{S \in \mathcal{S}}S}$ is also an element of $B$.
+\end{proof}
+\begin{solution}\\
+Result: If $S \subseteq B$ for every $S \in \mathcal{S}$, then $\bigcap_{S \in \mathcal{S}} S \subseteq B$.
+
+Proof method: Direct proof.
+\end{solution}
 	
 \question Review the following proof. Determine the proof method used (or attempted) and give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A.
 	\begin{claim}
