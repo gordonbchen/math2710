@@ -9,6 +9,7 @@
 \newtheorem{claim}{Claim}
 \newtheorem{definition}{Definition}
 \newcommand{\soln}[1]{\begin{framed}#1\end{framed} \par}
+\printanswers
 
 \pagestyle{head}                       % This causes the exam to only have headers, no footers.
 %\runningheadrule                     % This causes the headings to have an underline.
@@ -27,22 +28,41 @@
 
 
 \begin{questions}
-\question Give a direct proof of  the following statement.
-If $a$ is an odd integer, then $a+1$ is even.
+\question Give a direct proof of  the following statement. If $a$ is an odd integer, then $a+1$ is even.
+\begin{solution}\\
+Let $a$ be an odd integer. Then $a = 2k + 1$, where $k \in \mathbb{Z}$. Then $a + 1 = 2k + 1 + 1 = 2k + 2 = 2(k+1)$. Let $n = k + 1$. Then $a+1 = 2n$, where $n \in \mathbb{Z}$, so $a+1$ is even.
+\end{solution}
+
 
 \question Given component statements $P, Q, R, S,$ and $T$, describe the steps that would need to be used to prove the compound statement $P \wedge Q \implies \sim (R \vee S) \wedge T$ using the method of direct proof.
+\begin{solution}\\
+Assume $P$ and $Q$. Then, show not $R \lor S$, ie show not $R$ and show not $S$, and show $T$.
+\end{solution}
+
 
 \question Prove the following. 
 Given three sets $A$, $B$, and $C$, $A \subseteq B$ and $A \subseteq C$ if and only if $A \subseteq B \cap C$.
 
+
 \question Prove that for every set $A$ in a family $\mathcal{S}$ of sets, $\displaystyle{ A \subseteq \bigcup_{S \in \mathcal{S}}S}.$
+
 
 \question Give a direct proof (or proof by cases) of  the following statement.
 For two real numbers $a$ and $b$, $|ab|=|a||b|$.  You may use the following definition:
-	\begin{definition}
-	The function $|x|$ is defined as $$\begin{cases} x & x \geq 0 \\ -x & x<0 \end{cases}$$
-	\end{definition}
-	
+\begin{definition}
+The function $|x|$ is defined as $$\begin{cases} x & x \geq 0 \\ -x & x<0 \end{cases}$$
+\end{definition}
+\begin{solution}\\
+To show that $|ab| = |a||b|$, we consider the following cases:
+
+If $a \ge 0$ and $b \ge 0$, then $|a| = a$, $|b| = b$, and $ab \ge 0$, so $|ab| = ab = |a||b|$.
+
+Now we consider the case where $a < 0$ or $b < 0$, but not both. Without loss of generality, assume $a \ge 0$ and $b < 0$. Then $|a| = a$, $|b| = -b$, and $ab < 0$, so $|ab| = -ab = a(-b) = |a||b|$.
+
+If $a < 0$ and $b < 0$, then $|a| = -a$, $|b| = -b$, $ab > 0$, so $|ab| = ab = (-a)(-b) = |a||b|$.
+
+In every case, $|ab| = |a||b|$. \qed
+\end{solution}
 
 
 
