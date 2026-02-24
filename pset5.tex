@@ -101,16 +101,16 @@ Proof method: Direct proof.
 \end{solution}
 	
 \question Review the following proof. Determine the proof method used (or attempted) and give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A.
-	\begin{claim}
-		Given a positive real number $x$, the sum of $x$ and its reciprocal is greater than $2$.
-	\end{claim}
-	\begin{proof}
-		We seek to prove that if $x \geq 0$, then $x + \dfrac{1}{x} >2$. If we multiply this inequality by $x$, we get the equivalent inequality $x^2 + 1 \geq 2x$. Subtracting $2x$ from both sides, we see that $x^2 - 2x +1 \geq 0$, or in other words $(x-1)^2 \geq 0$. This is true because any real number's square is always positive or zero. So $x + \dfrac{1}{x} >2$ is true.
-	\end{proof}
+\begin{claim}
+Given a positive real number $x$, the sum of $x$ and its reciprocal is greater than $2$.
+\end{claim}
+\begin{proof}
+We seek to prove that if $x \geq 0$, then $x + \dfrac{1}{x} >2$. If we multiply this inequality by $x$, we get the equivalent inequality $x^2 + 1 \geq 2x$. Subtracting $2x$ from both sides, we see that $x^2 - 2x +1 \geq 0$, or in other words $(x-1)^2 \geq 0$. This is true because any real number's square is always positive or zero. So $x + \dfrac{1}{x} >2$ is true.
+\end{proof}
 
-
-	
+\begin{solution}\\
+    The proof tries to show the claim using a direct proof. I would give the proof a C. The proof has good math in it, but it is incorrect because it assumes that $x + \frac{1}{x} > 2$ and then shows that $x \ge 0$, when it should really do the opposite, assume $x \ge 0$ and show that $x + \frac{1}{x} > 2$. To revise the proof, the author should essentially backtrack from $(x-1)^2 \ge 0$ to get to $x + \frac{1}{x} > 2$. That way the proof actually shows that $(x \ge 0) \Rightarrow x + \frac{1}{x} > 2$.
+\end{solution}
 
 \end{questions}
-
 \end{document}
