@@ -1,0 +1,95 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color,amsthm}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption}
+\usetikzlibrary{arrows}
+
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 6: Ch 5 and 6}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+
+\begin{questions}
+
+
+\question Identify the proof method most closely suited to proving the following statement, then use that proof method to prove it.
+
+Given an integer $m$, $\dfrac{m}{2}$ is not an integer implies that $m$ is odd.
+
+
+
+\question Prove the following using the method of proof by contrapositive.
+
+If a real number $x$ is irrational, then $10x$ must also be irrational.
+
+
+
+\question Given component statements $P, Q, R,$ and $S$, describe the steps that would need to be used to prove the compound statement $(\sim P) \wedge Q \Rightarrow (\sim R) \wedge S$ using the method of proof by contrapositive.
+
+\question Prove the following:
+
+If $a,b \in \mathbb{Z}$ then $(a+b)^3 \equiv a^3+b^3 \mod 3$.
+
+\question Prove the following:
+Suppose $x, y, z \in \mathbb{Z}$ and $x \neq 0$. If $x \nmid yz$, then $x \nmid y$ and $x \nmid z$. 
+
+Then show the converse if false. 
+
+	
+\question Prove the following statement using the method of proof by contradiction:
+
+No point inside the circle $(x-3)^2+y^2=6$ is on the line $y=x+1$.
+\question Prove the following statement using the method of proof by contradiction:
+
+If $n$ is a natural number, then $\dfrac{n}{n+1}>\dfrac{n}{n+2}.$
+\newpage
+\section*{Challenge Problems}
+
+\question Let $n\in \mathbb{Z}$. Prove the following statement three ways: If $n$ is odd, then $6n^2+5n+4$ is odd.
+\begin{parts}
+\part Using the method of direct proof.
+\part Using the method of proof by contrapositive.
+\part Using the method of proof by contradiction.
+\end{parts}
+	
+\question Use the following lemma to prove that if $p$ is prime, then $\sqrt{p}$ is irrational.
+\begin{lemma}[Euclid's Lemma]
+If a prime $p$ divides the product $ab$ of two integers $a$ and $b$, then $p$ must divide either $a$ or $b$.
+\end{lemma}
+
+
+\question Review the following proof. Give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A.
+
+	
+	\begin{claim}
+		Given two subsets $A$ and $B$ of a universal set $U$, if $\overline{B} \subseteq \overline{A}$, then $A \subseteq B$
+	\end{claim}
+	\begin{proof}
+		We prove the equivalent statement, ``If $A \nsubseteq B$, then $\overline{B} \nsubseteq \overline{A}.$'' Suppose that $A \nsubseteq B$. Then it is not true that every element of $A$ is also an element of $B$. So there is some element $x$ of $B$ that is not an element of $A$. So $x$ is an element of $\overline{A}$, but $x$ is not an element of $\overline{B}$. Thus $\overline{B} \nsubseteq \overline{A}.$ 
+	\end{proof}
+
+\question Prove the two lemmas below then prove the third statement by contrapositive using the two lemmas, as needed. 
+\begin{parts}
+	\part Lemma 1: If an integer is odd, then it can be written as $2k-1$ for some integer $k$. 
+	\part Lemma 2: If 8 is a factor of an integer $m$, then $m$ is even. 
+	\part Given any integer $n$, if $8$ is a factor of $n^2-1$, then $n$ is odd.
+\end{parts}
+\question If $a \equiv b \mod n,$ then $\gcd(a,n)=\gcd(b,n)$.
+\end{questions}
+
+\end{document}
