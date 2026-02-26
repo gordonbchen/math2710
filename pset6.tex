@@ -8,12 +8,9 @@
 
 \newtheorem{claim}{Claim}
 \newtheorem{lemma}{Lemma}
+\printanswers
 
-\pagestyle{head}                       % This causes the exam to only have headers, no footers.
-%\runningheadrule                     % This causes the headings to have an underline.
-
-%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
-%\extraheadheight{.25in}
+\pagestyle{head}
 
 \begin{document}
 \hrule
@@ -26,68 +23,210 @@
 
 \begin{questions}
 
-
-\question Identify the proof method most closely suited to proving the following statement, then use that proof method to prove it.
+\question Identify the proof method most closely suited to proving the following statement,
+then use that proof method to prove it.
 
 Given an integer $m$, $\dfrac{m}{2}$ is not an integer implies that $m$ is odd.
 
+\begin{solution}
+\begin{proof}
+    Assume for the sake of contrapositive that $m$ is even. Then $m = 2n, n \in \mathbb{Z}$.
+    Then $\frac{m}{2} = \frac{2n}{2} = n$. Then $\frac{m}{2} = n \in \mathbb{Z}$.
+
+    Since we showed that if $m$ is even then $\frac{m}{2}$ is an integer, then by contrapositive,
+    we have that $\frac{m}{2}$ is not an integer implies that $m$ is odd.
+\end{proof}
+\end{solution}
 
 
 \question Prove the following using the method of proof by contrapositive.
 
 If a real number $x$ is irrational, then $10x$ must also be irrational.
 
+\begin{solution}
+\begin{proof}
+    Assume for the sake of contrapositive that $10x \in \mathbb{Q}$. Then $10x = \frac{p}{q}$,
+    where $p, q \in \mathbb{Z}$ and $q \ne 0$. Then $x = \frac{p}{10q}$. Since $p \in \mathbb{Z}$
+    and $10q \in \mathbb{Z}$ and $10q \ne 0$ since $q \ne 0$, then $x = \mathbb{Q}$.
+
+    Since we showed that $10x \in \mathbb{Q} \Rightarrow x \in \mathbb{Q}$, then by contrapositive,
+    we have that $x \in \mathbb{R}-\mathbb{Q} \Rightarrow 10x \in \mathbb{R}-\mathbb{Q}$.
+\end{proof}
+\end{solution}
 
 
-\question Given component statements $P, Q, R,$ and $S$, describe the steps that would need to be used to prove the compound statement $(\sim P) \wedge Q \Rightarrow (\sim R) \wedge S$ using the method of proof by contrapositive.
+\question Given component statements $P, Q, R,$ and $S$, describe the steps that would need to
+be used to prove the compound statement $(\sim P) \wedge Q \Rightarrow (\sim R) \wedge S$ using
+the method of proof by contrapositive.
+
+\begin{solution}
+\begin{proof}
+    Assume $\sim((\sim R) \land S)$. Then show that $\sim ((\sim P) \land Q)$.
+    Then conclude that by contrapositive, $(\sim P) \land Q \Rightarrow (\sim R) \land S$.
+\end{proof}
+\end{solution}
+
 
 \question Prove the following:
 
 If $a,b \in \mathbb{Z}$ then $(a+b)^3 \equiv a^3+b^3 \mod 3$.
 
+\begin{solution}
+\begin{proof}
+Let $a, b \in \mathbb{Z}$. Then $(a+b)^3 = a^3 + 3a^2 b + 3ab^2 + b^2$.
+Then $(a+b)^3 - (a^3 + b^3) = 3a^2b + 3 ab^3 = 3(a^2b + ab^2)$.
+Since $a^2b + ab^2 \in \mathbb{Z}$, then $3 | (a+b^3) - (a^3 + b^3)$,
+so $a^3 + b^3 \equiv (a+b)^3 \mod 3$.
+
+\end{proof}
+\end{solution}
+
+
 \question Prove the following:
 Suppose $x, y, z \in \mathbb{Z}$ and $x \neq 0$. If $x \nmid yz$, then $x \nmid y$ and $x \nmid z$. 
 
-Then show the converse if false. 
+Then show the converse is false. 
 
-	
+\begin{solution}
+\begin{proof}
+    Assume for the sake of contrapositive that $x | y$ or $x | z$.
+    Without loss of generality assume that $x | y$. Then $y = nx$ for some $n \in \mathbb{Z}$.
+    Then $yz = nxz = (nz)x$, where $nz \in \mathbb{Z}$, so $x | yz$.
+    \colorbox{red}{TODO: is this WLOG ok?}
+    Note that this analysis did not depend on whether or not $x | z$, we have covered all
+    3 cases, when $x|y$, when $x|z$, and when both $x|y$ and $x|z$.
+    Since we showed that $(x|y) \lor (x|z) \Rightarrow x | yz$, then by contrapositive
+    we have that $x \nmid yz \Rightarrow (x \nmid y) \land (x \nmid z)$.\\
+\end{proof}
+
+Show that the converse $x \nmid y \land x \nmid z \Rightarrow x \nmid yz$ is false.
+
+\begin{proof}
+    Let $x = 4, y = 2, z = 2$. Then $x \nmid y$ since $4 \nmid 2$, and $x \nmid z$ since $4 \nmid 2$.
+    However, $x | yz$ since $4 | 4$.
+\end{proof}
+\end{solution}
+
+
 \question Prove the following statement using the method of proof by contradiction:
 
 No point inside the circle $(x-3)^2+y^2=6$ is on the line $y=x+1$.
+
+\begin{solution}
+\begin{proof}
+    For the sake of contradiction assume that there exists a point, i.e some $(x,y)$ where
+    $x,y \in \mathbb{R}$, inside the circle $(x-3)^2 + y^2 =6$ and on the line $y=x+1$.
+    Then $(x-3)^2 + (x+1)^2 = 6$. Then $2x^2 -4x + 10 = 6$, and $2x^2 - 4x + 4 = 0$.
+
+    \begin{align*}
+    2x^2 - 4x + 4 &= 0 \\
+    x^2 - 2x + 2 &= 0 \\
+    (x-1)^2 + 1 &= 0 \\
+    (x-1)^2 &= -1 \\
+    x-1 &= \pm i \\
+    x &= 1 \pm i  
+    \end{align*}
+
+    We have found a contradiction since we assumed that $x \in \mathbb{R}$ but we found that
+    $x$ has an imaginary component and therefore $x \notin \mathbb{R}$. Therefore we have shown
+    that no point in the circle $(x-3)^2 + y^2 = 6$ is on the line $y=x+1$.
+\end{proof}
+\end{solution}
+
+
 \question Prove the following statement using the method of proof by contradiction:
 
 If $n$ is a natural number, then $\dfrac{n}{n+1}>\dfrac{n}{n+2}.$
+
+\begin{solution}
+\begin{proof}
+    Let $n \in \mathbb{N}$. Assume for the sake of contradiction that $\dfrac{n}{n+1} \le \dfrac{n}{n+2}$.
+    Then $n(n+2) \le n(n+1)$, so $n+2 \le n+1$, and $2 \le 1$. This is a contradiction because $2 > 1$.
+
+    Therefore we have shown that if $n \in \mathbb{N}$, then $\dfrac{n}{n+1} > \dfrac{n}{n+2}$.
+\end{proof}
+\end{solution}
+
+
 \newpage
 \section*{Challenge Problems}
 
 \question Let $n\in \mathbb{Z}$. Prove the following statement three ways: If $n$ is odd, then $6n^2+5n+4$ is odd.
 \begin{parts}
 \part Using the method of direct proof.
+
+\begin{solution}
+\begin{proof}
+    Let $n \in \mathbb{Z}$ be odd. Then $n = 2k+1$, where $k \in \mathbb{Z}$.
+
+    \begin{align*}
+    6n^2 + 5n + 4 &= 6(2k+1)^2 + 5(2k+1) + 4 \\
+                  &= 6(2k+1)^2 + 10k + 9 \\
+                  &= (6(2k+1)^2 + 10k + 8) + 1 \\
+                  &= 2(3(2k+1)^2 + 5k + 4) + 1 \\
+    \end{align*}
+
+    Since $3(2k+1)^2 + 5k + 4 \in \mathbb{Z}$, then $6n^2 + 5n + 4$ is odd.
+\end{proof}
+\end{solution}
+
 \part Using the method of proof by contrapositive.
+
+\begin{solution}
+\begin{proof}
+    Let $n \in \mathbb{Z}$. Assume for the sake of contrapositive that $6n^2 + 5n + 4$ is even.
+    Then $6n^2 + 5n + 4 = 2k$, where $k \in \mathbb{Z}$. \colorbox{red}{TODO}
+\end{proof}
+\end{solution}
+
 \part Using the method of proof by contradiction.
+
+\begin{solution}
+\begin{proof}
+    Let $n \in \mathbb{Z}$. Assume for the sake of contradiction that $n$ is odd and $6n^2 + 5n + 4$
+    is even. Since $n$ is odd, then $n = 2k+1$, where $k \in \mathbb{Z}$.
+
+    \begin{align*}
+        6n^2 + 5n + 4 &= 6(2k+1)^2 + 5(2k+1) + 4 \\
+                      &= 6(2k+1)^2 + 10k + 9 \\
+                      &= 2(3(2k+1)^2 + 5k + 4) + 1 \\
+    \end{align*}
+
+    Since $3(2k+1)^2 + 5k + 4 \in \mathbb{Z}$, then $6n^2 + 5n + 4$ is odd.
+
+    This is a contradiction because we assumed that $6n^2 + 5n + 4$ is even, but found that
+    $6n^2 + 5n + 4$ is odd. Therefore, if $n$ is odd, then $6n^2 + 5n + 4$ is odd.
+\end{proof}
+\end{solution}
+
 \end{parts}
-	
+
+
 \question Use the following lemma to prove that if $p$ is prime, then $\sqrt{p}$ is irrational.
 \begin{lemma}[Euclid's Lemma]
 If a prime $p$ divides the product $ab$ of two integers $a$ and $b$, then $p$ must divide either $a$ or $b$.
 \end{lemma}
 
+\begin{solution}
+\begin{proof}
+\end{proof}
+\end{solution}
+
 
 \question Review the following proof. Give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A.
 
-	
-	\begin{claim}
-		Given two subsets $A$ and $B$ of a universal set $U$, if $\overline{B} \subseteq \overline{A}$, then $A \subseteq B$
-	\end{claim}
-	\begin{proof}
-		We prove the equivalent statement, ``If $A \nsubseteq B$, then $\overline{B} \nsubseteq \overline{A}.$'' Suppose that $A \nsubseteq B$. Then it is not true that every element of $A$ is also an element of $B$. So there is some element $x$ of $B$ that is not an element of $A$. So $x$ is an element of $\overline{A}$, but $x$ is not an element of $\overline{B}$. Thus $\overline{B} \nsubseteq \overline{A}.$ 
-	\end{proof}
+    \begin{claim}
+        Given two subsets $A$ and $B$ of a universal set $U$, if $\overline{B} \subseteq \overline{A}$, then $A \subseteq B$
+    \end{claim}
+    \begin{proof}
+        We prove the equivalent statement, ``If $A \nsubseteq B$, then $\overline{B} \nsubseteq \overline{A}.$'' Suppose that $A \nsubseteq B$. Then it is not true that every element of $A$ is also an element of $B$. So there is some element $x$ of $B$ that is not an element of $A$. So $x$ is an element of $\overline{A}$, but $x$ is not an element of $\overline{B}$. Thus $\overline{B} \nsubseteq \overline{A}.$ 
+    \end{proof}
 
 \question Prove the two lemmas below then prove the third statement by contrapositive using the two lemmas, as needed. 
 \begin{parts}
-	\part Lemma 1: If an integer is odd, then it can be written as $2k-1$ for some integer $k$. 
-	\part Lemma 2: If 8 is a factor of an integer $m$, then $m$ is even. 
-	\part Given any integer $n$, if $8$ is a factor of $n^2-1$, then $n$ is odd.
+    \part Lemma 1: If an integer is odd, then it can be written as $2k-1$ for some integer $k$. 
+    \part Lemma 2: If 8 is a factor of an integer $m$, then $m$ is even. 
+    \part Given any integer $n$, if $8$ is a factor of $n^2-1$, then $n$ is odd.
 \end{parts}
 \question If $a \equiv b \mod n,$ then $\gcd(a,n)=\gcd(b,n)$.
 \end{questions}
