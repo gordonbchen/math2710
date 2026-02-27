@@ -92,7 +92,6 @@ Then show the converse is false.
     Assume for the sake of contrapositive that $x | y$ or $x | z$.
     Without loss of generality assume that $x | y$. Then $y = nx$ for some $n \in \mathbb{Z}$.
     Then $yz = nxz = (nz)x$, where $nz \in \mathbb{Z}$, so $x | yz$.
-    \colorbox{red}{TODO: is this WLOG ok?}
     Note that this analysis did not depend on whether or not $x | z$, we have covered all
     3 cases, when $x|y$, when $x|z$, and when both $x|y$ and $x|z$.
     Since we showed that $(x|y) \lor (x|z) \Rightarrow x | yz$, then by contrapositive
@@ -175,7 +174,24 @@ If $n$ is a natural number, then $\dfrac{n}{n+1}>\dfrac{n}{n+2}.$
 \begin{solution}
 \begin{proof}
     Let $n \in \mathbb{Z}$. Assume for the sake of contrapositive that $6n^2 + 5n + 4$ is even.
-    Then $6n^2 + 5n + 4 = 2k$, where $k \in \mathbb{Z}$. \colorbox{red}{TODO}
+    Then $6n^2 + 5n + 4 = 2k$, where $k \in \mathbb{Z}$.
+
+    Either $n$ is even or odd. If $n$ is odd, then $n = 2m + 1$, where $m \in \mathbb{Z}$.
+
+    \begin{align*}
+        6n^2 + 5n + 4 &= 2k\\
+        6(2m+1)^2 + 5(2m+1) + 4 &= 2k\\
+        6(2m+1)^2 + 5(2m+1) + 4 &= 2k\\
+        6(2m+1)^2 + 10m+5 + 4 &= 2k\\
+        2(3(2m+1)^2 + 5m+ 4) + 1 &= 2k\\
+        2(3(2m+1)^2 + 5m+ 4) + 1 &= 2k
+    \end{align*}
+
+    But then since $3(2m+1)^2+5m+4 \in \mathbb{Z}$, then we have that an odd number (LHS) is equal
+    to an even number (RHS). This is a contradiction, so $n$ must be even.
+
+    Since we have shown that if $6n^2 + 5n + 4$ is even then $n$ must be even, by contrapositive
+    we have that if $n$ is odd then $6n^2 + 5n + 4$ is odd.
 \end{proof}
 \end{solution}
 
@@ -209,6 +225,23 @@ If a prime $p$ divides the product $ab$ of two integers $a$ and $b$, then $p$ mu
 
 \begin{solution}
 \begin{proof}
+    Let $p$ be prime. Assume for the sake of contradiction that $\sqrt{p} \in \mathbb{Q}$.
+
+    Then $\sqrt{p} = \frac{m}{n}$, where $m,n \in \mathbb{Z}$ and $n \ne 0$, and $m$ and $n$
+    have no common factors.
+
+    Then $p = \frac{m^2}{n^2}$, and $n^2 p = m^2$.
+
+    Since $n^2 \in \mathbb{Z}$, then $p$ divides $m^2$, and by Euclid's Lemma, then $p$
+    must divide $m$ or $m$, so $p$ divides $m$, and we have that $m = kp$ for some $k \in \mathbb{Z}$.
+
+    Then $n^2 p = (kp)^2$, so $n^2 p = k^2 p^2$, and $n^2 = k^2 p$. But since $k \in \mathbb{Z}$,
+    then by Euclid's Lemma then $p$ divides $n^2$, so $p$ divides $n$.
+
+    This is a contradiction because we assumed that $n$ and $m$ have no common factors
+    but we found that both $m$ and $n$ have a common factor of $p$.
+
+    Therefore, we have shown that if $p$ is prime, then $\sqrt{p}$ is irrational.
 \end{proof}
 \end{solution}
 
