@@ -113,22 +113,26 @@ No point inside the circle $(x-3)^2+y^2=6$ is on the line $y=x+1$.
 
 \begin{solution}
 \begin{proof}
-    For the sake of contradiction assume that there exists a point, i.e some $(x,y)$ where
+    Assume for the sake of contradiction that there exists a point, some $(x,y)$ where
     $x,y \in \mathbb{R}$, inside the circle $(x-3)^2 + y^2 =6$ and on the line $y=x+1$.
-    Then $(x-3)^2 + (x+1)^2 = 6$. Then $2x^2 -4x + 10 = 6$, and $2x^2 - 4x + 4 = 0$.
-
+    Since $(x, y)$ lies inside the circle, then $(x-3)^2 + y^2 < 6$. Then,
     \begin{align*}
-    2x^2 - 4x + 4 &= 0 \\
-    x^2 - 2x + 2 &= 0 \\
-    (x-1)^2 + 1 &= 0 \\
-    (x-1)^2 &= -1 \\
-    x-1 &= \pm i \\
-    x &= 1 \pm i  
+        (x-3)^2 + (x+1)^2 &< 6 \\
+        (x^2 - 6x + 9) + (x^2 + 2x + 1) &< 6 \\
+        2x^2 - 4x + 10 &< 6 \\
+        2x^2 - 4x + 4 &< 0 \\
+        x^2 - 2x + 2 &< 0 \\
+        (x - 1)^2 + 1&< 0 \\
+        (x - 1)^2 &< -1
     \end{align*}
+    However, we know that $(x-1)^2 \ge 0$ for all $x \in \mathbb{R}$. Then,
+    \begin{align*}
+        0 \le (x - 1)^2 &< -1\\
+        0 &< -1
+    \end{align*}
+    We have found a contradiction because we found that $0 <-1$ but actually $0 \ge -1$.
 
-    We have found a contradiction since we assumed that $x \in \mathbb{R}$ but we found that
-    $x$ has an imaginary component and therefore $x \notin \mathbb{R}$. Therefore we have shown
-    that no point in the circle $(x-3)^2 + y^2 = 6$ is on the line $y=x+1$.
+    Therefore, we have shown that no point inside the circle $(x-3)^2 + y^2 = 6$ can lie on the line $y=x+1$.
 \end{proof}
 \end{solution}
 
