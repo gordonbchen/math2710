@@ -1,0 +1,64 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color,amsthm}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption}
+\usetikzlibrary{arrows}
+
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 7: Ch 7}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+
+\begin{questions}
+%\question Prove: an integer $a$ is odd if and only if $a^3$ is odd. 
+\question Suppose $a \in \mathbb{Z}$. Prove that $14 \mid a$ if and only if $2 \mid a$ and $7 \mid a$.
+\question 
+\begin{parts}
+\item Prove that there exists a positive real number $x$ for which $$x^2 < \sqrt{x}.$$
+\item For what statement is the example you gave above a counterexample?
+\end{parts}
+\question Give a counterexample to disprove each of the following false quantified statements:
+\begin{parts}
+\part For any sets $A$ and $B$, $\mathcal{P}(A)-\mathcal{P}(B)\subseteq\mathcal{P}(A-B)$.
+\part For every positive real number $a$, there is a positive real number $b$ such that $b<a$ and if $c\in \mathbb{R}^+$, then $bc\geq c$.
+\end{parts}
+\question Prove each of the following existence statements:
+\begin{parts}
+\part For every non-zero real number $x$, there exists a real number $y$ such that $x+y=7$.
+\part There exists a natural number $M$ such that for all natural numbers $n>M$, $\dfrac{1}{n}<0.105$.
+\end{parts}
+\question Disprove each of the following existence statements:
+\begin{parts}
+\part There exists a largest natural number $M$.
+\part There exists a rational number $x$ and an irrational number $y$ such that $x+y$ is rational (Hint: first prove that the sum of two rational numbers is rational).
+\end{parts}
+
+
+
+
+
+\section*{Challenge Problems}
+\question (If you have taken Math 2210Q) Prove at least four parts of the Invertible Matrix Theorem are equivalent.
+
+Prove each of the following statements.  
+\question Suppose $a, b \in \mathbb{N}$. Then $a=\gcd(a,b)$ if and only if $a \mid b.$
+\question Suppose $a, b \in \mathbb{N}$. Then $a=lcm(a,b)$ if and only if $b \mid a.$
+\question If $p >1$ is an integer and $n \nmid p$ for each integer $n$ for which $2 \leq n \leq \sqrt{p}$ then $p$ is prime. 
+\end{questions}
+
+\end{document}
