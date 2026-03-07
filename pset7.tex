@@ -30,7 +30,18 @@
 \question Suppose $a \in \mathbb{Z}$. Prove that $14 \mid a$ if and only if $2 \mid a$ and $7 \mid a$.
 
 \begin{solution}\begin{proof}
+  If $14 | a$ then $2 | a$ and $7 | a$.
 
+  Let $a \in \mathbb{Z}$. Assume that $14 | a$. Then $a = 14n$ where $n \in \mathbb{Z}$.
+  Then $a = 2(7n)$. Since $7n \in \mathbb{Z}$, then $2 | a$. Also, $a = 7(2n)$, and
+  since $2n \in \mathbb{Z}$, then $7 | a$. So if $14 | a$ then $2 | a$ and $7 | a$.
+
+  Let $a \in \mathbb{Z}$. Assume that $2 | a$ and $7 | a$. Then $a = 2n$ and $a = 7k$ where $n, k \in \mathbb{Z}$.
+  Then $2n = 7k$. Since $2n$ is even, then $7k$ must be even, so $k$ must be even. Then $k = 2m$, where
+  $m \in \mathbb{Z}$. Then $a = 7(2m) = 14m$, where $m \in \mathbb{Z}$, so $14 | a$. So if $2 | a$ and $7 | a$, then $14 | a$. 
+
+  Since we have show that $(14 | a) \Rightarrow (2 | a) \land (7 | a)$ and $(2 | a) \land (7 | a) \Rightarrow
+  (14 | a)$, then $(14 | a) \iff (2 | a) \land (7 | a)$.
 \end{proof}\end{solution}
 
 
@@ -39,13 +50,16 @@
 \item Prove that there exists a positive real number $x$ for which $$x^2 < \sqrt{x}.$$
 
 \begin{solution}\begin{proof}
-
+  Let $x = \frac{1}{4}$. Then $x^2 = \frac{1}{16}$ and $\sqrt{x} = \frac{1}{2}$, so $x^2 < \sqrt{x}$ since
+  $\frac{1}{16} < \frac{1}{2}$. Since $\frac{1}{4}$ is a positive real number that satisfies $x^2 < \sqrt{x}$,
+  then the statement is true.
 \end{proof}\end{solution}
 
 \item For what statement is the example you gave above a counterexample?
 
-\begin{solution}\begin{proof}
-\end{proof}\end{solution}
+\begin{solution}
+  $\forall x \in \mathbb{R}, x^2 \ge \sqrt{x}$.
+\end{solution}
 
 
 \end{parts}
@@ -55,25 +69,62 @@
 \part For any sets $A$ and $B$, $\mathcal{P}(A)-\mathcal{P}(B)\subseteq\mathcal{P}(A-B)$.
 
 \begin{solution}\begin{proof}
+  Let $A = \{1,2\}$ and $B = \{2\}$. Then $\mathcal{P}(A) = \{\emptyset, \{1\}, \{2\}, \{1,2\}\}$
+  and $\mathcal{P}(B) = \{\emptyset, \{2\}\}$. So $\mathcal{P}(A) - \mathcal{P}(B) =  \{\{1\}, \{1,2\}\}$.
+  Also, $\mathcal{P}(A-B) = \mathcal{P}(\{1\}) = \{\emptyset, \{1\}\}$.
+  Since $\{1, 2\} \in \mathcal{P}(A) - \mathcal{P}(B)$ and $\{1, 2\} \notin \mathcal{P}(A-B)$, then
+  $\mathcal{P}(A) - \mathcal{P}(B) \subsetneq \mathcal{P}(A-B)$ and the statement is fase.
 \end{proof}\end{solution}
 
 
 \part For every positive real number $a$, there is a positive real number $b$ such that $b<a$ and if $c\in \mathbb{R}^+$, then $bc\geq c$.
 
 \begin{solution}\begin{proof}
+Let $a = 1$. For the sake of contradiction assume that there exists a positive real $b$ such that $b < 1$
+and if $c \in \mathbb{R}^+$, then $bc \ge c$. If $b < 1$, then $bc < c$. But then we have that both
+$bc \ge c$ and $bc < c$. This is a contradiction so the statment is false.
 \end{proof}\end{solution}
 
 
 \end{parts}
+
 \question Prove each of the following existence statements:
 \begin{parts}
 \part For every non-zero real number $x$, there exists a real number $y$ such that $x+y=7$.
+
+\begin{solution}\begin{proof}
+Let $x$ be a non-zero real number. Choose $y = 7 - x$. Then $x + y = x + (7 - x) = 7$.
+\end{proof}\end{solution}
+
 \part There exists a natural number $M$ such that for all natural numbers $n>M$, $\dfrac{1}{n}<0.105$.
+
+\begin{solution}\begin{proof}
+  Let $M = 10$. Let $n \in \mathbb{N}$ and $n > M$, so $n > 10$. Then $\frac{1}{n} < \frac{1}{10}$.
+  Since $\frac{1}{10} < 0.105$, then $\frac{1}{n} < 0.105$.
+\end{proof}\end{solution}
+
 \end{parts}
+
+
 \question Disprove each of the following existence statements:
 \begin{parts}
 \part There exists a largest natural number $M$.
+
+\begin{solution}\begin{proof}
+Assume for the sake of contradiction that there exists a largest natural number $M$. Consider the number
+$M + 1$. Since $M+1 > M$ and $M + 1 \in \mathbb{N}$, we have found a contradiction. We assumed that $M$ was
+the largest natural number but found that $M+1$ is a larger natural number. So there is no largest natural number.
+\end{proof}\end{solution}
+
 \part There exists a rational number $x$ and an irrational number $y$ such that $x+y$ is rational (Hint: first prove that the sum of two rational numbers is rational).
+
+\begin{solution}\begin{proof}
+  Let $x \in \mathbb{Q}$ and $y \in \mathbb{R-Q}$. Assume for the sake of contradiction that $x+y \in \mathbb{Q}$.
+  Then $x = \frac{p}{q}$ where $p,q \in \mathbb{Z}$ and $q \ne 0$, and $x+y = \frac{m}{n}$, where $m,n
+  \in \mathbb{Z}$ and $n \ne 0$. Then $y = \frac{m}{n} - \frac{p}{q} = \frac{mq - pn}{nq}$. Since $mq-pn, nq \in \mathbb{Z}$ and $nq \ne 0$ since $n \ne 0$ and $q \ne 0$, then $y \in \mathbb{Q}$. This is a contradiction
+  since was assumed that $y \in \mathbb{R-Q}$ but we found that $y \in \mathbb{Q}$. Therefore there does not
+  exist a rational $x$ and irrational $y$ such that $x+y$ is rational.
+\end{proof}\end{solution}
 \end{parts}
 
 
@@ -83,10 +134,40 @@
 \section*{Challenge Problems}
 \question (If you have taken Math 2210Q) Prove at least four parts of the Invertible Matrix Theorem are equivalent.
 
-Prove each of the following statements.  
-\question Suppose $a, b \in \mathbb{N}$. Then $a=\gcd(a,b)$ if and only if $a \mid b.$
-\question Suppose $a, b \in \mathbb{N}$. Then $a=lcm(a,b)$ if and only if $b \mid a.$
-\question If $p >1$ is an integer and $n \nmid p$ for each integer $n$ for which $2 \leq n \leq \sqrt{p}$ then $p$ is prime. 
-\end{questions}
+Prove each of the following statements.
 
+\question Suppose $a, b \in \mathbb{N}$. Then $a=\gcd(a,b)$ if and only if $a \mid b.$
+\begin{solution}\begin{proof}
+  Let $a, b \in \mathbb{N}$.
+
+  Assume that $a = \gcd(a,b)$. Then $a | b$. So if $a = \gcd(a,b)$, then $a | b$.
+
+  Assume that $a | b$. Assume for the sake of contradiction that $a \ne \gcd(a, b)$. Then there must exist some
+  $k \in \mathbb{N}$ such that $k = \gcd(a, b)$ and $k > a$. Since $k = \gcd(a, b)$, then $k | a$.
+  This is a contradiction since no natural is divisible by a
+  natural greater than itself, so we have that $a | b \Rightarrow a = \gcd(a,b)$.
+
+  Since we have shown that $a = \gcd(a, b) \Rightarrow a | b$ and $a | b \Rightarrow a = \gcd(a,b)$,
+  then $a = \gcd(a,b) \iff a | b$.
+\end{proof}\end{solution}
+
+\question Suppose $a, b \in \mathbb{N}$. Then $a=lcm(a,b)$ if and only if $b \mid a.$
+\begin{solution}\begin{proof}
+  Let $a, b \in \mathbb{N}$
+
+  Assume that $a = lcm(a, b)$. Then $b | a$. So we have that $a = lcm(a, b) \Rightarrow b | a$.
+
+  Assume that $b | a$. Assume for the sake of contradiction that $a \ne lcm(a,b)$. Then there must exist some
+  $k \in \mathbb{N}$ such that $k = lcm(a, b)$ and $k < a$. Since $k = lcm(a, b)$, then $a | k$.
+  But this is a contradiction since no natural divides another
+  natural lower than itself. So we have that $b | a \Rightarrow a = lcm(a, b)$.
+
+  Since we have shown that $a = lcm(a, b) \Rightarrow b | a$ and $b | a \Rightarrow a = lcm(a,b)$,
+  then $a = lcm(a,b) \iff b | a$.
+\end{proof}\end{solution}
+
+
+\question If $p >1$ is an integer and $n \nmid p$ for each integer $n$ for which $2 \leq n \leq \sqrt{p}$ then $p$ is prime. 
+
+\end{questions}
 \end{document}
