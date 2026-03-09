@@ -9,6 +9,8 @@
 \newtheorem{claim}{Claim}
 \newtheorem{lemma}{Lemma}
 
+\printanswers
+
 \pagestyle{head}                       % This causes the exam to only have headers, no footers.
 %\runningheadrule                     % This causes the headings to have an underline.
 
@@ -26,25 +28,108 @@
 
 \begin{questions}
 
-
-
-
-
 \question Prove that if $A, B$ and $C$ are sets then $$A - (B \cap C) = (A - B) \cup (A - C).$$ 
-\question Prove that if $A, B$ and $C$ are sets then $$A \times (B \cup C) = (A \times B) \cup (A \times C).$$ 
+
+\begin{solution}\begin{proof}
+    Let $x \in A-(B \cap C)$. Then $x \in A$ and $x \notin (B \cap C)$, so
+    $x \notin B$ or $x \notin C$. Then, $x \in (A - B)$ or $x \in (A - C)$, so $x \in (A-B) \cup (A-C)$.
+    So $A-(B \cap C) \subseteq (A-B) \cup (A-C)$.
+
+    Let $x \in (A-B) \cup (A-C)$. Then $x \in A-B$ or $x \in A-C$. In either case, $x \in A$.
+    Also, we have that $x \notin B$ or $x \notin C$, so $x \notin (B \cap C)$. Then $x \in A-(B \cap C)$.
+    So $(A-B) \cup (A-C) \subseteq A-(B \cap C)$.
+
+    Since we showed that $A-(B \cap C) \subseteq (A-B) \cup (A-C)$ and
+    $(A-B) \cup (A-C) \subseteq A-(B \cap C)$, then $A - (B \cap C) = (A - B) \cup (A - C)$.
+\end{proof}\end{solution}
+
+
+\question Prove that if $A, B$ and $C$ are sets then $$A \times (B \cup C) = (A \times B) \cup (A \times C).$$
+
+\begin{solution}\begin{proof}
+    Let $(x,y) \in A \times (B \cup C)$. Then $x \in A$ and $y \in B \cup C$, so $y \in B$ or $y \in C$.
+    If $y \in B$ then $(x,y) \in A \times B$, and if $y \in C$ then $(x,y) \in A \times C$, so
+    $(x,y) \in (A \times B) \cup (A \times C)$. So $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$.
+
+    Let $(x,y) \in (A \times B) \cup (A \times C)$. Then $x \in A$ and $y \in B$ or $y \in C$, so
+    $y \in (B \cup C)$. Then $(x,y) \in A \times (B \cup C)$. So $(A \times B) \cup (A \times C)
+    \subseteq A \times (B \cup C)$.
+
+    Since we showed that $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$ and
+    $(A \times B) \cup (A \times C) \subseteq A \times (B \cup C)$, then we have that 
+    $A \times (B \cup C) = (A \times B) \cup (A \times C)$.
+\end{proof}\end{solution}
+
+
 \question Prove that if $A$ and $B$ are sets then $A \subseteq B$ if and only if $A - B = \emptyset$.
 
+\begin{solution}\begin{proof}
+Assume that $A \subseteq B$. Assume for the sake of
+contradiction that $A - B \ne \emptyset$. Then there exists some $x \in A - B$, so some $x \in A$
+and $x \notin B$. This is a contradiction because $A \subseteq B$, so all $x \in A$ also satisfy $x \in B$.
+Therefore if $A \subseteq B$, then $A - B = \emptyset$.
+
+Assume for contrapositive that $A \nsubseteq B$. Then there exists some $a \in A$ such that $a \notin B$.
+Consider $A-B$. $A-B$ must include $a$ because $a \in A$ and $a \notin B$. Since $a \in A-B$, then
+$A-B \neq \emptyset$. Therefore, by contrapositive we have that if $A-B = \emptyset$, then $A \subseteq B$.
+
+Since we have show that $A \subseteq B \Rightarrow A-B = \emptyset$ and $A-B = \emptyset \Rightarrow A
+\subseteq B$, then we have that $A \subseteq B \iff A-B = \emptyset$.
+\end{proof}\end{solution}
+
+
 \question Prove the two lemmas we used to prove $\mathcal{P}(A) \cup \mathcal{P}(B) \subseteq \mathcal{P}(A \cup B)$, i.e prove for all sets $C$ and $D$, $C \subseteq C \cup D$ and for sets $A, B$ and $C$ if $A \subseteq B$ and $B \subseteq C$, then $A \subseteq C$.
+
+\begin{solution}
+\begin{proof}
+Prove: $C \subseteq C \cup D$
+
+Let $c \in C$. Then $c \in C$ or $c \in D$, so $c \in C \cup D$. Then $C \subseteq C \cup D$.
+\end{proof}
+
+\begin{proof}
+Prove: if $A \subseteq B$ and $B \subseteq C$, then $A \subseteq C$.
+
+Let $a \in A$. Assume that $A \subseteq B$ and $B \subseteq C$. Since $A \subseteq B$, then $a \in B$.
+Since $B \subseteq C$, then $a \in C$. So if $A \subseteq B$ and $B \subseteq C$ then $A \subseteq C$.
+\end{proof}
+\end{solution}
 
  
 \textbf{For questions 5-8, determine if the statement is true.  If it is, prove it.  If it is false, disprove it.}
 
 \question If $x,y \in \mathbb{R}$, then $|x + y| = |x| + |y|$. 
 
+\begin{solution}\begin{proof}
+False. Let $x = 1$ and $y = -1$. Then $|x+y| = |1-1| = 0 \neq |x| + |y| = |1| + |-1| = 2$.
+\end{proof}\end{solution}
+
+
 \question If there exists a set $A$ such that $A \cap B = A \cap C$ and $A \cup B = A \cup C$, then $B=C.$
+
+\begin{solution}\begin{proof}
+    Assume that there exists a set $A$ such that $A \cap B = A \cap C$ and $A \cup B = A \cup C$.
+
+    Let $b \in B$. Either $b \in A$ or $b \notin A$.
+
+    Case $b \in A$: Then $b \in B$ and $b \in A$ so $b \in A \cap B$. Since $A \cap B = A \cap C$,
+    then $b \in A \cap C$, so $b \in C$. So $B \subseteq C$.
+
+    Case $b \notin A$: Since $b \in B$, then $b \in A \cup B$. Since $A \cup B = A \cup C$,
+    then $b \in A$ or $b \in C$. Since we know that $b \notin A$, then $b \in C$. So $B \subseteq C$.
+
+    \colorbox{red}{TODO}
+
+\end{proof}\end{solution}
+
 
 \question Let $A$ and $B$ sets with a universal set U. 
 $$\overline{A \cap B} = \overline{A} \cup \overline{B}$$
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
 
 
 \question If $a,b, c \in \mathbb{Z}$. If $a \mid bc$, then $a \mid b$ or $a \mid c$. 
