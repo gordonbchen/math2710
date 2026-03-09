@@ -30,8 +30,6 @@
 \question Suppose $a \in \mathbb{Z}$. Prove that $14 \mid a$ if and only if $2 \mid a$ and $7 \mid a$.
 
 \begin{solution}\begin{proof}
-  If $14 | a$ then $2 | a$ and $7 | a$.
-
   Let $a \in \mathbb{Z}$. Assume that $14 | a$. Then $a = 14n$ where $n \in \mathbb{Z}$.
   Then $a = 2(7n)$. Since $7n \in \mathbb{Z}$, then $2 | a$. Also, $a = 7(2n)$, and
   since $2n \in \mathbb{Z}$, then $7 | a$. So if $14 | a$ then $2 | a$ and $7 | a$.
@@ -40,7 +38,7 @@
   Then $2n = 7k$. Since $2n$ is even, then $7k$ must be even, so $k$ must be even. Then $k = 2m$, where
   $m \in \mathbb{Z}$. Then $a = 7(2m) = 14m$, where $m \in \mathbb{Z}$, so $14 | a$. So if $2 | a$ and $7 | a$, then $14 | a$. 
 
-  Since we have show that $(14 | a) \Rightarrow (2 | a) \land (7 | a)$ and $(2 | a) \land (7 | a) \Rightarrow
+  Since we have shown that $(14 | a) \Rightarrow (2 | a) \land (7 | a)$ and $(2 | a) \land (7 | a) \Rightarrow
   (14 | a)$, then $(14 | a) \iff (2 | a) \land (7 | a)$.
 \end{proof}\end{solution}
 
@@ -159,8 +157,8 @@ Prove each of the following statements.
 
   Assume that $b | a$. Assume for the sake of contradiction that $a \ne lcm(a,b)$. Then there must exist some
   $k \in \mathbb{N}$ such that $k = lcm(a, b)$ and $k < a$. Since $k = lcm(a, b)$, then $a | k$.
-  But this is a contradiction since no natural divides another
-  natural lower than itself. So we have that $b | a \Rightarrow a = lcm(a, b)$.
+  But this is a contradiction since no natural can be a multiple of a natural greater than itself.
+  So we have that $b | a \Rightarrow a = lcm(a, b)$.
 
   Since we have shown that $a = lcm(a, b) \Rightarrow b | a$ and $b | a \Rightarrow a = lcm(a,b)$,
   then $a = lcm(a,b) \iff b | a$.
