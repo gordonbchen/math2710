@@ -1,0 +1,67 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color,amsthm}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption}
+\usetikzlibrary{arrows}
+
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 8: Ch 8 and 9}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+
+\begin{questions}
+
+
+
+
+
+\question Prove that if $A, B$ and $C$ are sets then $$A - (B \cap C) = (A - B) \cup (A - C).$$ 
+\question Prove that if $A, B$ and $C$ are sets then $$A \times (B \cup C) = (A \times B) \cup (A \times C).$$ 
+\question Prove that if $A$ and $B$ are sets then $A \subseteq B$ if and only if $A - B = \emptyset$.
+
+\question Prove the two lemmas we used to prove $\mathcal{P}(A) \cup \mathcal{P}(B) \subseteq \mathcal{P}(A \cup B)$, i.e prove for all sets $C$ and $D$, $C \subseteq C \cup D$ and for sets $A, B$ and $C$ if $A \subseteq B$ and $B \subseteq C$, then $A \subseteq C$.
+
+ 
+\textbf{For questions 5-8, determine if the statement is true.  If it is, prove it.  If it is false, disprove it.}
+
+\question If $x,y \in \mathbb{R}$, then $|x + y| = |x| + |y|$. 
+
+\question If there exists a set $A$ such that $A \cap B = A \cap C$ and $A \cup B = A \cup C$, then $B=C.$
+
+\question Let $A$ and $B$ sets with a universal set U. 
+$$\overline{A \cap B} = \overline{A} \cup \overline{B}$$
+
+
+\question If $a,b, c \in \mathbb{Z}$. If $a \mid bc$, then $a \mid b$ or $a \mid c$. 
+\question A number is ``deficient” if it is greater than the sum of its proper divisors. For example, 35 is deficient, since 1 + 5 + 7 = 13, which is less than 35. A number is called “abundant” if it is less than the sum of its proper divisors. For example, 36 is abundant, since 1 + 2 + 3 + 4 + 6 + 9 + 12 + 18 = 55, which is greater than 36. Are prime powers (i.e numbers of the form $x=p^k$ where $p$ is prime) deficient or abundant?
+\section*{Challenge Problems}
+\question We want to show that $f(x)=x^2-3x-2$ has a unique zero between 3 and 4. 
+\begin{parts}
+\item Explain why a zero exists using the intermediate value theorem. 
+\item Assume $3<a<b<4$. Explain why $a^2-3a < b^2-3b$.  (Hint: if $w<x$ and $y<z$, when is $wy<xz$?)
+\item Explain why $f(a)<f(b)$. Use this to conclude why there must be a unique $x$ between 3 and 4 such that $f(x)=0$. 
+\end{parts}
+\question Prove that $$\bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2 ] =[3,5].$$
+
+\question Find a necessary and sufficient condition for $(A \times B) \cap (B \times A) = \emptyset.$  Verify the condition you found is necessary and sufficient. 
+ \question Prove or disprove: If $A \cup B = A \cup C$ for every set $A$, then $B=C.$
+\question Suppose that $n$ is an odd number and $M=2n$ is perfect. Show that $n$ must equal 3.
+\question Write a review (about two paragraphs) of this article: https://www.quantamagazine.org/the-mysterious-math-of-perfect-numbers-20210315.
+\end{questions}
+
+\end{document}
