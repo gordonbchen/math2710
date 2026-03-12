@@ -108,7 +108,7 @@ False. Let $x = 1$ and $y = -1$. Then $|x+y| = |1-1| = 0 \neq |x| + |y| = |1| + 
 \question If there exists a set $A$ such that $A \cap B = A \cap C$ and $A \cup B = A \cup C$, then $B=C.$
 
 \begin{solution}\begin{proof}
-    Assume that there exists a set $A$ such that $A \cap B = A \cap C$ and $A \cup B = A \cup C$.
+    True. Assume that there exists a set $A$ such that $A \cap B = A \cap C$ and $A \cup B = A \cup C$.
 
     Let $b \in B$. Either $b \in A$ or $b \notin A$.
 
@@ -118,8 +118,9 @@ False. Let $x = 1$ and $y = -1$. Then $|x+y| = |1-1| = 0 \neq |x| + |y| = |1| + 
     Case $b \notin A$: Since $b \in B$, then $b \in A \cup B$. Since $A \cup B = A \cup C$,
     then $b \in A$ or $b \in C$. Since we know that $b \notin A$, then $b \in C$. So $B \subseteq C$.
 
-    \colorbox{red}{TODO}
+    Similarly for $c \in C$. Either $c \in A$ or $c \notin A$. In either case, $C \subseteq B$.
 
+    Since $B \subseteq C$ and $C \subseteq B$, then $B = C$.
 \end{proof}\end{solution}
 
 
@@ -127,25 +128,137 @@ False. Let $x = 1$ and $y = -1$. Then $|x+y| = |1-1| = 0 \neq |x| + |y| = |1| + 
 $$\overline{A \cap B} = \overline{A} \cup \overline{B}$$
 
 \begin{solution}\begin{proof}
-
+    Let $A$ and $B$ sets with a universal set U.
+    \begin{align*}
+        \overline{A \cap B} &= \{x \in U: x \notin A \cap B\}\\
+        &= \{x \in U: x \notin A \lor x \notin B\}\\
+        &= \{x \in U: x \notin A\} \cup \{x \in U: x \notin B\}\\
+        &= \overline{A} \cup \overline{B}
+    \end{align*}
 \end{proof}\end{solution}
 
 
 
 \question If $a,b, c \in \mathbb{Z}$. If $a \mid bc$, then $a \mid b$ or $a \mid c$. 
+
+\begin{solution}\begin{proof}
+    False. Let $a=6, b=3$, and $c=4$. $a \mid bc$ since $6 \mid 12$, but $a \nmid b$ since $6 \nmid 3$ and
+    $a \nmid c$ since $6 \nmid 4$.
+\end{proof}\end{solution}
+
+
 \question A number is ``deficient” if it is greater than the sum of its proper divisors. For example, 35 is deficient, since 1 + 5 + 7 = 13, which is less than 35. A number is called “abundant” if it is less than the sum of its proper divisors. For example, 36 is abundant, since 1 + 2 + 3 + 4 + 6 + 9 + 12 + 18 = 55, which is greater than 36. Are prime powers (i.e numbers of the form $x=p^k$ where $p$ is prime) deficient or abundant?
+
+\begin{solution}\begin{proof}
+Let $x$ be a prime power. Then $x = p^k$, where $p$ is prime. Then the factors of $x$ are
+$p^0=1, p, p^2, ..., p^k=x$. Then the sum of the proper divisors of $x$ is $\sum_{n=0}^{k-1} p^k = 
+\frac{1-p^k}{1-p} = \frac{p^k - 1}{p-1}$. Then $\frac{p^k-1}{p-1} < p^k-1 < p^k$, so prime powers are
+deficient.
+\end{proof}\end{solution}
+
+
 \section*{Challenge Problems}
 \question We want to show that $f(x)=x^2-3x-2$ has a unique zero between 3 and 4. 
 \begin{parts}
 \item Explain why a zero exists using the intermediate value theorem. 
+
+\begin{solution}
+    $f(x)$ is a polynomial so it is continuous on $\mathbb{R}$, and since $[3, 4] \subseteq \mathbb{R}$.
+    $f(3) = 3^2 - 3(3) - 2 = -2$. $f(4) = 4^2 - 3(4) - 2 = 2$. Since $0 \in [f(3), f(4)] = [-2, 2]$ and
+    $f(x)$ is continuous on $[3, 4]$, then by the IVT there must exist some $c \in [3, 4]$ such that
+    $f(c) = 0$.
+\end{solution}
+
+
 \item Assume $3<a<b<4$. Explain why $a^2-3a < b^2-3b$.  (Hint: if $w<x$ and $y<z$, when is $wy<xz$?)
+
+\begin{solution}
+Since $a < b$, then $a-3 < b-3$. Since $3 < a$, then $a-3 > 0$ and $0 < a-3 < b-3$.
+Then $(a-3)a < (b-3)b$, so $a^2 - 3a < b^2 - 3b$.
+\end{solution}
+
+
 \item Explain why $f(a)<f(b)$. Use this to conclude why there must be a unique $x$ between 3 and 4 such that $f(x)=0$. 
+
+\begin{solution}
+Since $a^2 - 3a < b^2 - 3b$, then $a^2 - 3a - 2 < b^2 - 3b -2$, so $f(a) < f(b)$.
+
+Assume that $x \in [3, 4]$ and $f(x) = 0$. Assume for the sake of contradiction that there exists some
+$y \in [3,4]$, such that $y \ne x$ and $f(y) = 0$. Then either $x < y$ or $y < x$.
+
+If $x < y$, then $f(x) < f(y)$, so $0 < f(y)$, so $f(y) \ne 0$. This is a contradiction.
+
+If $y < x$, then $f(y) < f(x)$, so $f(y) < 0$, so $f(y) \ne 0$. This is a contradiction.
+
+So we know that if there exists an $x \in [3, 4]$ such that $f(x) = 0$, then that $x$ is unique.
+
+Since we know by IVT that there exists a $x \in [3, 4]$ such that $f(x) = 0$ and that if there is some
+$x \in [3, 4]$ such that $f(x) = 0$ then it must be unique, then we know that there must be a unique
+$x \in [3, 4]$ such that $f(x) = 0$.
+\end{solution}
 \end{parts}
+
 \question Prove that $$\bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2 ] =[3,5].$$
+\begin{solution}\begin{proof}
+    First we show that $\bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2 ] \subseteq [3,5]$ by contrapositive.
+
+    Let $a \notin [3, 5]$. Since $[3, 5] = [3-x^2, 5+x^2]$ for $x = 0$, then
+    $\bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2] = [3, 5] \cap \bigcap_{x \in \mathbb{R}-\{0\}}$.
+    Since $a \notin [3, 5]$, then $a \notin [3, 5] \cap \bigcap_{x \in \mathbb{R}-\{0\}}$
+    and $a \notin \bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2]$.
+
+    Then, by contrapositive, we have that $\bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2 ] \subseteq [3,5]$.\\
+
+
+    Now we show that $[3, 5] \subseteq \bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2]$.
+
+    Let $a \in [3, 5]$. Then $3 \le a \le 5$. Since $3-x^2 \le 3$ and $5 \le 5+x^2$ for all
+    $x \in \mathbb{R}$, then $3-x^2 \le a \le 5+x^2$ for all $x \in \mathbb{R}$, so
+    $a \in [3-x^2, 5+x^2]$ for all $x \in \mathbb{R}$. Then $a \in \bigcup_{x \in \mathbb{R}} [3-x^2, 5+x^2]$,
+    and we have that $[3, 5] \subseteq \bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2]$.
+
+    Since we showed that $\bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2 ] \subseteq [3,5]$
+    and $[3, 5] \subseteq \bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2]$, then we have that
+    $\bigcap_{x \in \mathbb{R}} [3-x^2, 5+x^2 ] = [3,5]$.
+\end{proof}\end{solution}
+
 
 \question Find a necessary and sufficient condition for $(A \times B) \cap (B \times A) = \emptyset.$  Verify the condition you found is necessary and sufficient. 
- \question Prove or disprove: If $A \cup B = A \cup C$ for every set $A$, then $B=C.$
+\begin{solution}
+    $A \cap B = \emptyset \iff (A \times B) \cap (B \times A) = \emptyset$.
+
+    Assume that $A \cap B = \emptyset$. Assume for the sake of contradiction that
+    $(A \times B) \cap (B \times A) \neq \emptyset$. Then there exists some
+    $(x, y) \in (A \times B) \cap (B \times A)$. Then $x \in A$ and $x \in B$, and $y \in B$ and $y \in A$,
+    so $x \in A \cap B$ and $y \in A \cap B$. This is a contradiction because we assumed that
+    $A \cap B = \emptyset$ but found an element in $A \cap B$.
+    So we have that if $A \cap B = \emptyset$, then $(A \times B) \cap (B \times A) = \emptyset$.
+
+    Assume that $(A \times B) \cap (B \times A) = \emptyset$. Assume for the sake of contradiction that
+    $A \cap B \ne \emptyset$. Then there must exist some $x \in A \cap B$.
+    Since $x \in A \cap B$, then $x \in A$ and $x \in B$. Then $(x, x) \in A \times B$ and
+    $(x,x) \in B \times A$. Then $(x, x) \in (A \times B) \cap (B \times A)$. This is a contradiction
+    because we assumed that $(A \times B) \cap (B \times A) = \emptyset$ but found an element
+    $(x,x) \in (A \times B) \cap (B \times A)$.
+    So we have that if $(A \times B) \cap (B \times A) = \emptyset$, then $A \cap B = \emptyset$.
+
+    Therefore $A \cap B = \emptyset \iff (A \times B) \cap (B \times A) = \emptyset$.
+\end{solution}
+
+
+\question Prove or disprove: If $A \cup B = A \cup C$ for every set $A$, then $B=C.$
+\begin{solution}\begin{proof}
+    True. Assume that $A \cup B = A \cup C$ for every set $A$. Let $A = \emptyset$. Then
+    $\emptyset \cup B = \emptyset \cup C$, so $B = C$.
+\end{proof}\end{solution}
+
+
 \question Suppose that $n$ is an odd number and $M=2n$ is perfect. Show that $n$ must equal 3.
+\begin{solution}
+    Assume that $n$ is odd and $M = 2n$ is perfect. \colorbox{red}{TODO}
+\end{solution}
+
+
 \question Write a review (about two paragraphs) of this article: https://www.quantamagazine.org/the-mysterious-math-of-perfect-numbers-20210315.
 \end{questions}
 
