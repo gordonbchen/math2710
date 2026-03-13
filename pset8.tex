@@ -84,13 +84,15 @@ Since we have show that $A \subseteq B \Rightarrow A-B = \emptyset$ and $A-B = \
 \begin{proof}
 Prove: $C \subseteq C \cup D$
 
-Let $c \in C$. Then $c \in C$ or $c \in D$, so $c \in C \cup D$. Then $C \subseteq C \cup D$.
+Let $C, D$ be sets. Let $c \in C$. Then $c \in C$ or $c \in D$, so $c \in C \cup D$.
+Then $C \subseteq C \cup D$.
 \end{proof}
 
 \begin{proof}
 Prove: if $A \subseteq B$ and $B \subseteq C$, then $A \subseteq C$.
 
-Let $a \in A$. Assume that $A \subseteq B$ and $B \subseteq C$. Since $A \subseteq B$, then $a \in B$.
+Let $A, B, C$ be sets.
+Assume that $A \subseteq B$ and $B \subseteq C$. Let $a \in A$. Since $A \subseteq B$, then $a \in B$.
 Since $B \subseteq C$, then $a \in C$. So if $A \subseteq B$ and $B \subseteq C$ then $A \subseteq C$.
 \end{proof}
 \end{solution}
@@ -128,12 +130,12 @@ False. Let $x = 1$ and $y = -1$. Then $|x+y| = |1-1| = 0 \neq |x| + |y| = |1| + 
 $$\overline{A \cap B} = \overline{A} \cup \overline{B}$$
 
 \begin{solution}\begin{proof}
-    Let $A$ and $B$ sets with a universal set U.
+    True. Let $A$ and $B$ sets with a universal set U.
     \begin{align*}
         \overline{A \cap B} &= \{x \in U: x \notin A \cap B\}\\
         &= \{x \in U: x \notin A \lor x \notin B\}\\
         &= \{x \in U: x \notin A\} \cup \{x \in U: x \notin B\}\\
-        &= \overline{A} \cup \overline{B}
+        \overline{A \cap B} &= \overline{A} \cup \overline{B}
     \end{align*}
 \end{proof}\end{solution}
 
@@ -163,8 +165,14 @@ deficient.
 \item Explain why a zero exists using the intermediate value theorem. 
 
 \begin{solution}
-    $f(x)$ is a polynomial so it is continuous on $\mathbb{R}$, and since $[3, 4] \subseteq \mathbb{R}$.
-    $f(3) = 3^2 - 3(3) - 2 = -2$. $f(4) = 4^2 - 3(4) - 2 = 2$. Since $0 \in [f(3), f(4)] = [-2, 2]$ and
+    $f(x)$ is a polynomial so it is continuous on $\mathbb{R}$, and since $[3, 4] \subseteq \mathbb{R}$,
+    then $f(x)$ is continuous on $[3, 4]$.
+    \begin{align*}
+        f(3) &= 3^2 - 3(3) - 2 = -2 \\
+        f(4) &= 4^2 - 3(4) - 2 = 2
+    \end{align*}
+
+    Since $0 \in [f(3), f(4)] = [-2, 2]$ and
     $f(x)$ is continuous on $[3, 4]$, then by the IVT there must exist some $c \in [3, 4]$ such that
     $f(c) = 0$.
 \end{solution}
@@ -254,9 +262,12 @@ $x \in [3, 4]$ such that $f(x) = 0$.
 
 
 \question Suppose that $n$ is an odd number and $M=2n$ is perfect. Show that $n$ must equal 3.
-\begin{solution}
-    Assume that $n$ is odd and $M = 2n$ is perfect. \colorbox{red}{TODO}
-\end{solution}
+\begin{solution}\begin{proof}
+    Assume that $n$ is odd and $M = 2n$ is perfect. Then $M$ is an even perfect number, so
+    $M = 2^{k-1} (2^k - 1)$ for some $k \in \mathbb{Z}$.
+    Then $n = 2^{k-2} (2^k - 1)$. Since $n$ must be odd, it cannot have $2$ as a factor, so
+    $2^{k-2} = 1 = 2^0$, so $k = 2$. Then $n = 2^0 (2^2 - 1) = 3$.
+\end{proof}\end{solution}
 
 
 \question Write a review (about two paragraphs) of this article: https://www.quantamagazine.org/the-mysterious-math-of-perfect-numbers-20210315.
