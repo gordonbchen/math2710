@@ -1,0 +1,112 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color,amsthm}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption}
+\usetikzlibrary{arrows}
+\printanswers %Look, I remembered! :)
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 9: Ch 10}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+
+\begin{questions}
+
+\question Review the following proof. Clearly, not all horses are the same color.  What is wrong with this proof?
+
+ \begin{claim} All horses are the same color. \end{claim}
+\begin{proof} We proceed by induction. First we establish a base case for one horse ($n=1$). We then prove that if $n$ horses have the same color, then $n+1$ horses must also have the same color. \\
+\textbf{Base Case:} If there is only one horse in the ``group", then clearly all horses in that group have the same color. \\
+\textbf{Inductive Step:} Assume that $n$ horses always are the same color. Let us consider a group consisting of $n+1$ horses. \\
+
+First, exclude the last horse and look only at the first $n$ horses; all these are the same color since $n$ horses always are the same color. Likewise, exclude the first horse and look only at the last $n$ horses. These too, must also be of the same color. Therefore, the first horse in the group is of the same color as the horses in the middle, who in turn are of the same color as the last horse. Hence the first horse, middle horses, and last horse are all of the same color, and we have proven that: if $n$ horses have the same color, then $n+1$ horses will also have the same color. \\
+
+This completes our proof by induction. \end{proof}
+
+\question Show that for all $n \in \mathbb{N}$, $$\sum_{k=1}^n k(k+1)  =
+\dfrac{n(n+1)(n+2)}{3}.$$
+
+\question From calculus, we know that
+\[ \frac{d}{dx}(x) = 1 \]
+and
+\[ \frac{d}{dx}(f\cdot g) = f \cdot \frac{dg}{dx} + \frac{df}{dx} \cdot g. \]
+Use these two facts to prove the following:
+\[ \text{For all } n \in \mathbb{N}, \frac{d}{dx}(x^n) = nx^{n-1}. \]
+
+
+\question Use induction to show that every finite nonempty set of real numbers has a largest element. 
+
+\question Prove, using induction, that for all $n \in \mathbb{N}$, $6 \mid 8^n - 2^n$.
+
+\newpage
+
+\question  Review the following proof. Determine the proof method used (or attempted) and give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A. 
+
+\begin{claim} Let $s_0=s_1=1$. For $n \geq 2,$ let $s_n=\dfrac{{s_{n-1}}^2}{s_{n-2}}$. Then $s_n=2^n$ for all nonnegative integers $n$. \end{claim}
+
+\begin{proof} Base Case: $s_0=2^0=1$. 
+
+Inductive Step: Let $n \geq 0$. Assume the claim holds for $j$ such that $0 \leq j \leq n$. Then $s_{n+1}= \dfrac{{s_{n}}^2}{s_{n-1}}=\dfrac{{2}^{2n}}{2^{n-1}}=2^{n+1}$. Therefore, by the principle of induction, $s_n=2^n$ for all $n \geq 0$. \end{proof}
+
+\question Prove, using a proof by minimum counterexample, that for all $n \in \mathbb{N}$, $6 \mid 8^n - 2^n$.
+
+
+
+\question Let $F_0 = 0$, $F_1 = 1$, and for natural numbers $k \geq 2$, let $F_k = F_{k-1} + F_{k-2}$. These are the famous Fibonacci numbers.  Show that $\sum_{i=0}^k F_i^2 = F_k F_{k+1}$ for all integers $k \geq 0$. 
+
+
+\question Prove, using the strong induction, that $ 2 \mid F_n$ if and only if $3 \mid n$ where $F_n$ is the $n$th Fibonacci number, defined above. 
+
+\question Prove, using strong induction, that using only 3- and 10-cent stamps, one can obtain postage in any amount $\ge 18$ cents.
+
+\newpage
+\section*{Challenge Problems}
+
+
+ \question  Review the following proof. Determine the proof method used (or attempted) and give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A. 
+
+ \underline{Claim:} Let $A$ be a set of size $n$. The total number of all subsets of $A$ is $2^n$. \\
+\underline{Proof:} We proceed by induction.\\
+\textbf{Base case ($n = 1$):} If $A$ has only one element, then the only subsets of $A$ are $\emptyset$ and $A$. Therefore, $A$ has $2^1 = 2$ subsets.\\
+\textbf{Inductive step:} Assume that a set of size $n$ has $2^n$ subsets. Let $A$ be a set of size $n + 1$. Then $A = A' \cup \{a\}$, for some element $a \in A$. The set $A'$ has size $n$ so it has $2^{n}$ subsets. The set $\{a\}$ has only one element, so by the base case, it has two subsets. Therefore, the set $A$ has $2^{n} \cdot 2 = 2^{n+1}$ subsets. This completes our proof by induction.\qed
+
+\question  Review the following proof. Determine the proof method used (or attempted) and give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A.  \underline{Claim:} For all $n\in\mathbb{N}$, $n+1 < n$.\\
+\underline{Proof:} We proceed by induction. The base case is immediate. Let us assume that the statement is true for some $n=k$. That is, 
+assume that
+\[ k+1 < k.\]
+Consider $(k+1)+1$: By the induction hypothesis, $k+1<k$, so $(k+1)+1<k+1$. Therefore if $n+1<n$ is true for $n=k$, then it is true
+for $n=k+1$.  So by induction, for all $n\in\mathbb{N}$, $n+1<n$.\qed
+
+
+
+
+
+
+
+
+
+
+\question Let
+$$s_1 = \sqrt{2},$$
+$$s_2 = \sqrt{2 + \sqrt{2}},$$
+$$s_3 = \sqrt{2 + \sqrt{2 + \sqrt{2}}},$$
+and in general,
+$$s_n = \sqrt{2 + \sqrt{2 + \sqrt{2 + \cdots}}},$$
+where the expression for $s_n$ contains $n$ twos. Show that $s_n$ is irrational for all $n \in \mathbb{N}$. [Double Challenge: Show that $s_n = 2\cos \left(\frac{\pi}{2^{n+1}} \right)$. You will need to use this identity from trigonometry: $\cos \theta = \sqrt{(1 + \cos 2 \theta)/2}.$]
+
+\end{questions}
+\end{document}
