@@ -37,8 +37,35 @@ First, exclude the last horse and look only at the first $n$ horses; all these a
 
 This completes our proof by induction. \end{proof}
 
+\begin{solution}
+The problem is that there is no middle horse for step 2. The base case holds, but the inductive step
+does not hold for step 2 because there is no overlap. The first 1 horse is the same color, and the last
+1 horse is the same color, but there is no overlap so the 2 horses can be the different color.
+\end{solution}
+
+
 \question Show that for all $n \in \mathbb{N}$, $$\sum_{k=1}^n k(k+1)  =
 \dfrac{n(n+1)(n+2)}{3}.$$
+
+\begin{solution}\begin{proof}
+We proceed by induction.
+
+Base case $n=1$: Since $\sum_{k=1}^n k(k+1) = \sum_{k=1}^1 k(k+1) = 1(1+1) = 2$
+and $\frac{1(1+1)(1+2)}{3} = \frac{6}{3} = 2$, the base case holds.
+
+Induction step: Assume that $\sum_{k=1}^l k(k+1) = \frac{l(l+1)(l+2)}{3}$.
+
+\begin{align*}
+    \sum_{k=1}^l k(k+1) &= \frac{l(l+1)(l+2)}{3} \\
+    \left ( \sum_{k=1}^l k(k+1) \right ) + (l+1)(l+2) &= \frac{l(l+1)(l+2)}{3} + (l+1)(l+2) \\
+    \sum_{k=1}^{l+1} k(k+1) &= \frac{l(l+1)(l+2) + 3(l+1)(l+2)}{3} \\
+    \sum_{k=1}^{l+1} k(k+1) &= \frac{(l+1)(l+2)(l+3)}{3}
+\end{align*}
+
+Then by induction, we have that $\sum_{k=1}^n k(k+1) = \dfrac{n(n+1)(n+2)}{3}$.
+
+\end{proof}\end{solution}
+
 
 \question From calculus, we know that
 \[ \frac{d}{dx}(x) = 1 \]
@@ -47,10 +74,67 @@ and
 Use these two facts to prove the following:
 \[ \text{For all } n \in \mathbb{N}, \frac{d}{dx}(x^n) = nx^{n-1}. \]
 
+\begin{solution}\begin{proof}
+We proceed by induction.
+
+Base case $n=1$: Since $\frac{d}{dx}(x^1) = \frac{d}{dx}(x) = 1$ and $1x^{1-1} = x^0 = 1$,
+then the base holds.
+
+Induction step: Assume that $\frac{d}{dx}(x^k) = k x^{k-1}$.
+
+\begin{align*}
+    \frac{d}{dx}(x^{k+1}) &= \frac{d}{dx}(x \cdot x^k) \\
+                          &= x \cdot \frac{d}{dx}(x^k) + \frac{d}{dx}(x) \cdot x^k \\
+                          &= x (k x^{k-1}) + 1 (x^k) \\
+    \frac{d}{dx}(x^{k+1}) &= (k+1) x^k
+\end{align*}
+
+By induction, we have that $\frac{d}{dx}x^n = n x^{n-1}$.
+
+\end{proof}\end{solution}
+
+
 
 \question Use induction to show that every finite nonempty set of real numbers has a largest element. 
 
+\begin{solution}\begin{proof}
+A nonempty set of real numbers must have 1 or more elements. We proceed by induction on the size
+of the nonempty set.
+
+Base case: If the nonempty set of real numbers has 1 element, then that element is its largest element.
+
+Induction step: Assume that a set of real numbers of size $k$ has a largest element.
+
+Consider a set of $k+1$ real numbers. Exclude 1 element from the set to get a set of $k$ real numbers
+and a single excluded real number. Find the largest element of the set of $k$ real numbers. Take the
+maximum between the largest element of the set of $k$ real numbers and the excluded real numbers.
+That is the largest element in the set.
+
+By induction, we have that every finite nonempty set of real numbers has a largest element.
+\end{proof}\end{solution}
+
+
 \question Prove, using induction, that for all $n \in \mathbb{N}$, $6 \mid 8^n - 2^n$.
+
+\begin{solution}\begin{proof}
+We proceed by induction.
+
+Base case $n=1$: Since $8^1 - 2^1 = 6$ and $6 | 6$ because $6(1) = 6$, then the base case holds.
+
+Induction step: Assume that $6 | 8^k - 2^k$. Then $8^k - 2^k = 6m$, where $m \in \mathbb{Z}$.
+
+\begin{align*}
+    8^{k+1} - 2^{k+1} &= 8 (8^k) - 2 (2^k) \\
+                      &= 6 (8^k) + 2(8^k - 2^k) \\
+                      &= 6 (8^k) + 2(6m) \\
+                      &= 6(8^k + 2m)
+\end{align*}
+
+Since $8^k + 2m \in \mathbb{Z}$, then $6 | 8^{k+1} - 2^{k+1}$.
+
+Then by induction, we have that $6 | 8^n - 2^n$.
+\end{proof}\end{solution}
+
 
 \newpage
 
@@ -62,16 +146,45 @@ Use these two facts to prove the following:
 
 Inductive Step: Let $n \geq 0$. Assume the claim holds for $j$ such that $0 \leq j \leq n$. Then $s_{n+1}= \dfrac{{s_{n}}^2}{s_{n-1}}=\dfrac{{2}^{2n}}{2^{n-1}}=2^{n+1}$. Therefore, by the principle of induction, $s_n=2^n$ for all $n \geq 0$. \end{proof}
 
+\begin{solution}\begin{proof}
+I would give the proof a C.
+
+The proof is missing the base case of $n=1$, which is needed since the inductive step for $s_{n+1}$ uses
+$s_{n}$ and $s_{n-1}$. We can't show that the equation holds for $n=1$ using the inductive step
+because that would require that the equation holds for $n=0$ and $n=-1$, and we don't have it for $n=-1$.
+\end{proof}\end{solution}
+
+
 \question Prove, using a proof by minimum counterexample, that for all $n \in \mathbb{N}$, $6 \mid 8^n - 2^n$.
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
 
 
 
 \question Let $F_0 = 0$, $F_1 = 1$, and for natural numbers $k \geq 2$, let $F_k = F_{k-1} + F_{k-2}$. These are the famous Fibonacci numbers.  Show that $\sum_{i=0}^k F_i^2 = F_k F_{k+1}$ for all integers $k \geq 0$. 
 
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+
 
 \question Prove, using the strong induction, that $ 2 \mid F_n$ if and only if $3 \mid n$ where $F_n$ is the $n$th Fibonacci number, defined above. 
 
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+
 \question Prove, using strong induction, that using only 3- and 10-cent stamps, one can obtain postage in any amount $\ge 18$ cents.
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
 
 \newpage
 \section*{Challenge Problems}
