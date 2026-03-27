@@ -40,7 +40,7 @@ This completes our proof by induction. \end{proof}
 \begin{solution}
 The problem is that there is no middle horse for step 2. The base case holds, but the inductive step
 does not hold for step 2 because there is no overlap. The first 1 horse is the same color, and the last
-1 horse is the same color, but there is no overlap so the 2 horses can be the different color.
+1 horse is the same color, but there is no overlap so the 2 horses can be different colors.
 \end{solution}
 
 
@@ -53,7 +53,7 @@ We proceed by induction.
 Base case $n=1$: Since $\sum_{k=1}^n k(k+1) = \sum_{k=1}^1 k(k+1) = 1(1+1) = 2$
 and $\frac{1(1+1)(1+2)}{3} = \frac{6}{3} = 2$, the base case holds.
 
-Induction step: Assume that $\sum_{k=1}^l k(k+1) = \frac{l(l+1)(l+2)}{3}$.
+Induction step: Assume that $\sum_{k=1}^l k(k+1) = \frac{l(l+1)(l+2)}{3}$. Then,
 
 \begin{align*}
     \sum_{k=1}^l k(k+1) &= \frac{l(l+1)(l+2)}{3} \\
@@ -158,7 +158,31 @@ because that would require that the equation holds for $n=0$ and $n=-1$, and we 
 \question Prove, using a proof by minimum counterexample, that for all $n \in \mathbb{N}$, $6 \mid 8^n - 2^n$.
 
 \begin{solution}\begin{proof}
-\colorbox{red}{TODO: min counterex}
+We proceed by minimum counterexample.\\
+
+Base case: $n=1$
+
+We see that $8^1 - 2^1 = 8 - 2 = 6$. $6|6$ since $6(1) = 6$, so the base case holds.\\
+
+Assume for the sake of contradiction that there exists some $n \in \mathbb{N}$ such that $6 \nmid 8^n - 2^n$.
+
+Then there must be a smallest $n$ where $6 \nmid 8^n - 2^n$, let $k$ be that smallest $n$.
+
+Since $k-1 < k$ and $k$ was the smallest $n$ such that $6 \nmid 8^n - 2^n$, then $6 | 8^{k-1} - 2^{k-1}$,
+so $8^{k-1} - 2^{k-1} = 6m$, where $m \in \mathbb{Z}$. Then,
+
+\begin{align*}
+    8^{k-1} - 2^{k-1} &= 6m\\
+    2 \cdot 8^{k-1} - 2^k &= 12m\\
+    6 (8^{k-1}) + 2 \cdot 8^{k-1} - 2^{k} &= 6 (8^{k-1}) + 12m\\
+    8(8^{k-1}) - 2^{k} &= 6 (8^{k-1} + 2m)\\
+    8^{k} - 2^{k} &= 6 (8^{k-1} + 2m)\\
+\end{align*}
+
+Since $8^{k-1} + 2m \in \mathbb{Z}$, then $6 | 8^{k} - 2^k$. This is a contradiction because we assumed that
+$6 \nmid 8^k - 2^k$.
+
+By minimum counterexample, we have that $6 | 8^n - 2^n$.
 \end{proof}\end{solution}
 
 
@@ -193,8 +217,6 @@ Then by induction we have that $\sum_{i=0}^k F_i^2 = F_k F_{k+1}$.
 \question Prove, using the strong induction, that $ 2 \mid F_n$ if and only if $3 \mid n$ where $F_n$ is the $n$th Fibonacci number, defined above. 
 
 \begin{solution}\begin{proof}
-\colorbox{red}{TODO: check this}
-
 We proceed by strong induction. \\
 
 
@@ -325,21 +347,22 @@ By induction we have that $s_n$ is irrational for all $n \in \mathbb{N}$.
 
 
 \begin{solution}\begin{proof}
-We proceed by induction.
+We proceed by induction.\\
 
 Base case $n=1$: $2 \cos(\frac{\pi}{2^{1+1}}) = 2 \cos(\frac{\pi}{4})
-    = 2 \frac{\sqrt{2}}{2} = \sqrt{2} = s_1$.
+    = 2 \frac{\sqrt{2}}{2} = \sqrt{2} = s_1$.\\
 
 Induction step: assume that $s_k = 2 \cos(\frac{\pi}{2^{k+1}})$.
 
-\colorbox{red}{TODO: ???}
-
 \begin{align*}
-    s_{k+1} &= \sqrt{2 + s_n}\\
-    s_{k+1} &= \sqrt{2 + 2 \cos(\frac{\pi}{2^{k+1}})}\\
-    s_{k+1} &= \sqrt{2 + 2 \sqrt{(1+\cos(2(\frac{\pi}{2^{k+1}})) / 2}}\\
+    s_{k+1} &= \sqrt{2 + s_k}\\
+    s_{k+1} &= \sqrt{2 + 2\cos(\frac{\pi}{2^{k+1}})}\\
+    s_{k+1} &= \sqrt{2 (1 + \cos(\frac{\pi}{2^{k+1}}))}\\
+    s_{k+1} &= 2\sqrt{\frac{1}{2} (1 + \cos(\frac{\pi}{2^{k+1}}))}\\
+    s_{k+1} &= 2\cos(\frac{\pi}{2^{k+2}}) \qquad \qquad \text{since } \cos(\theta) = \sqrt{\frac{1}{2}(1+\cos(2 \theta))}\\
 \end{align*}
 
+By induction, we have that $s_n = 2\cos(\frac{\pi}{2^{k+1}})$.
 \end{proof}\end{solution}
 
 
