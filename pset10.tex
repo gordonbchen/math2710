@@ -6,6 +6,8 @@
 \usepackage{pgf,tikz, subcaption, hyperref}
 \usetikzlibrary{arrows}
 
+\printanswers
+
 \newtheorem{claim}{Claim}
 \newtheorem{lemma}{Lemma}
 
@@ -28,32 +30,135 @@
 \question You are trying to decide on a one topping pizza. You have three options for crust - thin, original or thick, two options for sauce (red and white) and 5 choices of toppings. 
 \begin{parts}
 \part Without using the multiplication principle, describe how you would find the total number of possible pizzas you could make. 
+
+\begin{solution}
+Draw a tree diagram, branching out on every crust, sauce, and toppin choice, and count the number of pizzas
+on the right side.
+\end{solution}
+
+
 \part Explain how to use the multiplication principle in the context of this problem. 
+
+\begin{solution}
+Possible pizzas = 3 crusts * 2 sauces * 5 toppings = 30 total pizzas.
+\end{solution}
+
+
 \part Explain why the multiplication principle works. 
+
+\begin{solution}
+\colorbox{red}{TODO: THIS SUCKS}
+
+Because every choice you make multiplies the number of total pizzas by the number of choices.
+\end{solution}
+
+
 \end{parts}
-\item The US Government wants to assign each person in the US a passcode, which is a string of lowercase letters. How many letters should they use so that there are enough different passcodes for each person to have one? Explain how you went about solving this problem. 
+
+\question The US Government wants to assign each person in the US a passcode, which is a string of lowercase letters. How many letters should they use so that there are enough different passcodes for each person to have one? Explain how you went about solving this problem. 
+
+\begin{solution}
+\# passcodes for a n-length string of lowercase letters = $26^n$.
+
+US population is 340 million. Then,
+
+\begin{align*}
+    340 \cdot 10^6 &\ge 26^n\\
+    \log_{26}(340 \cdot 10^6) &\ge n\\
+    6.029 \ge n\\
+\end{align*}
+
+So we need to use a $7$-letter passcode.
+\end{solution}
+
+
 \question  How many different Chipotle Burrito options are there \url{https://www.chipotle.com/content/dam/poc/order/nutrition-files/PaperMenu_STANDARD_NoPricing_120221_us.pdf}? (Answers may vary, you can decide if you are allowed to choose multiple things in each category.)
+
+\begin{solution}
+Meats: 6
+
+Toppings: $2^{14}$
+
+Total: $6 * 2^{14}$
+\end{solution}
+
+
 
 \question Six math books, four physics books and three chemistry books are arranged on
 a shelf. How many arrangements are possible if all books of the same subject
 are grouped together?
 
+\begin{solution}\\
+Math book permutations: $6!$
+
+Physics book permutations: $4!$
+
+Chemistry book permutations: $3!$
+
+Then you have $3!$ ways to arrange math, physics, and chemistry.
+
+So $6! \cdot 4! \cdot 3! \cdot 3!$.
+\end{solution}
+
+
 \question How many 4-permutations are there of the set $\{A,B,C,D,E,F\}$if whenever $A$
 appears in the permutation, it is followed by $E$?
 
+\begin{solution}\\
+No A: then 4-permutations of $\{B, C, D, E, F\}$, so $5(4)(3)(2)$.
 
+1 AE: then 2-permutations are $\{B, C, D, F\}$, so $4(3)$.
+You can have AExx or xxAE or xAEx, so 3 ways to arrange AE and the 2 letters, so $4(3)(3) = 36$.
+
+Alt: choose 2 letters in $\{B, C, D, F\}$, then 3! ways to arrange AE and 2 letters,
+so $\binom{4}{2} 3! = \frac{4!}{2!(4-2)!} 3! = 2(3) 3! = 36$
+
+Total: $5(4)(3)(2) + 4(3)(3) = 156$.
+\end{solution}
 
 
 \question  A department consists of 5 men and 7 women. From this department you select
 a committee with 3 men and 2 women. In how many ways can you do this?
 
+\begin{solution}
+$\binom{5}{3}$ to choose 3 men from 5. $\binom{7}{2}$ ways to choose 2 women from 7 women.
+
+So $\binom{5}{3} \cdot \binom{7}{2}$.
+\end{solution}
+
+
+
 \question Use the binomial theorem to find the coefficient of $x^{10}$ in $(x+2)^{15}.$
+
+\begin{solution}
+
+\end{solution}
+
+
 
 \question Consider the expression $\sum_{k=0}^n 9^k \binom{n}{k}$. Evaluate the sum for several small values of $n$ and make a conjecture. Then prove that using the binomial theorem.
 
+\begin{solution}
+
+\end{solution}
+
+
+
 \question Show, via induction, that $\sum_{k=0}^n \binom{k}{r} = \binom{n+1}{r+1},$ where $1 \leq r \leq n$. 
 
+\begin{solution}
+
+\end{solution}
+
+
+
 \question Show, via induction, that $\sum_{k=0}^n \binom{m}{k}\binom{n}{p-k} = \binom{m+n}{p},$ where $m,n$ and $p$ are non-negative integers. 
+
+\begin{solution}
+
+\end{solution}
+
+
 
 \section*{Challenge Problems} 
 
