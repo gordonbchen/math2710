@@ -120,10 +120,10 @@ Total: $5(4)(3)(2) + 4(3)(3) = 156$.
 \question  A department consists of 5 men and 7 women. From this department you select
 a committee with 3 men and 2 women. In how many ways can you do this?
 
-\begin{solution}
+\begin{solution}\\
 $\binom{5}{3}$ to choose 3 men from 5. $\binom{7}{2}$ ways to choose 2 women from 7 women.
 
-So $\binom{5}{3} \cdot \binom{7}{2}$.
+So $\binom{5}{3} \cdot \binom{7}{2} = 210$.
 \end{solution}
 
 
@@ -131,32 +131,79 @@ So $\binom{5}{3} \cdot \binom{7}{2}$.
 \question Use the binomial theorem to find the coefficient of $x^{10}$ in $(x+2)^{15}.$
 
 \begin{solution}
-
+$\binom{15}{5} * 2^5 = 96096$
 \end{solution}
 
 
 
 \question Consider the expression $\sum_{k=0}^n 9^k \binom{n}{k}$. Evaluate the sum for several small values of $n$ and make a conjecture. Then prove that using the binomial theorem.
 
-\begin{solution}
+\begin{solution}\\
+$n=0: 9^0 \binom{0}{0} = 1$
 
+$n=1: 9^0 \binom{1}{0} + 9^1 \binom{1}{1} = 1 + 9 = 10$
+
+$n=2: 9^0 \binom{2}{0} + 9^1 \binom{2}{1} + 9^2 \binom{2}{2} = 1 + 18 + 81 = 100$\\
+
+Conjecture: $\sum_{k=0}^n 9^k \binom{n}{k} = 10^n$
+
+\begin{proof}
+\begin{align*}
+    \sum_{k=0}^n 9^k \binom{n}{k} &= (1+9)^n \qquad \text{by the Binomial Theorem}\\
+    &= 10^n
+\end{align*}
+\end{proof}
 \end{solution}
 
 
 
 \question Show, via induction, that $\sum_{k=0}^n \binom{k}{r} = \binom{n+1}{r+1},$ where $1 \leq r \leq n$. 
 
-\begin{solution}
+\begin{solution}\begin{proof}
+We proceed by induction.\\
 
-\end{solution}
+Base case $n=1$: $1 \le r \le 1$, so $r = 1$
+
+$\sum_{k=0}^n \binom{k}{r} = \binom{0}{1} + \binom{1}{1} = 0 + 1 = 1$
+
+$\binom{2}{2} = 1$
+
+So $\sum_{k=0}^n \binom{k}{r} = \binom{n+1}{r+1}$ for $n=1$.\\
+
+Induction step: Assume that $\sum_{k=0}^n \binom{k}{r} = \binom{n+1}{r+1}$.
+
+\begin{align*}
+    \sum_{k=0}^i \binom{k}{r} &= \binom{i+1}{r+1}\\
+    \sum_{k=0}^i \binom{k}{r} + \binom{i+1}{r} &= \binom{i+1}{r+1} + \binom{i+1}{r}\\
+    \sum_{k=0}^{i+1} \binom{k}{r} &= \binom{i+2}{r+1}\\
+\end{align*}
+
+Then by induction we have that $\sum_{k=0}^n \binom{k}{r} = \binom{n+1}{r+1}$.
+\end{proof}\end{solution}
 
 
 
-\question Show, via induction, that $\sum_{k=0}^n \binom{m}{k}\binom{n}{p-k} = \binom{m+n}{p},$ where $m,n$ and $p$ are non-negative integers. 
+\question Show, via induction, that $\sum_{k=0}^p \binom{m}{k}\binom{n}{p-k} = \binom{m+n}{p},$ where $m,n$ and $p$ are non-negative integers. 
 
-\begin{solution}
+\begin{solution}\begin{proof}
+We proceed by induction.\\
 
-\end{solution}
+Base case $p=0$:
+
+$\sum_{k=0}^p \binom{m}{k}\binom{n}{p-k} = \binom{m}{0} \binom{n}{0} = 1$.
+
+$\binom{m+n}{p} = \binom{m+n}{0} = 1$.
+
+So $\sum_{k=0}^p \binom{m}{k}\binom{n}{p-k} = \binom{m+n}{p}$ holds for $p=0$.\\
+
+Inductive step: assume that $\sum_{k=0}^i \binom{m}{k}\binom{n}{i-k} = \binom{m+n}{i}$.
+
+\begin{align*}
+    \sum_{k=0}^i \binom{m}{k}\binom{n}{i-k} &= \binom{m+n}{i}\\
+\end{align*}
+
+\colorbox{red}{TODO: finish}
+\end{proof}\end{solution}
 
 
 
@@ -166,22 +213,65 @@ So $\binom{5}{3} \cdot \binom{7}{2}$.
 \begin{parts}
  \part How many length-5 lists can be made if there is no repetition and the list
 is in alphabetical order? (Example: $BDEFI$ or $ABCGH$, but not $BACGH$.)
+
+\begin{solution}\\
+$\binom{9}{5}$. You can choose any 5 letters, but then they must be arranged alphabetically.
+\end{solution}
+
+
 \part How many length-5 lists can be made if repetition is not allowed and the
 list is not in alphabetical order?
+
+\begin{solution}\\
+    Total permutations = $P(9, 5)$
+
+    Not alpha = total - alpha = $P(9, 5) - \binom{9}{5} = 14994$
+\end{solution}
+
 \end{parts}
 \question This problem concerns lists of length 6 made from the letters $A,B,C,D,E,F$
 without repetition. How many such lists have the property that the $D$ occurs
 before the $A$?
 
+\begin{solution}\\
+    $\binom{6}{2}$ spots for D, A. Then $4!$ to permute the rest,
+    so total $\binom{6}{2} * 4! = \frac{6!}{2!} = 360$.
+\end{solution}
+
+
 \question  Explain why the equality found in 8 is true using a counting argument - explain why both sides are counting the same thing.
+
+\begin{solution}\\
+Conjecture: $\sum_{k=0}^n 9^k \binom{n}{k} = 10^n$.
+
+$10^n$ counts the number of n-element lists where each element has 10 choices.
+
+\colorbox{red}{TODO}
+\end{solution}
+
 
 \question  Explain why the equality found in 9 is true using a counting argument - explain why both sides are counting the same thing.  
 
+\begin{solution}\\
+
+\end{solution}
+
+
 \question  Explain why the equality found in 10 is true using a counting argument - explain why both sides are counting the same thing.    
+
+\begin{solution}\\
+
+\end{solution}
+
 
 \question The indicated diagonals of Pascal's triangle sum to the Fibonacci Numbers. Prove this pattern continues forever. 
 
 \includegraphics[width=.6\textwidth]{Pascaldiagonal}
+
+\begin{solution}\\
+
+\end{solution}
+
 
 \end{questions}
 \end{document}
