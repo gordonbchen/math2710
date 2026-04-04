@@ -32,7 +32,7 @@
 \part Without using the multiplication principle, describe how you would find the total number of possible pizzas you could make. 
 
 \begin{solution}
-Draw a tree diagram, branching out on every crust, sauce, and toppin choice, and count the number of pizzas
+Draw a tree diagram, branching out on every crust, sauce, and topping choice, and count the number of pizzas
 on the right side.
 \end{solution}
 
@@ -187,21 +187,31 @@ Then by induction we have that $\sum_{k=0}^n \binom{k}{r} = \binom{n+1}{r+1}$.
 \begin{solution}\begin{proof}
 We proceed by induction.\\
 
-Base case $p=0$:
-
-$\sum_{k=0}^p \binom{m}{k}\binom{n}{p-k} = \binom{m}{0} \binom{n}{0} = 1$.
-
-$\binom{m+n}{p} = \binom{m+n}{0} = 1$.
-
-So $\sum_{k=0}^p \binom{m}{k}\binom{n}{p-k} = \binom{m+n}{p}$ holds for $p=0$.\\
-
-Inductive step: assume that $\sum_{k=0}^i \binom{m}{k}\binom{n}{i-k} = \binom{m+n}{i}$.
-
+Base case $n=0$:
 \begin{align*}
-    \sum_{k=0}^i \binom{m}{k}\binom{n}{i-k} &= \binom{m+n}{i}\\
+    \sum_{k=0}^p \binom{m}{k} \binom{n}{p-k} &= \sum_{k=0}^p \binom{m}{k} \binom{0}{p-k}
+    = \sum_{k=0}^{p-1} \binom{m}{k} \binom{0}{p-k} + \binom{m}{p} \binom{0}{0} = \binom{m}{p}
 \end{align*}
 
-\colorbox{red}{TODO: finish}
+\begin{align*}
+    \binom{m+n}{p} = \binom{m}{p}
+\end{align*}
+
+So the base case holds.\\
+
+
+Inductive step: assume that $\sum_{k=0}^p \binom{m}{k} \binom{i}{p-k} = \binom{m+i}{p}$.
+
+\begin{align*}
+\sum_{k=0}^p \binom{m}{k} \binom{i+1}{p-k} &= \sum_{k=0}^p \binom{m}{k} (\binom{i}{p-k} + \binom{i}{p-k-1})\\
+&= \sum_{k=0}^p \binom{m}{k} \binom{i}{p-k} + \sum_{k=0}^p \binom{m}{k} \binom{i}{p-k-1}\\
+&= \binom{m+i}{p} + \sum_{k=0}^p \binom{m}{k} \binom{i}{p-k-1}\\
+&= \binom{m+i}{p} + \sum_{k=0}^{p-1} \binom{m}{k} \binom{i}{p-k-1} + \binom{m}{k} \binom{i}{-1}\\
+&= \binom{m+i}{p} + \binom{m+i}{p-1}\\
+&= \binom{m+i+1}{p}
+\end{align*}
+
+Therefor by induction we have that $\sum_{k=0}^p \binom{m}{k} \binom{n}{p-k} = \binom{m+n}{p}$.
 \end{proof}\end{solution}
 
 
@@ -245,21 +255,30 @@ Conjecture: $\sum_{k=0}^n 9^k \binom{n}{k} = 10^n$.
 
 $10^n$ counts the number of n-element lists where each element has 10 choices.
 
-\colorbox{red}{TODO}
-\end{solution}
+Consider the number of n-element lists where $n-k$ elements take on the last choice.
+Then for the rest of the $k$ elements, there are $9$ choices each because it is not the last choice.
+Then there are $9^k \binom{n}{k}$ of these lists, and summing across the number of elements for which you
+fix the last choice there are $\sum_{k=0}^n 9^k \binom{n}{k}$. \end{solution}
 
 
 \question  Explain why the equality found in 9 is true using a counting argument - explain why both sides are counting the same thing.  
 
 \begin{solution}\\
+$\binom{n+1}{r+1}$ counts the number of $r+1$-length subsets can be made from a list of $n+1$ elements.
 
+$\sum_{k=0}^n \binom{k}{r}$ counts the total number of ways that if you took only 1 thing from $n+1-k$ things
+and have $k$ things left to choose from, how many ways you can choose. In other words, you only took 1 thing
+from the first $n+1-k$ things you saw, so now you have to choose $r$ things from the remaining $k$ things.
 \end{solution}
 
 
-\question  Explain why the equality found in 10 is true using a counting argument - explain why both sides are counting the same thing.    
+\question  Explain why the equality found in 10 is true using a counting argument - explain why both sides are counting the same thing. 
 
 \begin{solution}\\
+$\binom{m+n}{p}$ counts the subsets of length $p$ that can be made from $m+n$ elements.
 
+$\sum_{k=0}^p \binom{m}{k} \binom{n}{p-k}$ splits the $m+n$ elements in two, and sums all the ways
+you can take $k$ from $m$ and $p-k$ from $n$ to get $k + p-k = p$ elements in total.
 \end{solution}
 
 
@@ -268,7 +287,29 @@ $10^n$ counts the number of n-element lists where each element has 10 choices.
 \includegraphics[width=.6\textwidth]{Pascaldiagonal}
 
 \begin{solution}\\
+Prove by induction that $\sum_{i=0}^n \binom{n-i}{i} = F_n$.\\
 
+Base cases:
+
+$n=0$: $\sum_{i=0}^0 \binom{-i}{i} = 1 = F_0$
+
+$n=1$: $\sum_{i=0}^1 \binom{1-i}{i} = \binom{1}{0} + \binom{0}{1} = 1 = F_1$\\
+
+Inductive step:
+
+Assume by strong induction that $\sum_{i=0}^j \binom{j-i}{i} = F_j$ for $0 \le j \le k$.
+
+\begin{align*}
+    \sum_{i=0}^k \binom{k-i}{i} &= F_k\\
+    \sum_{i=0}^k \binom{k-i}{i} + \sum_{i=0}^{k-1} \binom{k-1-i}{i} &= F_k + F_{k-1}\\
+    \sum_{i=0}^k \binom{k-i}{i} + \sum_{i=1}^{k} \binom{k-i}{i-1} &= F_{k+1}\\
+    \sum_{i=0}^k \binom{k-i}{i} + \sum_{i=0}^{k} \binom{k-i}{i-1} &= F_{k+1}\\
+    \sum_{i=0}^k (\binom{k-i}{i} + \binom{k-i}{i-1}) &= F_{k+1}\\
+    \sum_{i=0}^k \binom{k+1-i}{i} &= F_{k+1}\\
+    \sum_{i=0}^{k+1} \binom{k+1-i}{i} &= F_{k+1} \qquad \text{since } \binom{k+1 - (k+1)}{k+1} = 0\\
+\end{align*}
+
+Then by strong induction we have that $\sum_{i=0}^n \binom{n-i}{i} = F_n$.
 \end{solution}
 
 
