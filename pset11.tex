@@ -1,0 +1,92 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color,amsthm}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption, hyperref}
+\usetikzlibrary{arrows}
+\printanswers %bonus points for me
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 11: Ch 11}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+
+\begin{questions}
+
+\question A relation $R$ is defined on $S=\{0,1,2,3\}$ by $x\, R \, y$ if $m+n=3.$  Is this relation reflexive? symmetric? transitive? Explain your reasoning. 
+
+\question Give an example of a non-empty relation on the set $A=\{1,2,3\}$ which is 
+\begin{parts}
+\part symmetric and transitive but not reflexive
+\part reflexive and symmetric but not transitive
+\part transitive and reflexive but not symmetric
+\end{parts}
+In each case, explain your reasoning. 
+
+\question Let $R_1$ and $R_2$ be relations on a set $S$. Prove or disprove the following:
+\begin{parts}
+\part If $R_1$ and $R_2$ are reflexive, then so is $R_1 \cap R_2$.
+\part If $R_1$ and $R_2$ are symmetric, then so is $R_1 \cap R_2$. 
+\part If $R_1$ and $R_2$ are transitive, then so is $R_1 \cap R_2$.  
+\end{parts}
+
+\question A relation $R$ is defined on $\mathbb{Z}$ by $a \, R \, b$ if $a \equiv b  \mod 2$ or $a \equiv b  \mod 3$. Is $R$ an equivalence relation on $\mathbb{Z}$? 
+
+\question Review the following proof. Determine the proof method used (or attempted) and give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A, if possible.
+
+\begin{claim} Every relation which is symmetric and transitive is reflexive. \end{claim}
+
+\begin{proof}
+Assume $R$ is a relation on a set $A$ which is symmetric and transitive. We want to show $\forall a \in A, (a \, R \,a)$.  Assume $a\, R \,b$ for some $b \in A$. Then since $R$ is symmetric, $b\, R \,a.$  And since $a\, R \,b$ and $b\, R \,a$, and $R$ is transitive, $a\, R \,a.$  Thus, for all $a \in A$, $a\, R \,a$ so $R$ is reflexive.  
+\end{proof}
+
+\question Fill out the addition and multiplication tables below for $\mathbb{Z}_7$
+
+\begin{tabular} {c|ccccccc}
+$+ $&$[0]$&$[1]$&$[2]$&$[3]$&$[4]$&$[5]$&$[6]$ \\
+\hline
+
+$[0]$&&&&&&&\\
+$[1]$&&&&&&&\\
+$[2]$&&&&&&&\\
+$[3]$&&&&&&&\\
+$[4]$&&&&&&&\\
+$[5]$&&&&&&&\\
+$[6]$&&&&&&&\\
+\end{tabular}
+
+
+\begin{tabular} {c|ccccccc}
+$\cdot $&$[0]$&$[1]$&$[2]$&$[3]$&$[4]$&$[5]$&$[6]$ \\
+\hline
+
+$[0]$&&&&&&&\\
+$[1]$&&&&&&&\\
+$[2]$&&&&&&&\\
+$[3]$&&&&&&&\\
+$[4]$&&&&&&&\\
+$[5]$&&&&&&&\\
+$[6]$&&&&&&&\\
+\end{tabular}
+
+
+\section*{Challenge Problems} 
+ \question Note: we can also define relations between two different sets. A relation from $A$ to $B$ is a subset of $A \times B.$ Let $A$ be a nonempty set and $B \subseteq \mathcal{P}(A)$. Define a relation $R$ from $A$ to $B$ by $x \, R \, Y$ if $x \in Y$. Given an example of two sets $A$ and $B$ that illustrate this. What is $R$ for these two sets?
+
+\question Let $S$ be the set of all sequences $(s_n)$, i.e. the set of all infinite lists of real numbers. Define $R$ on the set S by $(s_n) \, R \, (t_n)$ if the set $\{i \in \mathbb{N} : s_i\neq t_i \}$ is finite. Show that $R$ is an equivalence relation. 
+
+\end{questions}
+\end{document}
