@@ -1,0 +1,77 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color,amsthm}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption, hyperref}
+\usetikzlibrary{arrows}
+
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 12: Ch 12}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+\begin{questions}
+
+ \question Define relations $f$ and $g$ on $\mathbb{R}$ by $f = \{ (x,y): (y=x) \vee (y=-x) \}$ and $f = \{ (x,y): y=x^2\}$. Prove that $f$ is not a function, but that $gf=\{(x,y):\exists z\in\mathbb{R}, (x,z)\in f \wedge (z,y)\in g \}$ is a function.
+ 
+
+ 
+ \question Let $A$ be a nonempty set. Prove that there exists an injective function from $\mathcal{P}(A)$ to $\mathcal{P}(\mathcal{P}(A))$. Is the function you found bijective?
+ 
+ \question Use mathematical induction to prove that if $A$ and $B$ are finite sets with $|A|=|B|=n$, then there are $n!$ bijective functions from $A$ to $B$.
+
+
+
+\question Prove or disprove each of the following:
+\begin{parts}
+	\part There exist functions $f:S \rightarrow T$ and $g:T \rightarrow U$ such that $f$ is not surjective and $g\circ f$ is surjective. 
+	\part There exist functions $f:S \rightarrow T$ and $g:T \rightarrow U$ such that $f$ is not injective and $g\circ f$ is injective. 
+\end{parts}
+
+\question Consider the function $f:\mathbb{Z}_3 \rightarrow \mathbb{Z}_{12}$ defined by $f\left(\left[a \right]\right)=\left[4a \right]$.
+\begin{parts}
+	\part Prove that $f$ is well-defined and bijective.
+	\part Determine the inverse function of $f$, and prove that it is the inverse of $f$.
+\end{parts}
+
+\question Review the following proof. Determine the proof method used (or attempted) and give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A, if possible.
+
+\begin{claim} The function $f:\mathbb{R}-\{1\} \rightarrow \mathbb{R}-\{3\}$ defined by $f(x)=\dfrac{3x}{x-1}$ is bijective. \end{claim}
+ \begin{proof} 
+ 	First, we show that $f$ is one-to-one. Assume that $f(a)=f(b)$, where $a,b \in \mathbb{R}-\{1\}$. Then $\dfrac{3a}{a-1}=\dfrac{3b}{b-1}.$ Therefore, $3a(b-1)=3b(a-1)$, so $3ab-3a=3ab-3b$. From here, we see that $-3a=-3b$, and so $a=b$. This implies $f$ is injective.
+	
+	Now, to see that $f$ is onto, let $f(x)=r$. Then $\dfrac{3x}{x-1}=r$, so $3x=r(x-1)=rx-r.$ This implies that $3x-rx=-r$, so we have $x(3-r)=-r$. Finally, since $x\in \mathbb{R}-\{3\}$, we see that $x=\dfrac{-r}{3-r}=\dfrac{r}{r-3}$. Therefore, $$f(x)=f\left(\frac{r}{r-3}\right)=\frac{3\left(\frac{r}{r-3}\right)}{\frac{r}{r-3}-1}=\frac{3r}{r-(r-3)}=\frac{3r}{3}=r.$$ So $f$ is surjective.
+ \end{proof}
+ 
+ \newpage
+ 
+\section*{Challenge Problems} 
+\question Prove that if $a$ is a natural number, then there exist two unequal natural numbers $k$ and $l$ for which $a^k-a^l$ is divisible by $10.$
+
+
+\question Prove that any set of seven distinct integers contains a pair of integers whose sum or difference is divisible by 10
+
+
+A \textbf{sequence} of real numbers is defined to be a function with domain $\mathbb{N}$ (or $\mathbb{N}_0)$ whose values are real numbers. Typically, we represent a sequence $f:\mathbb{N}\rightarrow \mathbb{R}$ by $\{a_n\}$ instead of in terms of the function $f=\{ (1,a_1), (2,a_2), (3,a_3), \ldots\}$. With this definition in mind, prove each of the following statements.
+
+\question A function defined on a domain $D\subseteq \mathbb{R}$ is called \textbf{strictly increasing} if, for any two real numbers $a,b\in D$, $a<b$ implies $f(a)<f(b)$. Write, in symbols, the quantified statement that means, ``The sequence $\{a_n\}$ is a strictly increasing function on $\mathbb{N}$.''
+\question Prove, using the method of proof by contradiction, that every strictly increasing sequence is a 1-1 function.
+\question  Use induction to prove that ``for every $n\in \mathbb{N}$, $a_n < a_{n+1}$,'' is a characterization of a strictly increasing sequence $\{a_n\}$. (Hint: you need to prove a quantified statement of the form $\forall m \in \mathbb{N}, \forall n \in \mathbb{N} m<n \Rightarrow \ldots$. To do this, let $m\in \mathbb{N}$ and induct on $n$, beginning with $n=m+1$.)
+\question  Use strong induction to prove that the Fibonnaci sequence defined recursively on $\mathbb{N}_0$ by $f_0=0,f_1=1,$ and $f_{n+1}=f_n+f_{n-1}$ for $n\geq1$ is a strictly increasing function on $\{2,3,4, \ldots \}$. That is, prove that for every $m,n\in\mathbb{N}$, if $n>m\geq2,$ then $f_n>f_m$. You may wish to use part (c) directly, or to use a similar method to your proof in (c).
+
+
+\end{questions}
+\end{document}
