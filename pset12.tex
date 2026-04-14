@@ -8,6 +8,7 @@
 
 \newtheorem{claim}{Claim}
 \newtheorem{lemma}{Lemma}
+\printanswers
 
 \pagestyle{head}                       % This causes the exam to only have headers, no footers.
 %\runningheadrule                     % This causes the headings to have an underline.
@@ -25,26 +26,121 @@
 
 \begin{questions}
 
- \question Define relations $f$ and $g$ on $\mathbb{R}$ by $f = \{ (x,y): (y=x) \vee (y=-x) \}$ and $f = \{ (x,y): y=x^2\}$. Prove that $f$ is not a function, but that $gf=\{(x,y):\exists z\in\mathbb{R}, (x,z)\in f \wedge (z,y)\in g \}$ is a function.
- 
+ \question Define relations $f$ and $g$ on $\mathbb{R}$ by $f = \{ (x,y): (y=x) \vee (y=-x) \}$ and $g = \{ (x,y): y=x^2\}$. Prove that $f$ is not a function, but that $gf=\{(x,y):\exists z\in\mathbb{R}, (x,z)\in f \wedge (z,y)\in g \}$ is a function.
+
+\begin{solution}
+
+\begin{proof}
+$(2, 2) \in f$ since $2 = 2$ and $(2, -2) \in f$ since $2 = -(-2)$. Then $f$ is not a function because
+$2$ maps to 2 different outputs.
+\end{proof}
+
+\begin{proof}
+Let $(x, y), (x, y_1) \in gf$.
+
+Since $(x, y) \in gf$. Then there exists some $z \in \mathbb{R}$ such that $z = x$ or $z = -x$ and $y = z^2$.
+If $z = x$, then $y = x^2$. If $z = -x$, then $y=(-x)^2 = x^2$. So in either case, $y = x^2$.
+
+Since $(x, y_1) \in gf$. Then there exists some $z_1 \in \mathbb{R}$ such that
+$z_1 = x$ or $z_1 = -x$ and $y_1 = z_1^2$.
+If $z_1 = x$, then $y_1 = x^2$. If $z_1 = -x$, then $y_1 =(-x)^2 = x^2$. So in either case, $y_1 = x^2$.
+
+Then $y = y_1$. Since $(x, y), (x, y_1) \in gf \implies y = y_1$, $gf$ maps each input to a unique output,
+so it is a function.
+\end{proof}
+
+\end{solution}
 
  
  \question Let $A$ be a nonempty set. Prove that there exists an injective function from $\mathcal{P}(A)$ to $\mathcal{P}(\mathcal{P}(A))$. Is the function you found bijective?
+
+\begin{solution}
+
+\begin{proof}
+Let $f = \{(a \in \mathcal{P}(A), p \in \mathcal{P}(\mathcal{P}(A))): p = \{a\}\}$.
+
+Injective: we want to show that if $a \ne a'$, then $f(a) \ne f(a')$.
+
+We proceed by contrapositive.
+
+Assume that $f(a) = f(a')$. Then $p = \{a\} = p' = \{a'\}$, so $a = a'$.
+
+Then by contrapositive we have that $a \ne a' \implies f(a) \ne f(a')$, so $f$ is injective.
+\end{proof}
+
+\begin{proof}
+    $|\mathcal{P}(A)| = 2^{|A|} < |\mathcal{P}(\mathcal{P}(A))| = 2^{2^{|A|}}$.
+
+    Since the cardinality of the domain is smaller than the cardinality of the codomain,
+    $f$ cannot be surjective, and therefore it is not bijective.
+\end{proof}
+
+\end{solution}
+
+ 
  
  \question Use mathematical induction to prove that if $A$ and $B$ are finite sets with $|A|=|B|=n$, then there are $n!$ bijective functions from $A$ to $B$.
 
+\begin{solution}\begin{proof}
+Base case $n=1$:
+
+Let $A$ and $B$ be finite sets where $|A| = |B| = 1$. Then $A = {a}$ and $B = {b}$.
+Then the only bijective function from $A$ to $B$ is $f = \{(a, b)\}$. Since there is only $n! = 1! = 1$
+bijective function from $A$ to $B$, the base case holds.\\
+
+
+Induction step:
+
+Assume that there are $k!$ bijective functions between 2 sets with $k$ elements.
+
+Consider 2 sets with $k+1$ elements $A = \{a_1 ... a_{k+1}\}$ and $B = \{b_1 ... b_{k+1}\}$.
+
+For every $i \in {1... k+1}$, make a bijective function $f_i$ by taking the union between the
+bijective function mapping $\{a_1 ... a_k\}$ to $\{b_j: j \ne i\}$ and $\{(a_{k+1}, b_i)\}$.
+
+Since there are $k+1$ choices for $i$, and
+$k!$ bijective functions mapping $\{a_1 ... a_k\}$ to $\{b_j: j \ne i\}$ for each choice of $i$,
+then there are $k! (k+1)$ bijective functions mapping between 2 sets with $k+1$ elements.\\
+
+Then by induction, we have that there are $n!$ bijections between finite sets with $n$ elements.
+
+\end{proof}\end{solution}
 
 
 \question Prove or disprove each of the following:
 \begin{parts}
 	\part There exist functions $f:S \rightarrow T$ and $g:T \rightarrow U$ such that $f$ is not surjective and $g\circ f$ is surjective. 
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
 	\part There exist functions $f:S \rightarrow T$ and $g:T \rightarrow U$ such that $f$ is not injective and $g\circ f$ is injective. 
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
 \end{parts}
 
 \question Consider the function $f:\mathbb{Z}_3 \rightarrow \mathbb{Z}_{12}$ defined by $f\left(\left[a \right]\right)=\left[4a \right]$.
 \begin{parts}
 	\part Prove that $f$ is well-defined and bijective.
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
 	\part Determine the inverse function of $f$, and prove that it is the inverse of $f$.
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
 \end{parts}
 
 \question Review the following proof. Determine the proof method used (or attempted) and give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A, if possible.
@@ -55,11 +151,23 @@
 	
 	Now, to see that $f$ is onto, let $f(x)=r$. Then $\dfrac{3x}{x-1}=r$, so $3x=r(x-1)=rx-r.$ This implies that $3x-rx=-r$, so we have $x(3-r)=-r$. Finally, since $x\in \mathbb{R}-\{3\}$, we see that $x=\dfrac{-r}{3-r}=\dfrac{r}{r-3}$. Therefore, $$f(x)=f\left(\frac{r}{r-3}\right)=\frac{3\left(\frac{r}{r-3}\right)}{\frac{r}{r-3}-1}=\frac{3r}{r-(r-3)}=\frac{3r}{3}=r.$$ So $f$ is surjective.
  \end{proof}
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
  
  \newpage
  
 \section*{Challenge Problems} 
 \question Prove that if $a$ is a natural number, then there exist two unequal natural numbers $k$ and $l$ for which $a^k-a^l$ is divisible by $10.$
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
 
 
 \question Prove that any set of seven distinct integers contains a pair of integers whose sum or difference is divisible by 10
@@ -67,10 +175,40 @@
 
 A \textbf{sequence} of real numbers is defined to be a function with domain $\mathbb{N}$ (or $\mathbb{N}_0)$ whose values are real numbers. Typically, we represent a sequence $f:\mathbb{N}\rightarrow \mathbb{R}$ by $\{a_n\}$ instead of in terms of the function $f=\{ (1,a_1), (2,a_2), (3,a_3), \ldots\}$. With this definition in mind, prove each of the following statements.
 
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
+
 \question A function defined on a domain $D\subseteq \mathbb{R}$ is called \textbf{strictly increasing} if, for any two real numbers $a,b\in D$, $a<b$ implies $f(a)<f(b)$. Write, in symbols, the quantified statement that means, ``The sequence $\{a_n\}$ is a strictly increasing function on $\mathbb{N}$.''
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
 \question Prove, using the method of proof by contradiction, that every strictly increasing sequence is a 1-1 function.
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
 \question  Use induction to prove that ``for every $n\in \mathbb{N}$, $a_n < a_{n+1}$,'' is a characterization of a strictly increasing sequence $\{a_n\}$. (Hint: you need to prove a quantified statement of the form $\forall m \in \mathbb{N}, \forall n \in \mathbb{N} m<n \Rightarrow \ldots$. To do this, let $m\in \mathbb{N}$ and induct on $n$, beginning with $n=m+1$.)
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
 \question  Use strong induction to prove that the Fibonnaci sequence defined recursively on $\mathbb{N}_0$ by $f_0=0,f_1=1,$ and $f_{n+1}=f_n+f_{n-1}$ for $n\geq1$ is a strictly increasing function on $\{2,3,4, \ldots \}$. That is, prove that for every $m,n\in\mathbb{N}$, if $n>m\geq2,$ then $f_n>f_m$. You may wish to use part (c) directly, or to use a similar method to your proof in (c).
+
+\begin{solution}\begin{proof}
+
+\end{proof}\end{solution}
+
+ 
 
 
 \end{questions}
