@@ -112,14 +112,34 @@ Then by induction, we have that there are $n!$ bijections between finite sets wi
 	\part There exist functions $f:S \rightarrow T$ and $g:T \rightarrow U$ such that $f$ is not surjective and $g\circ f$ is surjective. 
 
 \begin{solution}\begin{proof}
+Let $S = \{1\}$, and $T = \{2, 3\}$, and $U = \{4\}$. Let $f = \{(1, 2)\}$, and $g = \{(2, 4)\}$.
 
+Then $f$ is not surjective because nothing maps to $3$.
+
+Then $g \circ f = \{(1, 4)\}$. Then $g \circ f$ is surjective because for all $u \in U$, i.e. $4$,
+there exists a $s \in S$, i.e. $1$, such that $g \circ f(1) = 4$.
 \end{proof}\end{solution}
 
  
 	\part There exist functions $f:S \rightarrow T$ and $g:T \rightarrow U$ such that $f$ is not injective and $g\circ f$ is injective. 
 
 \begin{solution}\begin{proof}
+False.
 
+Assume for the sake of contradiction that there exists $f: S \to T$ and $g: T \to U$ such that
+$f$ is not injective and $g \circ f$ is injective.
+
+Since $f$ is not injective, then there must exist $x_1, x_2 \in S$ such that $f(x_1) = f(x_2)$ and
+$x_1 \ne x_2$.
+
+Since $f(x_1) = f(x_2)$, then $g(f(x_1)) = g(f(x_2))$ since $g$ is a function, so then
+$g \circ f(x_1) = g \circ f(x_2)$.
+
+Since $g \circ f$ is injective, then $x_1 = x_2$.
+This is a contradiction, since we assumed that $x_1 \ne x_2$.
+
+Then there cannot exist $f: S \to T$ and $g: T \to U$ such that
+$f$ is not injective and $g \circ f$ is injective.
 \end{proof}\end{solution}
 
  
@@ -172,14 +192,15 @@ Then by induction, we have that there are $n!$ bijections between finite sets wi
 
 \question Prove that any set of seven distinct integers contains a pair of integers whose sum or difference is divisible by 10
 
-
-A \textbf{sequence} of real numbers is defined to be a function with domain $\mathbb{N}$ (or $\mathbb{N}_0)$ whose values are real numbers. Typically, we represent a sequence $f:\mathbb{N}\rightarrow \mathbb{R}$ by $\{a_n\}$ instead of in terms of the function $f=\{ (1,a_1), (2,a_2), (3,a_3), \ldots\}$. With this definition in mind, prove each of the following statements.
-
 \begin{solution}\begin{proof}
 
 \end{proof}\end{solution}
 
  
+
+
+A \textbf{sequence} of real numbers is defined to be a function with domain $\mathbb{N}$ (or $\mathbb{N}_0)$ whose values are real numbers. Typically, we represent a sequence $f:\mathbb{N}\rightarrow \mathbb{R}$ by $\{a_n\}$ instead of in terms of the function $f=\{ (1,a_1), (2,a_2), (3,a_3), \ldots\}$. With this definition in mind, prove each of the following statements.
+
 
 \question A function defined on a domain $D\subseteq \mathbb{R}$ is called \textbf{strictly increasing} if, for any two real numbers $a,b\in D$, $a<b$ implies $f(a)<f(b)$. Write, in symbols, the quantified statement that means, ``The sequence $\{a_n\}$ is a strictly increasing function on $\mathbb{N}$.''
 
