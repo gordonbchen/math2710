@@ -150,7 +150,7 @@ $f$ is not injective and $g \circ f$ is injective.
 	\part Prove that $f$ is well-defined and bijective.
 
 \begin{solution}\begin{proof}
-
+\colorbox{red}{WTF?}
 \end{proof}\end{solution}
 
  
@@ -173,7 +173,7 @@ $f$ is not injective and $g \circ f$ is injective.
  \end{proof}
 
 \begin{solution}\begin{proof}
-
+\colorbox{red}{LGTM}
 \end{proof}\end{solution}
 
  
@@ -184,7 +184,17 @@ $f$ is not injective and $g \circ f$ is injective.
 \question Prove that if $a$ is a natural number, then there exist two unequal natural numbers $k$ and $l$ for which $a^k-a^l$ is divisible by $10.$
 
 \begin{solution}\begin{proof}
+Let $a \in \mathbb{N}$.
 
+Consider the function $f: \mathbb{N} \to \{0...9\}$ where $f(n) = a^n \mod 10$.
+
+Since $|\mathbb{N}| > |\{0...9\}|$, then by the pigeonhole principle $f$ cannot be injective.
+
+Then there must exist $k, l \in \mathbb{N}$, such that $k \ne l$ and $f(k) = f(l)$.
+
+Then $a^k \mod 10 = a^l \mod 10$, and we have that $a^k - a^l \mod 10 = 0$, so $10 | a^k - a^l$.
+
+Then we have $k \ne l$ such that $10 | a^k - a^l$.
 \end{proof}\end{solution}
 
  
