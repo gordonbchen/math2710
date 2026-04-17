@@ -205,7 +205,7 @@ Then we have $k \ne l$ such that $10 | a^k - a^l$.
 \question Prove that any set of seven distinct integers contains a pair of integers whose sum or difference is divisible by 10
 
 \begin{solution}\begin{proof}
-
+\colorbox{red}{TODO}
 \end{proof}\end{solution}
 
  
@@ -216,29 +216,84 @@ A \textbf{sequence} of real numbers is defined to be a function with domain $\ma
 
 \question A function defined on a domain $D\subseteq \mathbb{R}$ is called \textbf{strictly increasing} if, for any two real numbers $a,b\in D$, $a<b$ implies $f(a)<f(b)$. Write, in symbols, the quantified statement that means, ``The sequence $\{a_n\}$ is a strictly increasing function on $\mathbb{N}$.''
 
-\begin{solution}\begin{proof}
-
-\end{proof}\end{solution}
+\begin{solution}
+$\forall x, y \in \mathbb{N}, x < y \implies a_x < a_y$.
+\end{solution}
 
  
 \question Prove, using the method of proof by contradiction, that every strictly increasing sequence is a 1-1 function.
 
 \begin{solution}\begin{proof}
+Let $\{a_n\}$ be a strictly increasing sequence.
 
+Assume for the sake of contradiction that $\{a_n\}$ is not injective. Then there must exist
+some $x, y \in \mathbb{N}$ such that $a_x = a_y$ and $x \ne y$.
+
+Without loss of generality, let $x < y$. Since $\{a_n\}$ is strictly increasing, then $a_x < a_y$.
+
+This is a contradiction because we assumed that $a_x = a_y$ but found that $a_x < a_y$.
+
+Then we have that every strictly increasing sequence is injective.
 \end{proof}\end{solution}
 
  
 \question  Use induction to prove that ``for every $n\in \mathbb{N}$, $a_n < a_{n+1}$,'' is a characterization of a strictly increasing sequence $\{a_n\}$. (Hint: you need to prove a quantified statement of the form $\forall m \in \mathbb{N}, \forall n \in \mathbb{N} m<n \Rightarrow \ldots$. To do this, let $m\in \mathbb{N}$ and induct on $n$, beginning with $n=m+1$.)
 
 \begin{solution}\begin{proof}
+Assume that $\forall n \in \mathbb{N}: a_n < a_{n+1}$.
 
+We show by induction that $\forall m,n \in \mathbb{N}: m < n \implies a_m < a_n$.
+
+Let $m \in \mathbb{N}$.\\
+
+Base case $n = m + 1$:
+
+$m < n$ is true since $m < m + 1$, and $a_m < a_n$ is true since $a_m < a_{m+1}$, so the base case holds.\\
+
+Inductive step:
+
+Assume that for some $n \in \mathbb{N}$, we have that $m < n \implies a_m < a_n$.
+
+Since $m < n$, then $m < n + 1$.
+
+Since $\{a_n\}$ is an increasing sequence, we know that $a_n < a_{n+1}$.
+
+Then $a_m < a_n < a_{n+1}$, so $a_m < a_{n+1}$.
+
+Then we have that $m < n+1 \implies a_m < a_{n+1}$.\\
+
+Then by induction we have that $\forall m,n \in \mathbb{N}: a_n < a_{n+1} \implies \{a_n\}$
+is strictly increasing.
 \end{proof}\end{solution}
 
  
 \question  Use strong induction to prove that the Fibonnaci sequence defined recursively on $\mathbb{N}_0$ by $f_0=0,f_1=1,$ and $f_{n+1}=f_n+f_{n-1}$ for $n\geq1$ is a strictly increasing function on $\{2,3,4, \ldots \}$. That is, prove that for every $m,n\in\mathbb{N}$, if $n>m\geq2,$ then $f_n>f_m$. You may wish to use part (c) directly, or to use a similar method to your proof in (c).
 
 \begin{solution}\begin{proof}
+We first show that $\forall n \in \mathbb{N}, n \ge 2 \implies f_n < f_{n+1}$.\\
 
+Base case $n = 2$:
+
+We see that $f_2 = 1 < f_3 = 2$ so the base case holds.\\
+
+
+Base case $n = 3$:
+
+We see that $f_3 = 2 < f_4 = 3$ so the base case holds.\\
+
+
+Inductive step:
+
+\colorbox{red}{TODO: fix strong induction proof}
+
+Assume that for $3 \le n$, we have that $f_k < f_{k+1}$.
+
+Since $2 \le k-1 \le n$, then we have that $f_{k-1} < f_{k}$. Then $f_{k-1} + f_k < f_k + f_{k+1}$,
+so $f_{k+1} < f_{k+2}$.\\
+
+Thus by induction we have that $\forall n \in \mathbb{N}, n \ge 2 \implies f_n < f_{n+1}$.
+
+Then by (c) we have that $f_n$ is strictly increasing for $n \ge 2$.
 \end{proof}\end{solution}
 
  
