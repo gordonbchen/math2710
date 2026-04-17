@@ -286,10 +286,12 @@ Inductive step:
 
 \colorbox{red}{TODO: fix strong induction proof}
 
-Assume that for $3 \le n$, we have that $f_k < f_{k+1}$.
+Assume that for $3 \le n$, we have that $f_k < f_{k+1}$ for $2 \le k \le n$.
 
-Since $2 \le k-1 \le n$, then we have that $f_{k-1} < f_{k}$. Then $f_{k-1} + f_k < f_k + f_{k+1}$,
-so $f_{k+1} < f_{k+2}$.\\
+Then $f_n < f_{n+1}$.
+
+Since $2 \le n-1 \le n$, then we have that $f_{n-1} < f_{n}$. Then $f_{n-1} + f_n < f_n + f_{n+1}$,
+so $f_{n+1} < f_{n+2}$.\\
 
 Thus by induction we have that $\forall n \in \mathbb{N}, n \ge 2 \implies f_n < f_{n+1}$.
 
