@@ -147,11 +147,24 @@ $f$ is not injective and $g \circ f$ is injective.
 
 \question Consider the function $f:\mathbb{Z}_3 \rightarrow \mathbb{Z}_{12}$ defined by $f\left(\left[a \right]\right)=\left[4a \right]$.
 \begin{parts}
-	\part Prove that $f$ is well-defined and bijective.
+	\part Prove that $f$ is well-defined, injective, and not surjective.
 
 \begin{solution}\begin{proof}
-Since $|\mathbb{Z}_3| < |\mathbb{Z}_{12}|$, so by the pigeonhole principle, $f$ is not surjective, and
-therefore not bijective.
+Let $x, y \in [a]_3$. Then $x \equiv a \mod 3$ and $y \equiv a \mod 3$.
+
+Then $x = a \mod 3$ and $y = a \mod 3$.
+
+Then $a = 3n + x$ and $a = 3m + y$, where $n, m \in \mathbb{Z}$.
+
+Then $4a = 12n + 4x$ and $4a = 12m + 4y$.
+
+Then $4a = 4x \mod 12$ and $4a = 4y \mod 12$.
+
+Then $4x \mod 12 = 4x \mod 12$, so $[4x]_{12} = [4y]_{12}$.
+
+Then $f$ is well-defined since $[x]_3 = [y]_3 = [a]_3 \implies [4x]_{12} = [4y]_{12} = [4a]_{12}$.\\
+
+Since $|\mathbb{Z}_3| < |\mathbb{Z}_{12}|$, so by the pigeonhole principle, $f$ is not surjective.
 \end{proof}\end{solution}
 
  
