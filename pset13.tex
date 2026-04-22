@@ -1,0 +1,83 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color,amsthm}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption, hyperref}
+\usetikzlibrary{arrows}
+\printanswers
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 13: Ch 13}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+
+\begin{questions}
+
+\question  Explain the precise definition of a limit in your own words. What is the role of $\delta$ and of $\varepsilon$? 
+
+\question  Let $f(x)=3x+2$. We will show that $\displaystyle{\lim_{x \to 1} f(x) =5}$
+
+\begin{parts}
+
+\part Fill in the blanks:\\
+\vspace{.2in}
+
+ For every \underline{\hspace{.8in}} there exists \underline{\hspace{.8in}}, such that \underline{\hspace{1in}}$<\varepsilon$ whenever \underline{\hspace{1in}}$<\delta$. 
+
+
+\part  Let $\varepsilon=0.5$.  Find $\delta$ so that $|f(x)-5|<\varepsilon$ whenever $|x-1|<\delta.$ Illustrate with a graph. 
+
+\part  Let $\varepsilon=0.01$.  Find $\delta$ so that $|f(x)-5|<\varepsilon$ whenever $|x-1|<\delta.$ Illustrate with a graph.
+
+\part  Find $\delta$(in terms of $\varepsilon$) so that $|f(x)-5|<\varepsilon$ whenever $|x-1|<\delta.$ Illustrate with a graph. 
+
+\end{parts} 
+
+\question Prove, using the $\delta, \epsilon$ defintion of limits, that: $\lim_{x \to 3} 4x+6=18.$
+
+\question  Prove, using the $\delta, \epsilon$ defintion of limits, that: $$\lim_{x \to a} mx+b=ma+b, \textrm{ for } m\neq 0$$
+
+\question Prove that $f(x)=2x+1$ is continuous for all $x \in \mathbb{R}$.
+
+\question Prove that the following limit does not exist
+$$\lim_{x \to 0} \frac{1}{x^2}$$
+
+
+\question Give an example where $\lim_{x \to c}f(x)$ does not exist and $\lim_{x \to c}g(x)$ does not exist but $$\lim_{x \to c}f(x)-g(x) =7.$$ 
+
+
+
+\question Prove that $$\lim_{x \to \infty} \frac{1}{x^2}=0.$$
+
+
+
+
+
+
+
+\newpage
+
+\section*{Challenge Problems} 
+\question Prove that if $\lim_{x \to c}f(x)=A$ and $\lim_{x \to c}g(x)=B$ then $\lim_{x \to c}f(x)-g(x)=A-B$.
+
+\question Prove the squeeze theorem: Suppose $g(x) \leq f(x) \leq h(x)$ for all $x \in \mathbb{R}$ satisfying $0 < |x-c| < \delta$. If $\lim_{x \to c}g(x)=l=\lim_{x \to c}h(x)$, then $\lim_{x \to c} f(x) =L$.
+
+\question Show that $$\lim_{x \to 3} x^2 =9.$$
+
+
+
+\end{questions}
+\end{document}
