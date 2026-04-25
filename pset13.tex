@@ -9,6 +9,8 @@
 \newtheorem{claim}{Claim}
 \newtheorem{lemma}{Lemma}
 
+\newcommand{\eps}{\varepsilon}
+
 \pagestyle{head}                       % This causes the exam to only have headers, no footers.
 %\runningheadrule                     % This causes the headings to have an underline.
 
@@ -50,14 +52,18 @@ whenever $0 < |x - 1| < \delta$.
 \part  Let $\varepsilon=0.5$.  Find $\delta$ so that $|f(x)-5|<\varepsilon$ whenever $|x-1|<\delta.$ Illustrate with a graph. 
 
 \begin{solution}\\
+See part d. Let $\delta = \frac{\varepsilon}{3} = \frac{0.5}{3} = \frac{1}{6}$.
 
+\includegraphics[width=\textwidth]{pset13_imgs/eps0_5.png}
 \end{solution}
 
 
 \part  Let $\varepsilon=0.01$.  Find $\delta$ so that $|f(x)-5|<\varepsilon$ whenever $|x-1|<\delta.$ Illustrate with a graph.
 
 \begin{solution}\\
+See part d. Let $\delta = \frac{\varepsilon}{3} = \frac{0.01}{3} = \frac{1}{300}$.
 
+\includegraphics[width=\textwidth]{pset13_imgs/eps0_01.png}
 \end{solution}
 
 
@@ -76,8 +82,11 @@ Assume that $0 < |x-1| < \frac{\varepsilon}{3}$.
     |3x+2 - 5| <& \varepsilon
 \end{align*}
 
-Then for every $\varepsilon > 0$, there exists some $\delta > 0$ such that
+Then for every $\varepsilon > 0$, there exists a $\delta > 0$ such that
 $0 < |x - 1| < \delta \implies |f(x) - 5| < \varepsilon$.
+
+
+\includegraphics[width=\textwidth]{pset13_imgs/eps0_24.png}
 \end{solution}
 
 
@@ -87,20 +96,43 @@ $0 < |x - 1| < \delta \implies |f(x) - 5| < \varepsilon$.
 
 \begin{solution}
 
-\end{solution}
+WTS:
+
+$\forall \varepsilon > 0, \exists \delta > 0, \forall x: 0 < |x - 3| < \delta \implies |4x+6 - 18| < \varepsilon$.
+\begin{align*}
+    |4x+6-18| &< \varepsilon \\
+    |4x-12| &< \varepsilon \\
+    |x-3| &< \frac{\varepsilon}{4}
+\end{align*}
+
+So choose $\delta = \frac{\varepsilon}{4}$.
+
+\begin{proof}
+    Let $\varepsilon > 0$. Let $\delta = \frac{\varepsilon}{4}$.
+
+    Assume that $|x-3| < \delta$.
+    \begin{align*}
+        |x-3| < \delta \\
+        |x-3| < \frac{\varepsilon}{4} \\
+        |4x-12| < \varepsilon \\
+        |4x+6 - 18| < \varepsilon \\
+    \end{align*}
+
+    Thus we conclude that $\lim_{x \to 3} 4x + 6 = 18$.
+\end{proof}\end{solution}
 
 
 \question  Prove, using the $\delta, \epsilon$ defintion of limits, that: $$\lim_{x \to a} mx+b=ma+b, \textrm{ for } m\neq 0$$
 
 \begin{solution}\\
-
+\includegraphics[width=\textwidth]{pset13_imgs/p4.jpg}
 \end{solution}
 
 
 \question Prove that $f(x)=2x+1$ is continuous for all $x \in \mathbb{R}$.
 
 \begin{solution}\\
-
+\includegraphics[width=\textwidth]{pset13_imgs/p5.jpg}
 \end{solution}
 
 
