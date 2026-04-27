@@ -1,0 +1,66 @@
+\documentclass[12 pt]{exam}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,color,amsthm}
+\usepackage{enumerate,graphicx,multicol}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz, subcaption, hyperref}
+\usetikzlibrary{arrows}
+\printanswers %happy last assignment
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}{Lemma}
+
+\pagestyle{head}                       % This causes the exam to only have headers, no footers.
+%\runningheadrule                     % This causes the headings to have an underline.
+
+%\firstpageheader{Name:\enspace\hbox to 4.5in{\hrulefill} Section:\enspace\hbox to 1.2in{\hrulefill}}{}{}
+%\extraheadheight{.25in}
+
+\begin{document}
+\hrule
+\begin{center}
+  \huge{Math 2710 Problem Set 14: Ch 14}    %Title
+\end{center}
+\hrule
+\vskip .2in
+
+
+\begin{questions}
+
+\question Define $f:\mathbb{N} \to \mathbb{Z}$ as $$f(n)=\begin{cases} \frac{n}{2} & n \textrm{ is even } \\ -\frac{n-1}{2} & n \textrm{ is odd }\end{cases}.$$  Show that $f(n)$ is a bijective function.  
+
+\question Show that the cardinality of the even integers is equal to the cardinality of the multiples of 3 by constructing a bijection between the two sets. Explain why your function is a bijection.
+
+\question Prove, using induction, that the union of a finite number of countably infinite sets is countably infinite. 
+
+\question Prove or disprove: There is a bijective function $f:\mathbb{Q} \to \mathbb{R}.$ (Hint: the composition of bijective functions is bijective). 
+
+\question Prove or disprove: The cardinality of the set $[a,b]$ is the same as the cardinality of the set $[0,1]$.
+
+
+
+\section*{Challenge Problems} 
+
+\question Review the following proof. Determine the proof method used (or attempted) and give the proof a grade of A (complete, correct, and clear), C (partially correct, partially incomplete, and/or partially unclear), or F (not clear, not correct, or not complete). If you give a grade lower than A, explain your reasoning and describe a way to revise the proof for an A, if possible.
+
+\begin{claim}The sets $(0, \infty)$ and $[0, \infty)$ are numerically equivalent. \end{claim}
+\begin{proof}
+Define the function $f:(0 , \infty) \to [0, \infty)$ by $f(x)=x.$ First, we show that $f$ is one-to-one. Assume that $f(a)=f(b)$. Then $a=b$ and so $f$ is one-to-one. Next, we show that $f$ is onto. Let $r\in[0,\infty)$. Since $f(r)=r$, the function $f$ is onto. Since $f$ is bijective, $|(0,\infty)|=|[0,\infty)|$. 
+\end{proof}
+
+\question Prove the result above using the Schr{\"o}der-Bernstein Theorem, i.e prove the sets $(0, \infty)$ and $[0, \infty)$ are numerically equivalent. 
+
+\question Consider the function $f:[0,1) \to (0,1)$ defined by 
+$$f(x)=\begin{cases} 
+1/2 & x=0 \\
+\frac{1}{2^{n+1}} &  x=\frac{1}{2^n} \quad \textrm{ for } n \in \mathbb{N} \\
+x & \textrm{otherwise}
+\end{cases}$$
+\begin{parts}
+\part Explain why $f$ is one-to-one. 
+\part Explain why $f$ is onto. 
+\part Use this to show that the sets $(0, \infty)$ and $[0, \infty)$ are numerically equivalent. 
+\end{parts}
+
+
+\end{questions}
+\end{document}
